@@ -1,8 +1,9 @@
 // Copies what the tests compare against from the HTML build into app/src/test/resources:
 //   figma-frames.json  the frame manifest (design/screens/dist/manifest.json, made by `node build.js`)
+//   icons.txt          the icon names tools/icons.mjs collected (read by FoundationsTest)
 //   figma-tokens.json  { "<android colour name>": "#AARRGGBB" } for every --color-* and --team-* token in kit.css :root
 // Usage (from LeagueX): node tools/sync-figma.mjs
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -32,6 +33,9 @@ function argb(value) {
   }
   throw new Error(`Unsupported colour value: ${value}`);
 }
+
+const iconsPath = join(PROJECT, 'tools', 'icons.txt');
+if (existsSync(iconsPath)) copyFileSync(iconsPath, join(OUT, 'icons.txt'));
 
 const css = readFileSync(join(SCREENS, 'src', 'kit.css'), 'utf8');
 const root = /:root\s*\{([^}]*)\}/.exec(css);

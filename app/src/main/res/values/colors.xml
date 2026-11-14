@@ -1,0 +1,31 @@
+<resources>
+    <color name="blue">#FF1F3FD1</color>
+    <color name="ink">#FF0F1533</color>
+    <color name="muted">#FF5A6280</color>
+    <color name="line">#FFE6E9F2</color>
+    <color name="tint">#FFE6EBFF</color>
+    <color name="page">#FFF4F6FB</color>
+    <color name="paper">#FFFFFFFF</color>
+    <color name="orange">#FFFF6A1F</color>
+    <color name="orange_text">#FFC2410C</color>
+    <color name="on_blue">#FFFFFFFF</color>
+    <color name="on_blue_muted">#FFC9D3FF</color>
+    <color name="on_blue_surface">#24FFFFFF</color>
+    <color name="success">#FF12784A</color>
+    <color name="success_bg">#FFE3F3EA</color>
+    <color name="waiting">#FF8A5300</color>
+    <color name="waiting_bg">#FFFFF2DE</color>
+    <color name="error">#FFC62828</color>
+    <color name="error_bg">#FFFDECEC</color>
+    <color name="card_yellow">#FFF5C518</color>
+    <color name="card_red">#FFD62828</color>
+    <color name="scrim">#660F1533</color>
+    <color name="team_cap">#FF2F4EB8</color>
+    <color name="team_mar">#FF0F7A5B</color>
+    <color name="team_pot">#FFD08F12</color>
+    <color name="team_raw">#FFB02A55</color>
+    <color name="team_khy">#FF4D5D73</color>
+    <color name="team_sad">#FF6E52CF</color>
+    <color name="team_pin">#FF0E7490</color>
+    <color name="team_koh">#FF7A4E2D</color>
+</resources>

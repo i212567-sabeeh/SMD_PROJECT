@@ -1,0 +1,22 @@
+<resources>
+    <!-- Repeated kit.css values; 1 CSS px = 1dp. -->
+    <dimen name="page_margin">20dp</dimen>
+    <dimen name="card_radius">20dp</dimen>
+    <dimen name="blue_block_radius">28dp</dimen>
+    <dimen name="status_bar_height">40dp</dimen>
+    <dimen name="top_bar_height">64dp</dimen>
+    <dimen name="nav_bar_height">80dp</dimen>
+    <dimen name="nav_item_width">76dp</dimen>
+    <dimen name="nav_item_height">64dp</dimen>
+    <dimen name="row_height">64dp</dimen>
+    <dimen name="row_height_compact">56dp</dimen>
+    <dimen name="row_padding_h">16dp</dimen>
+    <dimen name="table_row_height">48dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_height_big">56dp</dimen>
+    <dimen name="button_padding_h">24dp</dimen>
+    <dimen name="chip_height">36dp</dimen>
+    <dimen name="search_height">48dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="line_width">1dp</dimen>
+</resources>

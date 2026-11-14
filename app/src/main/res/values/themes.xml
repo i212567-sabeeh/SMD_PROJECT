@@ -3,6 +3,34 @@
     <!-- The design is light only, so the app doesn't follow the system dark mode. -->
     <style name="Theme.LeagueX" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="29">false</item>
+
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+        <item name="android:textColorPrimary">@color/ink</item>
+        <item name="android:textColorSecondary">@color/muted</item>
+
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorOnPrimary">@color/on_blue</item>
+        <item name="colorPrimaryContainer">@color/tint</item>
+        <item name="colorOnPrimaryContainer">@color/blue</item>
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorOnSecondary">@color/ink</item>
+        <item name="colorSecondaryContainer">@color/tint</item>
+        <item name="colorOnSecondaryContainer">@color/blue</item>
+        <item name="colorSurface">@color/paper</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorSurfaceVariant">@color/page</item>
+        <item name="colorOnSurfaceVariant">@color/muted</item>
+        <item name="colorOutline">@color/line</item>
+        <item name="colorOutlineVariant">@color/line</item>
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/on_blue</item>
+        <item name="colorErrorContainer">@color/error_bg</item>
+        <item name="colorOnErrorContainer">@color/error</item>
+        <item name="android:colorBackground">@color/page</item>
+        <item name="colorOnBackground">@color/ink</item>
+        <item name="android:windowBackground">@color/page</item>
+        <item name="scrimBackground">@color/scrim</item>
     </style>
 
 </resources>
