@@ -1,0 +1,6 @@
+<resources>
+    <!-- The list of every Figma frame, where the app opens. -->
+    <string name="screens_title">LeagueX screens</string>
+    <string name="screens_start">Start the app</string>
+    <string name="screens_style_kit">Style kit</string>
+</resources>

@@ -1,0 +1,13 @@
+<!-- Figma: none. A row in the "LeagueX screens" list: a Figma frame, "Start the app" or "Style kit". -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="48dp"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="8dp"
+    android:textAppearance="?attr/textAppearanceBodyLarge"
+    android:textColor="?android:attr/textColorPrimary"
+    tools:text="08 Home / League" />
