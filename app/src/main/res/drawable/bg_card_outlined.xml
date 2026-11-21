@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A list as the style guide draws it on its cells: paper, 20dp corners and a 1dp line border. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/paper" />
+    <corners android:radius="@dimen/card_radius" />
+    <stroke
+        android:width="1dp"
+        android:color="@color/line" />
+</shape>

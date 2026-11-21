@@ -43,6 +43,8 @@ android {
             isIncludeAndroidResources = true
             all {
                 it.jvmArgs("--enable-native-access=ALL-UNNAMED")
+                // Every frame test opens dozens of screens; the default heap runs out once all sections exist.
+                it.maxHeapSize = "2g"
                 it.systemProperty("leaguex.shots", shots)
                 it.systemProperty("leaguex.shotsDir", shotsDir)
                 if (shots.isNotEmpty()) it.outputs.upToDateWhen { false }

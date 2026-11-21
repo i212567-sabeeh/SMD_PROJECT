@@ -775,6 +775,118 @@
                 tools:text="BA" />
         </LinearLayout>
 
+        <TextView
+            style="@style/Widget.LeagueX.KitCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/kit_cap_match_rows" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/kitMatchRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_card_outlined"
+            android:padding="1dp"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_match_row" />
+
+        <TextView
+            style="@style/Widget.LeagueX.KitCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/kit_cap_table_rows" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/kitTableRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_outlined"
+            android:padding="1dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_table_row" />
+
+        <TextView
+            style="@style/Widget.LeagueX.KitCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/kit_cap_people_rows" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/kitPeopleRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_card_outlined"
+            android:padding="1dp"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_player_row" />
+
+        <TextView
+            style="@style/Widget.LeagueX.KitCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/kit_cap_settings_rows" />
+
+        <LinearLayout
+            android:id="@+id/kitSettingsCell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_card_outlined"
+            android:orientation="vertical"
+            android:padding="1dp">
+
+            <!-- A settings row written out, as the fixed menus are (ui.js settingRow). -->
+            <LinearLayout
+                style="@style/Widget.LeagueX.Row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    style="@style/Widget.LeagueX.Row.Icon"
+                    android:src="@drawable/ic_notifications" />
+
+                <TextView
+                    style="@style/Widget.LeagueX.Row.Label"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:labelFor="@+id/kitScoreUpdates"
+                    android:text="@string/kit_setting_score_updates" />
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/kitScoreUpdates"
+                    style="@style/Widget.LeagueX.Switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/line" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/kitNoteRows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_note_row" />
+        </LinearLayout>
+
         <!-- Match parts. In the style guide the Timeline cell follows Match clock. -->
         <TextView
             android:layout_width="match_parent"
@@ -898,6 +1010,25 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+        <TextView
+            style="@style/Widget.LeagueX.KitCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/kit_cap_timeline" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/kitTimeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_card_outlined"
+            android:padding="1dp"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_event" />
 
         <TextView
             style="@style/Widget.LeagueX.KitCaption"

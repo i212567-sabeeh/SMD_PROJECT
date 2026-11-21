@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 08 Home, 13 Matches, 37 Organizer dashboard, 39 Generate fixtures and the Style kit's match rows (ui.js matchRow).
+     When on the left (time and court, the minute and "Live", or "FT"), the two teams on the right, the winner bold. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LeagueX.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="76dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <LinearLayout
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/whenTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+            tools:text="7:00 pm" />
+
+        <TextView
+            android:id="@+id/whenBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+            android:textColor="@color/muted"
+            tools:text="Court 2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_8"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/homeCrest"
+                style="@style/Widget.LeagueX.Crest.S"
+                tools:text="MAR" />
+
+            <TextView
+                android:id="@+id/homeName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                tools:text="Margalla Strikers" />
+
+            <TextView
+                android:id="@+id/homeGoals"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.LeagueX.Display.Small"
+                tools:text="3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/awayCrest"
+                style="@style/Widget.LeagueX.Crest.S"
+                tools:text="RAW" />
+
+            <TextView
+                android:id="@+id/awayName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                tools:text="Rawal Rovers" />
+
+            <TextView
+                android:id="@+id/awayGoals"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.LeagueX.Display.Small"
+                tools:text="2" />
+        </LinearLayout>
+
+        <!-- A live score that's still to be confirmed: "Updated 3 min ago". -->
+        <TextView
+            android:id="@+id/updated"
+            style="@style/Widget.LeagueX.Status.Updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:text="Updated 3 min ago" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 08 Home (Latest results), 12 League page and 19 Team page (ui.js resultRow). One line: crest, code, score,
+     code, crest and "FT" or a note. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LeagueX.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_8"
+    android:minHeight="56dp">
+
+    <TextView
+        android:id="@+id/homeCrest"
+        style="@style/Widget.LeagueX.Crest.S"
+        tools:text="CAP" />
+
+    <TextView
+        android:id="@+id/homeCode"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+        tools:text="CAP" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.LeagueX.ResultScore"
+        tools:text="3–1" />
+
+    <TextView
+        android:id="@+id/awayCode"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+        tools:text="KHY" />
+
+    <TextView
+        android:id="@+id/awayCrest"
+        style="@style/Widget.LeagueX.Crest.S"
+        tools:text="KHY" />
+
+    <TextView
+        android:id="@+id/meta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:maxLines="1"
+        android:minWidth="52dp"
+        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+        android:textColor="@color/muted"
+        tools:text="FT" />
+</LinearLayout>

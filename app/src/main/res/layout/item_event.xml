@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 14 Match page, 46 Record match and the Style kit's timeline (ui.js eventRow). A home event reads minute, icon,
+     what; an away event is mirrored on the right. EventAdapter puts the parts in order. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_10"
+    android:gravity="center_vertical"
+    android:minHeight="52dp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/row_padding_h"
+    android:paddingTop="6dp"
+    android:paddingEnd="@dimen/row_padding_h"
+    android:paddingBottom="6dp"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/minute"
+        android:layout_width="40dp"
+        android:layout_height="28dp"
+        android:background="@drawable/bg_minute"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.LeagueX.EventMinute"
+        tools:text="29'" />
+
+    <FrameLayout
+        android:id="@+id/mark"
+        android:layout_width="28dp"
+        android:layout_height="28dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:importantForAccessibility="no"
+            app:tint="@color/ink"
+            tools:src="@drawable/ic_sports_soccer" />
+
+        <View
+            android:id="@+id/cardMark"
+            android:layout_width="14dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_card_mark"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/what"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+            tools:text="Usman Tariq" />
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+            android:textColor="@color/muted"
+            tools:text="Assist: Hamza Ali" />
+
+        <TextView
+            android:id="@+id/waiting"
+            style="@style/Widget.LeagueX.Status.Waiting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/row_waiting_to_upload"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

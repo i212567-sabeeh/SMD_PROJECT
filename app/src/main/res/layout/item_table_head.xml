@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 12 League page, 15 Table and the Style kit's table rows (ui.js tableHead). The short table hides W, D and L. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_4"
+    android:gravity="center_vertical"
+    android:minHeight="40dp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/row_padding_h"
+    android:paddingEnd="@dimen/row_padding_h"
+    android:showDividers="middle">
+
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:text="@string/table_pos"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/table_team"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/table_p"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:id="@+id/w"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/table_w"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:id="@+id/d"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/table_d"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:id="@+id/l"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/table_l"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/table_gd"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/table_pts"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Bold"
+        android:textColor="@color/muted" />
+</LinearLayout>

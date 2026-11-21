@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .event .minute: a 40 x 28dp tint pill. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/tint" />
+    <corners android:radius="14dp" />
+</shape>

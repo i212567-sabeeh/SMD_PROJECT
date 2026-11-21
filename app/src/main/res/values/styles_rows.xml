@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- List rows (kit.css .row, .match-row, .result-row, .table-row, .event, .period). Fixed menus such as Settings
+     write their rows out with Widget.LeagueX.Row, .Row.Title and .Row.Meta; data lists use the item_* layouts. -->
+<resources>
+
+    <!-- .row: at least 64dp, 8dp top and bottom, 16dp sides, 12dp between the parts, centred. -->
+    <style name="Widget.LeagueX.Row" parent="">
+        <item name="android:minHeight">@dimen/row_height</item>
+        <item name="android:paddingStart">@dimen/row_padding_h</item>
+        <item name="android:paddingEnd">@dimen/row_padding_h</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:divider">@drawable/gap_12</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- .row.compact -->
+    <style name="Widget.LeagueX.Row.Compact">
+        <item name="android:minHeight">@dimen/row_height_compact</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <!-- A row's name or title (.t-title-s): one line, ending in "…" when it's too long. -->
+    <style name="Widget.LeagueX.Row.Title" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Title.Small</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- The muted line under a row's title (.t-body-s.muted). -->
+    <style name="Widget.LeagueX.Row.Meta" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Small</item>
+        <item name="android:textColor">@color/muted</item>
+    </style>
+
+    <!-- A settings row's label (ui.js settingRow, .t-body-l). -->
+    <style name="Widget.LeagueX.Row.Label" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Large</item>
+    </style>
+
+    <!-- A settings row's value before its chevron (.t-body-m.muted). -->
+    <style name="Widget.LeagueX.Row.Value" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Medium</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- A settings row's leading icon (24dp, muted) and trailing chevron. -->
+    <style name="Widget.LeagueX.Row.Icon" parent="">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="tint">@color/muted</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+
+    <!-- .result-row .score: Anton 20/24. -->
+    <style name="TextAppearance.LeagueX.ResultScore" parent="TextAppearance.LeagueX.Display.Small">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <!-- .table-row .pts: Archivo Bold 14/20. -->
+    <style name="TextAppearance.LeagueX.TablePts" parent="TextAppearance.LeagueX.Body.Medium">
+        <item name="android:fontFamily">@font/archivo_bold</item>
+        <item name="fontFamily">@font/archivo_bold</item>
+    </style>
+
+    <!-- .event .minute: Archivo SemiBold 12, blue, centred in a 40 x 28dp tint pill. -->
+    <style name="TextAppearance.LeagueX.EventMinute" parent="TextAppearance.LeagueX.Label.Medium">
+        <item name="android:fontFamily">@font/archivo_semibold</item>
+        <item name="fontFamily">@font/archivo_semibold</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <!-- .period: Archivo SemiBold 12/16, muted. -->
+    <style name="TextAppearance.LeagueX.Period" parent="TextAppearance.LeagueX.EventMinute">
+        <item name="android:textColor">@color/muted</item>
+    </style>
+</resources>

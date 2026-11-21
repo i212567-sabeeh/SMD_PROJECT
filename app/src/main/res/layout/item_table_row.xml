@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 12 League page, 15 Table and the Style kit's table rows (ui.js tableRow). The followed team's row is tinted,
+     and a dashed blue line under a row marks the playoff places. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/gap_4"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/table_row_height"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/row_padding_h"
+        android:paddingEnd="@dimen/row_padding_h"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/pos"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+            tools:text="1" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@drawable/gap_8"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/crest"
+                style="@style/Widget.LeagueX.Crest.S"
+                tools:text="CAP" />
+
+            <TextView
+                android:id="@+id/teamName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                tools:text="Capital United" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/p"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+            tools:text="4" />
+
+        <TextView
+            android:id="@+id/w"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+            tools:text="4" />
+
+        <TextView
+            android:id="@+id/d"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/l"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/gd"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+            tools:text="+7" />
+
+        <TextView
+            android:id="@+id/pts"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.TablePts"
+            tools:text="12" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/playoffLine"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/bg_dashed_line"
+        android:visibility="gone" />
+</LinearLayout>

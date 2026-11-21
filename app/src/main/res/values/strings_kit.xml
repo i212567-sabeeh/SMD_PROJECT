@@ -200,4 +200,10 @@
     <string name="kit_push_title">Kick-off in 1 hour</string>
     <string name="kit_push_body">MAR vs RAW at 7:00 pm, Court 2</string>
     <string name="kit_push_time">6:00 pm</string>
+    <string name="kit_cap_match_rows">Match rows</string>
+    <string name="kit_cap_table_rows">Table rows, full width as on Standings</string>
+    <string name="kit_cap_people_rows">Player and team rows</string>
+    <string name="kit_cap_settings_rows">Settings and notifications</string>
+    <string name="kit_cap_timeline">Timeline</string>
+    <string name="kit_setting_score_updates">Score updates</string>
 </resources>

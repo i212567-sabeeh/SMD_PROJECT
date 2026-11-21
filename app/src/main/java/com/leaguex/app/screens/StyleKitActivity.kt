@@ -7,8 +7,12 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
+import androidx.recyclerview.widget.ConcatAdapter
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
+import com.leaguex.app.data.MatchRow
+import com.leaguex.app.data.MatchState
+import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityStyleKitBinding
 import com.leaguex.app.databinding.ItemKitSwatchBinding
 import com.leaguex.app.databinding.ItemKitTypeBinding
@@ -20,6 +24,17 @@ import com.leaguex.app.kit.Tie
 import com.leaguex.app.kit.avatar
 import com.leaguex.app.kit.bind
 import com.leaguex.app.kit.crest
+import com.leaguex.app.kit.rows.EventAdapter
+import com.leaguex.app.kit.rows.MatchRowAdapter
+import com.leaguex.app.kit.rows.NoteRow
+import com.leaguex.app.kit.rows.NoteRowAdapter
+import com.leaguex.app.kit.rows.PlayerRow
+import com.leaguex.app.kit.rows.PlayerRowAdapter
+import com.leaguex.app.kit.rows.TableAdapter
+import com.leaguex.app.kit.rows.TeamRow
+import com.leaguex.app.kit.rows.TeamRowAdapter
+import com.leaguex.app.kit.rows.Trail
+import com.leaguex.app.kit.rows.showRows
 import com.leaguex.app.kit.showSheet
 import java.util.Locale
 import kotlin.math.roundToInt
@@ -101,6 +116,37 @@ class StyleKitActivity : LeagueXActivity() {
         provinceInput.setText(resources.getStringArray(R.array.kit_provinces).first(), false)
         tieDecided.bind(Tie("MAR", "CAP", scoreA = 2, scoreB = 2, note = getString(R.string.kit_tie_pens), winner = "MAR"))
         tieToPlay.bind(Tie("SAD", "RAW", note = getString(R.string.kit_tie_date)))
+
+        // Identity, lists and rows: the style guide's sample rows.
+        kitMatchRows.showRows(
+            MatchRowAdapter(
+                listOf(
+                    MatchRow("MAR", "RAW", MatchState.UPCOMING, time = "7:00 pm", venue = "Court 2"),
+                    MatchRow("CAP", "POT", MatchState.LIVE, 2, 1, minute = "32'"),
+                    MatchRow("MAR", "RAW", MatchState.RESULT, 3, 2),
+                ),
+            ),
+        )
+        kitTableRows.showRows(TableAdapter(SampleData.TABLE.take(4), highlight = "MAR", playoffAfter = 4))
+        kitPeopleRows.showRows(
+            ConcatAdapter(
+                PlayerRowAdapter(
+                    listOf(
+                        PlayerRow("Muhammad Abdullah Qureshi", "Forward, #11"),
+                        PlayerRow("Zain Abbas", "Margalla Strikers", Trail.Stat("6")),
+                    ),
+                ),
+                TeamRowAdapter(listOf(TeamRow("SAD", "Captain: Rehan Butt"))),
+            ),
+        )
+        kitNoteRows.showRows(
+            NoteRowAdapter(
+                listOf(NoteRow(R.drawable.ic_sports_soccer, "Goal: Zain Abbas scores for Margalla Strikers, 1–0", time = "7:06 pm", unread = true)),
+            ),
+        )
+        kitSettingsCell.clipToOutline = true
+        val raw = SampleData.MAR_RAW
+        kitTimeline.showRows(EventAdapter(listOf(raw[4].copy(waiting = true), raw[3], raw[2], raw[1], raw[0])), divided = false)
 
         topTab.title.setText(R.string.kit_top_standings)
         topBack.title.setText(R.string.kit_top_edit_profile)

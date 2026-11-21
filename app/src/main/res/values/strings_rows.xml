@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fixed copy inside list rows (ui.js matchRow, resultRow, tableHead, playerRow, eventRow). -->
+<resources>
+    <string name="row_ft">FT</string>
+    <string name="row_live">Live</string>
+    <string name="row_invite">Invite</string>
+    <string name="row_invite_sent">Invite sent</string>
+    <string name="row_waiting_to_upload">Waiting to upload</string>
+    <string name="row_upload_failed">Upload failed. Tap to retry.</string>
+
+    <string name="table_pos">#</string>
+    <string name="table_team">Team</string>
+    <string name="table_p">P</string>
+    <string name="table_w">W</string>
+    <string name="table_d">D</string>
+    <string name="table_l">L</string>
+    <string name="table_gd">GD</string>
+    <string name="table_pts">Pts</string>
+
+    <string name="row_cd_call">Call</string>
+    <string name="row_cd_more">More options</string>
+    <string name="row_cd_remove">Remove</string>
+    <string name="row_cd_retry">Retry upload</string>
+    <string name="row_cd_yellow">Yellow cards</string>
+    <string name="row_cd_red">Red cards</string>
+    <string name="row_cd_unread">Unread</string>
+</resources>

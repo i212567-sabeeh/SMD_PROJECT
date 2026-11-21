@@ -200,6 +200,6 @@ class FrameShotsTest {
 
     private companion object {
         /** Taller than the Style kit's content, so the whole of it is on screen at once. */
-        const val KIT_HEIGHT_DP = 8000
+        const val KIT_HEIGHT_DP = 10000
     }
 }

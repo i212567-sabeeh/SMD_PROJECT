@@ -161,11 +161,12 @@ class StyleKitTest {
     private fun shownTexts(view: View): List<String> = shownTextViews(view).map { FrameHarness.normalize(it.text.toString()) }
 
     private companion object {
-        val SECTIONS = listOf("Colours", "Type", "Buttons and inputs", "Match parts", "Navigation and system")
+        val SECTIONS = listOf("Colours", "Type", "Buttons and inputs", "Identity, lists and rows", "Match parts", "Navigation and system")
         val CAPTIONS = listOf(
             "Filled", "Tonal", "Outlined", "Text", "Danger", "On blue", "Icon buttons", "Filter chips", "Status chips",
             "Text fields", "Search", "Dropdown", "Toggle, checkbox, radio", "Tabs and steps", "Crests", "Avatars",
-            "Scoreboard", "Match clock", "Bracket ties", "Top bars", "Bottom nav", "Bottom sheet",
+            "Match rows", "Table rows, full width as on Standings", "Player and team rows", "Settings and notifications",
+            "Scoreboard", "Match clock", "Timeline", "Bracket ties", "Top bars", "Bottom nav", "Bottom sheet",
             "Offline banner and snackbar", "Empty state", "League banner", "Push notification",
         )
         val SAMPLES = listOf("Record match", "Waiting to upload", "MAR win 4–3 on penalties", "20+1", "Step 2 of 4: Details")

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 18 Teams, 37 Organizer dashboard, 38 Team requests and the Style kit's team row (ui.js teamRow). The crest,
+     name and meta, then a chevron or a status chip. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LeagueX.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/crest"
+        style="@style/Widget.LeagueX.Crest.M"
+        tools:text="SAD" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/Widget.LeagueX.Row.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Saddar City" />
+
+        <TextView
+            android:id="@+id/meta"
+            style="@style/Widget.LeagueX.Row.Meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Captain: Rehan Butt" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/chevron"
+        style="@style/Widget.LeagueX.Row.Icon"
+        android:src="@drawable/ic_chevron_right" />
+
+    <TextView
+        android:id="@+id/status"
+        style="@style/Widget.LeagueX.Status.Waiting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="Waiting" />
+</LinearLayout>
