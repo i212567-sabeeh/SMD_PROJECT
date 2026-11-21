@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 42 Start playoffs: a semi-final, both teams' crests, which semi it is and who plays, and why. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LeagueX.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/gap_12"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/crestA"
+            style="@style/Widget.LeagueX.Crest.S"
+            tools:text="CAP" />
+
+        <TextView
+            android:id="@+id/crestB"
+            style="@style/Widget.LeagueX.Crest.S"
+            tools:text="RAW" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+            android:textColor="@color/muted"
+            tools:text="Semi-final 1" />
+
+        <TextView
+            android:id="@+id/teams"
+            style="@style/Widget.LeagueX.Row.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="CAP vs RAW" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/why"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+        android:textColor="@color/muted"
+        tools:text="1st plays 4th" />
+</LinearLayout>

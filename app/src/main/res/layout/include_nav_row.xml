@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 44 League settings: a setting that opens its own page, a muted glyph, its name and current value, and a
+     chevron. Bind it with IncludeNavRowBinding.bind(). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LeagueX.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/Widget.LeagueX.Row.Icon"
+        tools:src="@drawable/ic_edit" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/label"
+            style="@style/Widget.LeagueX.Row.Label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Details" />
+
+        <TextView
+            android:id="@+id/value"
+            style="@style/Widget.LeagueX.Row.Meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Islamabad Futsal League, Season 2026" />
+    </LinearLayout>
+
+    <ImageView
+        style="@style/Widget.LeagueX.Row.Icon"
+        android:src="@drawable/ic_chevron_right" />
+</LinearLayout>

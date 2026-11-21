@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The 1dp line between rows written out in a LinearLayout (android:divider with showDividers="middle"). -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/line" />
+    <size android:height="1dp" />
+</shape>

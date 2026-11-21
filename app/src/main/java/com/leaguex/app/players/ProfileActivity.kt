@@ -21,6 +21,8 @@ import com.leaguex.app.league.LeagueActivity
 import com.leaguex.app.league.MatchActivity
 import com.leaguex.app.league.MatchVersion
 import com.leaguex.app.news.TeamActivity
+import com.leaguex.app.organizer.CreateTypeActivity
+import com.leaguex.app.organizer.DashboardActivity
 
 /** 24 My profile's versions: a player's profile, and an organizer's. */
 enum class ProfileVersion { PLAYER, ORGANIZER }
@@ -58,8 +60,9 @@ class ProfileActivity : LeagueXActivity() {
                         ActionRow(R.drawable.ic_emoji_events, SampleData.CUP.name, "Knockout, 8 teams, semi-finals"),
                         ActionRow(R.drawable.ic_emoji_events, SampleData.WINTER.name, keepTogether("Knockout, taking entries, starts ${SampleData.WINTER.starts}")),
                     ),
-                ),
+                ) { go(DashboardActivity::class) },
             )
+            b.create.setOnClickListener { go(CreateTypeActivity::class) }
             b.followHead.title.setText(R.string.profile_following)
             b.follow.showRows(ActionRowAdapter(listOf(ActionRow(R.drawable.ic_emoji_events, "Lahore Futsal League", "League, 10 teams, Lahore"))) {
                 go(LeagueActivity::class)

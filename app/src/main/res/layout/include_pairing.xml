@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 40 Draw: one quarter-final pairing, "QF1", then both teams' crests and codes either side of "vs". -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_8"
+    android:gravity="center_vertical"
+    android:minHeight="56dp"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="8dp"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted"
+        tools:text="QF1" />
+
+    <TextView
+        android:id="@+id/crestA"
+        style="@style/Widget.LeagueX.Crest.S"
+        tools:text="CAP" />
+
+    <TextView
+        android:id="@+id/codeA"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+        tools:text="CAP" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/draw_vs"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+        android:textColor="@color/muted" />
+
+    <TextView
+        android:id="@+id/codeB"
+        android:layout_width="34dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+        tools:text="KOH" />
+
+    <TextView
+        android:id="@+id/crestB"
+        style="@style/Widget.LeagueX.Crest.S"
+        tools:text="KOH" />
+</LinearLayout>

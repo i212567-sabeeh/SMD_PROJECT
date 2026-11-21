@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 41 Edit match, a sheet over 37 Organizer dashboard: move a match's date, time or court, and tell both teams. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_sheet_head" />
+
+    <LinearLayout
+        style="@style/Widget.LeagueX.SheetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_8"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/homeCrest"
+                style="@style/Widget.LeagueX.Crest.S"
+                tools:text="KHY" />
+
+            <TextView
+                android:id="@+id/match"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.LeagueX.Title.Small"
+                tools:text="Khyber Eagles vs Kohsar FC" />
+
+            <TextView
+                android:id="@+id/awayCrest"
+                style="@style/Widget.LeagueX.Crest.S"
+                tools:text="KOH" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/date"
+                android:text="@string/edit_match_date"
+                android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.LeagueX.TextField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconDrawable="@drawable/ic_calendar_month"
+                app:endIconMode="custom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    tools:text="Sat 15 Nov" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/time"
+                android:text="@string/edit_match_time"
+                android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.LeagueX.TextField.Focused"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:endIconDrawable="@drawable/ic_schedule"
+                app:endIconMode="custom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="time"
+                    tools:text="5:30 pm" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/court"
+                android:text="@string/edit_match_court"
+                android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.LeagueX.TextField.Dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/court"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    app:simpleItems="@array/courts" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/notify"
+            layout="@layout/include_setting_line" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_match_save" />
+    </LinearLayout>
+</LinearLayout>

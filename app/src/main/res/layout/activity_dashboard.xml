@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 37 Organizer dashboard (41 Edit match is a sheet over it). Today's match with Set line-ups and Record
+     match, the team requests waiting, and shortcuts to the organizer's other jobs. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/content"
+            style="@style/Widget.LeagueX.Content.Tight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_8"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/synced"
+                    style="@style/Widget.LeagueX.Status.Synced"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dashboard_synced" />
+
+                <TextView
+                    android:id="@+id/leagueLine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                    android:textColor="@color/muted"
+                    tools:text="Islamabad Futsal League, matchday 5 of 14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dashboard_today"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+                    android:textColor="@color/muted" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:id="@+id/homeCrest"
+                        style="@style/Widget.LeagueX.Crest.M"
+                        tools:text="MAR" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:divider="@drawable/gap_2"
+                        android:orientation="vertical"
+                        android:showDividers="middle">
+
+                        <TextView
+                            android:id="@+id/match"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.LeagueX.Title.Small"
+                            tools:text="MAR vs RAW" />
+
+                        <TextView
+                            android:id="@+id/matchWhen"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                            android:textColor="@color/muted"
+                            tools:text="7:00 pm, Court 2" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/awayCrest"
+                        style="@style/Widget.LeagueX.Crest.M"
+                        tools:text="RAW" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/setLineUps"
+                        style="@style/Widget.LeagueX.Button.Outlined"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/dashboard_set_line_ups" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/record"
+                        style="@style/Widget.LeagueX.Button.Filled"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/dashboard_record" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/requests"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_action_row" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/shortcutsHead"
+                    layout="@layout/include_section_head" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/fixtures"
+                        layout="@layout/include_tile" />
+
+                    <include
+                        android:id="@+id/post"
+                        layout="@layout/include_tile" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/editMatches"
+                        layout="@layout/include_tile" />
+
+                    <include
+                        android:id="@+id/settings"
+                        layout="@layout/include_tile" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Organizers: setting up (32–44), copied from design/screens/src/screens/organizer-setup.js. -->
+<resources>
+    <string name="create_title">Create</string>
+    <string name="create_step_type">Type</string>
+    <string name="create_step_details">Details</string>
+    <string name="create_step_rules">Rules</string>
+    <string name="create_step_review">Review</string>
+    <string name="create_continue">Continue</string>
+    <string name="create_cd_close">Close</string>
+
+    <string name="type_title">What are you running?</string>
+    <string name="type_body">You can run more than one. Start with this one.</string>
+    <string name="type_league">League</string>
+    <string name="type_league_body">Teams play each other over a season, and the table decides the winner. Playoffs are optional.</string>
+    <string name="type_knockout">Knockout tournament</string>
+    <string name="type_knockout_body">Lose once and you\'re out, until the final.</string>
+
+    <string name="details_name">Name</string>
+    <string name="details_season">Season</string>
+    <string name="details_banner">Banner</string>
+    <string name="details_change_banner">Change banner</string>
+    <string name="details_venue">Venue</string>
+
+    <string name="rules_play_each">Play each team</string>
+    <string name="rules_once">Once</string>
+    <string name="rules_home_away">Home and away</string>
+    <string name="rules_win">Win</string>
+    <string name="rules_draw">Draw</string>
+    <string name="rules_loss">Loss</string>
+    <string name="rules_playoffs">Playoffs</string>
+    <string name="rules_playoffs_body">Top teams play knockouts after the league games.</string>
+    <string name="rules_top_2">Top 2</string>
+    <string name="rules_top_4">Top 4</string>
+    <string name="rules_top_8">Top 8</string>
+    <string name="rules_match_length">Match length</string>
+    <string name="rules_extra_time">Extra time</string>
+    <string name="rules_extra_time_body">Played when a match ends level.</string>
+    <string name="rules_extra_time_length">Extra time length</string>
+    <string name="rules_penalties">Still level after extra time? It goes to penalties.</string>
+    <string name="rules_third_place">Third-place match</string>
+    <string name="rules_third_place_body">The losing semi-finalists play for third.</string>
+    <string-array name="match_lengths">
+        <item>2 halves of 20 minutes</item>
+        <item>2 halves of 25 minutes</item>
+        <item>2 halves of 30 minutes</item>
+    </string-array>
+    <string-array name="extra_time_lengths">
+        <item>2 halves of 5 minutes</item>
+        <item>2 halves of 10 minutes</item>
+    </string-array>
+
+    <string name="review_edit">Edit</string>
+    <string name="review_publish">Publish league</string>
+
+    <string name="published_live">%1$s is live</string>
+    <string name="published_body">Send this code to captains so they can register their teams.</string>
+    <string name="published_copy">Copy code</string>
+    <string name="published_share">Share</string>
+    <string name="published_dashboard">Go to dashboard</string>
+
+    <string name="dashboard_title">Organizer dashboard</string>
+    <string name="dashboard_synced">Synced</string>
+    <string name="dashboard_league_line">%1$s, matchday %2$d of %3$d</string>
+    <string name="dashboard_today">Today</string>
+    <string name="dashboard_set_line_ups">Set line-ups</string>
+    <string name="dashboard_record">Record match</string>
+    <string name="dashboard_shortcuts">Shortcuts</string>
+    <string name="dashboard_fixtures">Generate fixtures</string>
+    <string name="dashboard_post">Post announcement</string>
+    <string name="dashboard_edit_matches">Edit matches</string>
+    <string name="dashboard_settings">League settings</string>
+
+    <string name="edit_match_title">Edit match</string>
+    <string name="edit_match_date">Date</string>
+    <string name="edit_match_time">Time</string>
+    <string name="edit_match_court">Court</string>
+    <string name="edit_match_notify">Notify both teams</string>
+    <string name="edit_match_notify_body">Players and followers get a push notification.</string>
+    <string name="edit_match_save">Save changes</string>
+    <string-array name="courts">
+        <item>Court 1</item>
+        <item>Court 2</item>
+    </string-array>
+
+    <string name="requests_title">Team requests</string>
+    <string name="requests_about">%1$s, starts %2$s</string>
+    <string name="requests_meta">Captain: %1$s, sent %2$s</string>
+    <string name="requests_decline">Decline</string>
+    <string name="requests_approve">Approve</string>
+    <string name="requests_add">Add a team yourself</string>
+    <string name="requests_code">Winter Cup join code</string>
+
+    <string name="fixtures_title">Generate fixtures</string>
+    <string name="fixtures_start">Start date</string>
+    <string name="fixtures_days">Match days</string>
+    <string name="fixtures_friday">Friday</string>
+    <string name="fixtures_saturday">Saturday</string>
+    <string name="fixtures_sunday">Sunday</string>
+    <string name="fixtures_kickoffs">Kick-offs</string>
+    <string name="fixtures_courts">Courts</string>
+    <string name="fixtures_preview">Preview: matchday 1, %1$s</string>
+    <string name="fixtures_matchdays">%1$d matchdays</string>
+    <string name="fixtures_publish">Publish fixtures</string>
+
+    <string name="draw_title">Draw</string>
+    <string name="draw_about">%1$s, %2$d teams</string>
+    <string name="draw_random">Draw at random</string>
+    <string name="draw_by_hand">Place by hand</string>
+    <string name="draw_vs">vs</string>
+    <string name="draw_again">Draw again</string>
+    <string name="draw_confirm">Confirm draw</string>
+
+    <string name="playoffs_title">Start playoffs</string>
+    <string name="playoffs_note">League games are over. The top 4 go through to the playoffs.</string>
+    <string name="playoffs_final_table">Final table</string>
+    <string name="playoffs_semi">Semi-final %1$d</string>
+    <string name="playoffs_first_fourth">1st plays 4th</string>
+    <string name="playoffs_second_third">2nd plays 3rd</string>
+
+    <string name="post_title">Post announcement</string>
+    <string name="post_field_title">Title</string>
+    <string name="post_message">Message</string>
+    <string name="post_push">Send push notification</string>
+    <string name="post_push_body">Followers get it on their phone right away.</string>
+    <string name="post_audience">Audience</string>
+    <string name="post_button">Post</string>
+    <string-array name="audiences">
+        <item>Everyone following</item>
+        <item>Captains only</item>
+    </string-array>
+
+    <string name="settings_league_title">League settings</string>
+    <string name="settings_details">Details</string>
+    <string name="settings_rules">Rules</string>
+    <string name="settings_banner">Banner</string>
+    <string name="settings_join_code">Join code</string>
+    <string name="settings_organizers">Organizers</string>
+    <string name="settings_end_season">End season</string>
+    <string name="settings_end_season_body">Ends the league and locks the final table.</string>
+</resources>

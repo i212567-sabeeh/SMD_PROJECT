@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 32 Create / Type. Step 1 of 4: a league or a knockout tournament, one card each, then Continue. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top_back" />
+
+    <include
+        android:id="@+id/steps"
+        layout="@layout/include_steps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Content.Tight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_8"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    style="@style/Widget.LeagueX.Anton.PageTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type_title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/type_body"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Body.Large"
+                    android:textColor="@color/muted" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/league"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_card"
+                android:divider="@drawable/gap_16"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:showDividers="middle">
+
+                <ImageView
+                    style="@style/Widget.LeagueX.OptionGlyph"
+                    android:src="@drawable/ic_leaderboard" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@drawable/gap_4"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type_league"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Title.Medium" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type_league_body"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                        android:textColor="@color/muted" />
+                </LinearLayout>
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/leagueRadio"
+                    style="@style/Widget.LeagueX.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-12dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/knockout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_option_card"
+                android:divider="@drawable/gap_16"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:showDividers="middle">
+
+                <ImageView
+                    style="@style/Widget.LeagueX.OptionGlyph"
+                    android:src="@drawable/ic_account_tree" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@drawable/gap_4"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type_knockout"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Title.Medium" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/type_knockout_body"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                        android:textColor="@color/muted" />
+                </LinearLayout>
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/knockoutRadio"
+                    style="@style/Widget.LeagueX.RadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-12dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        style="@style/Widget.LeagueX.Footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/next"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/create_continue"
+            app:iconGravity="textStart" />
+    </LinearLayout>
+</LinearLayout>

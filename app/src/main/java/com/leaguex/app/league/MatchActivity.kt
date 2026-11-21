@@ -21,6 +21,7 @@ import com.leaguex.app.kit.keepTogether
 import com.leaguex.app.kit.rows.EventAdapter
 import com.leaguex.app.kit.rows.showRows
 import com.leaguex.app.kit.status
+import com.leaguex.app.organizer.DashboardActivity
 
 /** 14 Match page's versions, one per Figma frame. */
 enum class MatchVersion { BEFORE, LIVE, FULL_TIME, PENALTIES, ORGANIZER }
@@ -89,6 +90,7 @@ class MatchActivity : LeagueXActivity() {
         }
         b.empty.bind(R.drawable.ic_timer, keepTogether(getString(R.string.match_kickoff_at, "7:00 pm")), getString(R.string.match_timeline_empty))
 
+        b.edit.setOnClickListener { go(DashboardActivity::class, sheet = DashboardActivity.SHEET_EDIT_MATCH) }
         val upcoming = version == MatchVersion.BEFORE || version == MatchVersion.ORGANIZER
         b.tabs.getTabAt(if (upcoming) 1 else 0)?.select()
         b.tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {

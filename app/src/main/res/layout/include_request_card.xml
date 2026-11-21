@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 38 Team requests: a team asking to enter, its captain and when they asked, then Decline and Approve. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_card"
+    android:divider="@drawable/gap_8"
+    android:orientation="vertical"
+    android:paddingStart="20dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="16dp"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/gap_12"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/crest"
+            style="@style/Widget.LeagueX.Crest.M"
+            tools:text="SAD" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@drawable/gap_2"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/Widget.LeagueX.Row.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Saddar City" />
+
+            <TextView
+                android:id="@+id/meta"
+                style="@style/Widget.LeagueX.Row.Meta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Captain: Rehan Butt, sent Thu 13 Nov" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/gap_8"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/decline"
+            style="@style/Widget.LeagueX.Button.Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/requests_decline" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/approve"
+            style="@style/Widget.LeagueX.Button.Tonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/requests_approve"
+            app:icon="@drawable/ic_check" />
+    </LinearLayout>
+</LinearLayout>

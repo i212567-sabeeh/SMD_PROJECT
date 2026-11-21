@@ -34,6 +34,8 @@ import com.leaguex.app.league.MatchVersion
 import com.leaguex.app.league.StandingsActivity
 import com.leaguex.app.league.StandingsVersion
 import com.leaguex.app.news.AnnouncementActivity
+import com.leaguex.app.organizer.DashboardActivity
+import com.leaguex.app.organizer.TeamRequestsActivity
 import com.leaguex.app.news.NotificationsActivity
 import com.leaguex.app.news.SearchActivity
 import kotlin.math.roundToInt
@@ -86,6 +88,7 @@ class HomeActivity : LeagueXActivity() {
         b.top.notifications.setOnClickListener { go(NotificationsActivity::class) }
         b.notice.setOnClickListener { go(AnnouncementActivity::class) }
         b.findLeagues.setOnClickListener { go(SearchActivity::class) }
+        if (version == HomeVersion.ORGANIZER) b.secondary.setOnClickListener { go(DashboardActivity::class) }
         if (version == HomeVersion.LIVE) b.secondary.setOnClickListener { go(MatchActivity::class, MatchVersion.LIVE) }
         if (sheetToOpen == SHEET_SWITCH_LEAGUE) switchLeague(version)
     }
@@ -223,6 +226,7 @@ class HomeActivity : LeagueXActivity() {
                     ActionRow(R.drawable.ic_group_add, getString(R.string.home_team_requests, 3), "${SampleData.WINTER.name}: $requests", getString(R.string.home_review)),
                     ActionRow(R.drawable.ic_checklist, getString(R.string.home_lineups_not_set), keepTogether("${next.home} vs ${next.away}, ${next.time}")),
                 ),
+                onAction = { go(TeamRequestsActivity::class) },
             ),
         )
         section(b.recordedSection, b.recordedHead.title, R.string.home_recorded_today)
