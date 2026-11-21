@@ -75,6 +75,12 @@
         <item name="android:textColor">@color/on_blue</item>
     </style>
 
+    <!-- .stat .n: Anton 28/34, 12 League page's numbers. -->
+    <style name="TextAppearance.LeagueX.StatNumber" parent="TextAppearance.LeagueX.Display.Title">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineHeight">34sp</item>
+    </style>
+
     <!-- .pill-orange: "Matchday 5" on orange. -->
     <style name="Widget.LeagueX.PillOrange" parent="">
         <item name="android:background">@drawable/bg_pill_orange</item>

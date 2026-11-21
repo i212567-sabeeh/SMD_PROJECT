@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 13 Matches, and 57 Empty / No matches yet. The matchday tabs on the blue block, then the live match and the
+     day's fixtures; a league with no fixtures yet shows the empty state instead. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/blueBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue_block"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+        <include
+            android:id="@+id/top"
+            layout="@layout/include_top_tab" />
+
+        <include
+            android:id="@+id/league"
+            layout="@layout/include_league_row" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            style="@style/Widget.LeagueX.Tabs.OnBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/content"
+            style="@style/Widget.LeagueX.Content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_16"
+            android:paddingTop="20dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/allMatches"
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/matches_all" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/myTeam"
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/matches_my_team" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <LinearLayout
+                android:id="@+id/liveSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/liveHead"
+                    layout="@layout/include_section_head" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/live"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_match_row" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/daySection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/dayHead"
+                    layout="@layout/include_section_head" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_match_row" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/emptyArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/page_margin"
+        android:paddingTop="24dp"
+        android:paddingEnd="@dimen/page_margin"
+        android:paddingBottom="120dp"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/empty"
+            layout="@layout/include_empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/include_bottom_nav" />
+</LinearLayout>

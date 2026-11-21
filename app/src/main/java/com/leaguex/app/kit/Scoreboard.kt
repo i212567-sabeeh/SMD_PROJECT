@@ -1,10 +1,13 @@
 package com.leaguex.app.kit
 
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.updateLayoutParams
 import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
 import com.leaguex.app.R
 import com.leaguex.app.databinding.IncludeScoreboardBinding
+import kotlin.math.roundToInt
 
 /** Where a match is, for its scoreboard (ui.js scoreboard states). */
 enum class ScoreState { UPCOMING, LIVE, HALF_TIME, FULL_TIME, PENALTIES }
@@ -39,6 +42,13 @@ fun IncludeScoreboardBinding.bind(sb: Scoreboard) {
         if (upcoming) R.style.TextAppearance_LeagueX_Display_Title else R.style.TextAppearance_LeagueX_Display_Score,
     )
     score.setTextColor(ContextCompat.getColor(root.context, R.color.on_blue))
+    // Anton placed as CSS places it (styles_anton.xml): no font padding, pulled in by half the leading.
+    score.includeFontPadding = false
+    val halfLeading = ((if (upcoming) -3 else -10) * root.resources.displayMetrics.density).roundToInt()
+    score.updateLayoutParams<ViewGroup.MarginLayoutParams> {
+        topMargin = halfLeading
+        bottomMargin = halfLeading
+    }
     score.text = if (upcoming) sb.status else "${sb.homeScore ?: 0}–${sb.awayScore ?: 0}"
 
     live.isVisible = sb.state == ScoreState.LIVE

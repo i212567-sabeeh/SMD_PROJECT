@@ -69,6 +69,26 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+
+        <!-- League, matches and standings (12–17); 09 is a sheet over Home. -->
+        <activity
+            android:name=".league.LeagueActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".league.MatchesActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".league.MatchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".league.StandingsActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -65,6 +65,12 @@ object SampleData {
             SquadPlayer(10, "Hamza Ali", "Midfielder"), SquadPlayer(11, "Muhammad Abdullah Qureshi", "Forward"),
             SquadPlayer(12, "Hassan Javed", "Goalkeeper"),
         ),
+        "CAP" to listOf(
+            SquadPlayer(1, "Taimoor Aslam", "Goalkeeper"), SquadPlayer(2, "Bilal Haroon", "Defender"),
+            SquadPlayer(5, "Kamil Yousaf", "Defender"), SquadPlayer(7, "Sameer Qadir", "Winger"),
+            SquadPlayer(8, "Asad Mehmood", "Midfielder"), SquadPlayer(9, "Danish Iqbal", "Forward"),
+            SquadPlayer(10, "Raheel Akbar", "Midfielder"),
+        ),
         "RAW" to listOf(
             SquadPlayer(1, "Arsalan Mir", "Goalkeeper"), SquadPlayer(3, "Waqas Anwar", "Defender"),
             SquadPlayer(6, "Shoaib Akram", "Midfielder"), SquadPlayer(9, "Nabeel Haider", "Forward"),

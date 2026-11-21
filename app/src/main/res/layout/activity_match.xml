@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 14 Match page (Before kick-off, Live, Full time, Won on penalties, Organizer). The scoreboard and the
+     Timeline, Line-ups and Info tabs on the blue block; under them, the tab's content for that version. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/blueBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_blue_block"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/top"
+            layout="@layout/include_top_back_on_blue" />
+
+        <include
+            android:id="@+id/scoreboard"
+            layout="@layout/include_scoreboard" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs"
+            style="@style/Widget.LeagueX.Tabs.OnBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_timeline" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_line_ups" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/match_info" />
+        </com.google.android.material.tabs.TabLayout>
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/content"
+            style="@style/Widget.LeagueX.Content.Tight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+            <!-- 14 Match page / Organizer. -->
+            <LinearLayout
+                android:id="@+id/organize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card_tinted"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:showDividers="middle"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_8"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_shield_person"
+                        app:tint="@color/blue" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/match_you_organize"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Title.Small" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/record"
+                    style="@style/Widget.LeagueX.Button.Filled.Big"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/match_record"
+                    app:icon="@drawable/ic_sports_soccer" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/setLineUps"
+                        style="@style/Widget.LeagueX.Button.Outlined"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/match_set_line_ups" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/edit"
+                        style="@style/Widget.LeagueX.Button.Outlined"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/match_edit"
+                        app:icon="@drawable/ic_edit" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/lineUpsNote"
+                layout="@layout/include_info_card"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/lineups"
+                layout="@layout/include_lineups"
+                android:visibility="gone" />
+
+            <!-- 14 Match page / Won on penalties. -->
+            <LinearLayout
+                android:id="@+id/penalties"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="16dp"
+                android:showDividers="middle"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/match_penalties"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Title.Small" />
+
+                <include
+                    android:id="@+id/kicksHome"
+                    layout="@layout/include_kicks_row" />
+
+                <include
+                    android:id="@+id/kicksAway"
+                    layout="@layout/include_kicks_row" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/timeline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:visibility="gone"
+                tools:itemCount="6"
+                tools:listitem="@layout/item_event" />
+
+            <include
+                android:id="@+id/empty"
+                layout="@layout/include_empty_state"
+                android:visibility="gone" />
+
+            <!-- The Info tab: when, where and what. -->
+            <LinearLayout
+                android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    style="@style/Widget.LeagueX.Row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        style="@style/Widget.LeagueX.Row.Icon"
+                        android:src="@drawable/ic_calendar_month" />
+
+                    <TextView
+                        style="@style/Widget.LeagueX.Row.Label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/match_info_date" />
+
+                    <TextView
+                        android:id="@+id/infoDate"
+                        style="@style/Widget.LeagueX.Row.Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="Sat 15 Nov" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    style="@style/Widget.LeagueX.Row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        style="@style/Widget.LeagueX.Row.Icon"
+                        android:src="@drawable/ic_schedule" />
+
+                    <TextView
+                        style="@style/Widget.LeagueX.Row.Label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/match_info_kickoff" />
+
+                    <TextView
+                        android:id="@+id/infoTime"
+                        style="@style/Widget.LeagueX.Row.Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="7:00 pm" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    style="@style/Widget.LeagueX.Row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        style="@style/Widget.LeagueX.Row.Icon"
+                        android:src="@drawable/ic_location_on" />
+
+                    <TextView
+                        style="@style/Widget.LeagueX.Row.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/match_info_venue" />
+
+                    <TextView
+                        android:id="@+id/infoVenue"
+                        style="@style/Widget.LeagueX.Row.Value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        tools:text="F-9 Sports Arena, Court 2" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line" />
+
+                <LinearLayout
+                    style="@style/Widget.LeagueX.Row"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        style="@style/Widget.LeagueX.Row.Icon"
+                        android:src="@drawable/ic_emoji_events" />
+
+                    <TextView
+                        style="@style/Widget.LeagueX.Row.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/match_info_competition" />
+
+                    <TextView
+                        android:id="@+id/infoCompetition"
+                        style="@style/Widget.LeagueX.Row.Value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        tools:text="Islamabad Futsal League" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/venue"
+                layout="@layout/include_info_card"
+                android:visibility="gone" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/remind"
+                style="@style/Widget.LeagueX.Button.Outlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/match_remind_me"
+                android:visibility="gone"
+                app:icon="@drawable/ic_notifications" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

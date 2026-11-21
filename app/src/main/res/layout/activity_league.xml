@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 12 League page, and 57 Error / No connection. What someone sees before following a league: its banner, who
+     runs it, its numbers, Follow and Register a team, the next matches and the latest announcement. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/page"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/content"
+            style="@style/Widget.LeagueX.Content.Tight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp">
+
+            <include
+                android:id="@+id/banner"
+                layout="@layout/include_banner" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_4"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Title.Large"
+                    tools:text="Islamabad Futsal League" />
+
+                <TextView
+                    android:id="@+id/place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                    android:textColor="@color/muted"
+                    tools:text="Islamabad, Islamabad Capital Territory" />
+
+                <TextView
+                    android:id="@+id/organizer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                    android:textColor="@color/muted"
+                    tools:text="Organized by Kamran Shah" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@drawable/gap_2"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:id="@+id/teams"
+                        style="@style/Widget.LeagueX.Anton.Stat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="8" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/league_stat_teams"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                        android:textColor="@color/muted" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@drawable/gap_2"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:id="@+id/season"
+                        style="@style/Widget.LeagueX.Anton.Stat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="2026" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/league_stat_season"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                        android:textColor="@color/muted" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:divider="@drawable/gap_2"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:id="@+id/matchday"
+                        style="@style/Widget.LeagueX.Anton.Stat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="5 of 14" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/league_stat_matchday"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                        android:textColor="@color/muted" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_12"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/follow"
+                    style="@style/Widget.LeagueX.Button.Filled"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/league_follow"
+                    app:icon="@drawable/ic_add" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/register"
+                    style="@style/Widget.LeagueX.Button.Outlined"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/league_register" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/nextHead"
+                    layout="@layout/include_section_head" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_match_row" />
+            </LinearLayout>
+
+            <include
+                android:id="@+id/announcement"
+                layout="@layout/include_info_card" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/page_margin"
+        android:paddingTop="24dp"
+        android:paddingEnd="@dimen/page_margin"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/empty"
+            layout="@layout/include_empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</LinearLayout>

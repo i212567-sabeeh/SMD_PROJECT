@@ -97,7 +97,9 @@ class FrameShotsTest {
         val screen = Bitmap.createBitmap(decor.width, decor.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(screen)
         canvas.drawColor(Color.WHITE)
-        for (root in windowRoots()) {
+        // The activity's own window first: a sheet opened in onCreate is added before it, but a phone always shows
+        // dialogs above their activity.
+        for (root in windowRoots().sortedBy { if (it === decor) 0 else 1 }) {
             // The activity's own decor view has a DecorContext; its dialogs' and popups' roots have the activity's.
             val mine = root === decor || owner(root.context) === activity
             if (!mine || root.visibility != View.VISIBLE || root.width == 0) continue

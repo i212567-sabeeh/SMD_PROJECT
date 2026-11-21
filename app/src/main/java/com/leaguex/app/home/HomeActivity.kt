@@ -1,15 +1,21 @@
 package com.leaguex.app.home
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.RadioButton
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
+import com.leaguex.app.Extras
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
 import com.leaguex.app.Tab
+import com.leaguex.app.data.MatchRow
 import com.leaguex.app.data.MatchState
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityHomeBinding
+import com.leaguex.app.databinding.ItemSheetOptionBinding
+import com.leaguex.app.databinding.SheetSwitchLeagueBinding
 import com.leaguex.app.kit.StatusKind
 import com.leaguex.app.kit.Tie
 import com.leaguex.app.kit.bind
@@ -21,7 +27,12 @@ import com.leaguex.app.kit.rows.MatchRowAdapter
 import com.leaguex.app.kit.rows.ResultRowAdapter
 import com.leaguex.app.kit.rows.TableAdapter
 import com.leaguex.app.kit.rows.showRows
+import com.leaguex.app.kit.showSheet
 import com.leaguex.app.kit.status
+import com.leaguex.app.league.MatchActivity
+import com.leaguex.app.league.MatchVersion
+import com.leaguex.app.league.StandingsActivity
+import com.leaguex.app.league.StandingsVersion
 import kotlin.math.roundToInt
 
 /** 08 Home's versions, one per Figma frame. */
@@ -55,7 +66,64 @@ class HomeActivity : LeagueXActivity() {
             HomeVersion.OFFLINE -> offline()
             HomeVersion.ORGANIZER -> organizer()
         }
+
+        // Taps: the league name opens 09 Switch league; the hero's buttons open the match or the bracket.
+        val switch = View.OnClickListener { switchLeague(version) }
+        b.league.leagueName.setOnClickListener(switch)
+        b.league.switchArrow.setOnClickListener(switch)
+        b.primary.setOnClickListener {
+            when (version) {
+                HomeVersion.LIVE -> go(MatchActivity::class, MatchVersion.LIVE)
+                HomeVersion.TOURNAMENT -> go(StandingsActivity::class, StandingsVersion.BRACKET)
+                HomeVersion.ORGANIZER, HomeVersion.NOTHING -> Unit
+                else -> go(MatchActivity::class, MatchVersion.BEFORE)
+            }
+        }
+        if (version == HomeVersion.LIVE) b.secondary.setOnClickListener { go(MatchActivity::class, MatchVersion.LIVE) }
+        if (sheetToOpen == SHEET_SWITCH_LEAGUE) switchLeague(version)
     }
+
+    /** Home is single-top: choosing another competition in 09 Switch league reopens it in that version. */
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        if (intent.hasExtra(Extras.VERSION)) {
+            setIntent(intent)
+            recreate()
+        }
+    }
+
+    /** 09 Switch league: the competitions you play in or follow; picking the cup or the league shows its Home. */
+    private fun switchLeague(current: HomeVersion) {
+        val sheet = SheetSwitchLeagueBinding.inflate(layoutInflater)
+        sheet.head.sheetTitle.setText(R.string.league_switch_title)
+        val dialog = showSheet(sheet.root)
+        val mar = SampleData.teamName("MAR")
+        val options = listOf(
+            Triple(SampleData.LEAGUE.name, getString(R.string.league_you_play_for, getString(R.string.league_kind_league), mar), HomeVersion.LEAGUE),
+            Triple(SampleData.CUP.name, getString(R.string.league_you_play_for, getString(R.string.league_kind_knockout), mar), HomeVersion.TOURNAMENT),
+            Triple(OTHER_LEAGUE, getString(R.string.league_following, getString(R.string.league_kind_league)), null),
+        )
+        val chosen = if (current == HomeVersion.TOURNAMENT) 1 else 0
+        val radios = mutableListOf<RadioButton>()
+        options.forEachIndexed { i, (name, meta, target) ->
+            val row = ItemSheetOptionBinding.inflate(layoutInflater, sheet.options, true)
+            row.name.text = name
+            row.meta.text = meta
+            row.radio.isChecked = i == chosen
+            radios += row.radio
+            val pick = View.OnClickListener {
+                radios.forEachIndexed { j, radio -> radio.isChecked = j == i }
+                if (target != null && target != current) {
+                    dialog.dismiss()
+                    go(HomeActivity::class, target)
+                }
+            }
+            row.root.setOnClickListener(pick)
+            row.radio.setOnClickListener(pick)
+        }
+    }
+
+    private fun openResult(@Suppress("UNUSED_PARAMETER") row: MatchRow) = go(MatchActivity::class, MatchVersion.FULL_TIME)
 
     // The versions.
 
@@ -80,7 +148,7 @@ class HomeActivity : LeagueXActivity() {
         b.semiOne.bind(Tie("MAR", "CAP", 2, 2, note = getString(R.string.home_pens_note, "MAR", 4, 3), winner = "MAR"))
         b.semiTwo.bind(Tie("SAD", "RAW", note = keepTogether("Sun 23 Nov, 6:00 pm")))
         section(b.quartersSection, b.quartersHead.title, R.string.home_quarters)
-        b.quarters.showRows(ResultRowAdapter(SampleData.CUP_QUARTERS))
+        b.quarters.showRows(ResultRowAdapter(SampleData.CUP_QUARTERS) { go(StandingsActivity::class, StandingsVersion.BRACKET) })
     }
 
     private fun live() {
@@ -97,7 +165,7 @@ class HomeActivity : LeagueXActivity() {
         val raw = SampleData.MAR_RAW
         b.events.showRows(EventAdapter(listOf(raw[5], raw[4], raw[3], raw[1], raw[0])), divided = false)
         section(b.earlierSection, b.earlierHead.title, R.string.home_earlier_today)
-        b.earlier.showRows(ResultRowAdapter(SampleData.EARLIER_TODAY))
+        b.earlier.showRows(ResultRowAdapter(SampleData.EARLIER_TODAY, ::openResult))
     }
 
     private fun nothingFollowed() {
@@ -147,7 +215,7 @@ class HomeActivity : LeagueXActivity() {
             ),
         )
         section(b.recordedSection, b.recordedHead.title, R.string.home_recorded_today)
-        b.recorded.showRows(MatchRowAdapter(SampleData.EARLIER_TODAY.reversed().map { it.copy(state = MatchState.RESULT) }))
+        b.recorded.showRows(MatchRowAdapter(SampleData.EARLIER_TODAY.reversed().map { it.copy(state = MatchState.RESULT) }, ::openResult))
     }
 
     // Parts the versions share.
@@ -201,12 +269,14 @@ class HomeActivity : LeagueXActivity() {
 
     private fun table() {
         section(b.tableSection, b.tableHead.title, R.string.home_table)
-        b.table.showRows(TableAdapter(SampleData.TABLE.take(4), short = true, highlight = "MAR", playoffAfter = 4))
+        b.table.showRows(
+            TableAdapter(SampleData.TABLE.take(4), short = true, highlight = "MAR", playoffAfter = 4, onClick = { go(StandingsActivity::class, StandingsVersion.TABLE) }),
+        )
     }
 
     private fun results(count: Int) {
         section(b.resultsSection, b.resultsHead.title, R.string.home_latest_results)
-        b.results.showRows(ResultRowAdapter(SampleData.MATCHDAY4.take(count)))
+        b.results.showRows(ResultRowAdapter(SampleData.MATCHDAY4.take(count), ::openResult))
     }
 
     private fun section(section: View, title: android.widget.TextView, text: Int) = section(section, title, getString(text))
@@ -218,8 +288,14 @@ class HomeActivity : LeagueXActivity() {
 
     private fun dp(value: Int) = (value * resources.displayMetrics.density).roundToInt()
 
-    private companion object {
+    companion object {
+        /** Extras.SHEET value that opens 09 Switch league over Home. */
+        const val SHEET_SWITCH_LEAGUE = "switch_league"
+
         /** The Capital Futsal Cup final. */
-        const val FINAL_DATE = "Sat 29 Nov"
+        private const val FINAL_DATE = "Sat 29 Nov"
+
+        /** A league the player follows but doesn't play in. */
+        private const val OTHER_LEAGUE = "Lahore Futsal League"
     }
 }

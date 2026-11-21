@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 09 Switch league, a sheet over 08 Home: the competitions you play in or follow, one chosen, and Find more. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_sheet_head" />
+
+    <LinearLayout
+        style="@style/Widget.LeagueX.SheetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/options"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/findMore"
+            style="@style/Widget.LeagueX.Button.Tonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/league_find_more"
+            app:icon="@drawable/ic_search" />
+    </LinearLayout>
+</LinearLayout>

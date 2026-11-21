@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- League, matches and standings (09, 12–17), copied from design/screens/src/screens/league.js, plus the 57 states
+     these screens show (across.js). -->
+<resources>
+    <string name="league_switch_title">Your leagues and tournaments</string>
+    <string name="league_find_more">Find more</string>
+    <string name="league_you_play_for">%1$s, you play for %2$s</string>
+    <string name="league_following">%1$s, following</string>
+    <string name="league_kind_league">League</string>
+    <string name="league_kind_knockout">Knockout</string>
+
+    <string name="league_title">League</string>
+    <string name="league_organized_by">Organized by %1$s</string>
+    <string name="league_stat_teams">teams</string>
+    <string name="league_stat_season">season</string>
+    <string name="league_stat_matchday">matchday</string>
+    <string name="league_matchday_of">%1$d of %2$d</string>
+    <string name="league_follow">Follow</string>
+    <string name="league_following_button">Following</string>
+    <string name="league_register">Register a team</string>
+    <string name="league_next_matches">Next matches</string>
+    <string name="league_cd_share">Share</string>
+
+    <string name="matches_title">Matches</string>
+    <string name="matches_matchday">Matchday %1$d</string>
+    <string name="matches_all">All matches</string>
+    <string name="matches_my_team">My team</string>
+    <string name="matches_live">Live</string>
+    <string name="matches_updated">Updated %1$s</string>
+
+    <string name="match_timeline">Timeline</string>
+    <string name="match_line_ups">Line-ups</string>
+    <string name="match_info">Info</string>
+    <string name="match_remind_me">Remind me</string>
+    <string name="match_full_time">Full time</string>
+    <string name="match_after_extra_time">After extra time</string>
+    <string name="match_win_on_pens">%1$s win %2$d–%3$d on penalties</string>
+    <string name="match_penalties">Penalties</string>
+    <string name="match_live">Live %1$s</string>
+    <string name="match_you_organize">You organize this match</string>
+    <string name="match_record">Record match</string>
+    <string name="match_set_line_ups">Set line-ups</string>
+    <string name="match_edit">Edit match</string>
+    <string name="match_line_ups_not_set">Line-ups not set yet</string>
+    <string name="match_line_ups_body">Pick who\'s playing for each team before kick-off. Followers see them here.</string>
+    <string name="match_kickoff_at">Kick-off at %1$s</string>
+    <string name="match_timeline_empty">Goals, cards and substitutions appear here once the match starts.</string>
+    <string name="match_info_date">Date</string>
+    <string name="match_info_kickoff">Kick-off</string>
+    <string name="match_info_venue">Venue</string>
+    <string name="match_info_competition">Competition</string>
+    <string name="match_semi_final">Semi-final</string>
+
+    <string name="standings_title">Standings</string>
+    <string name="standings_table">Table</string>
+    <string name="standings_playoffs">Playoffs</string>
+    <string name="standings_stats">Stats</string>
+    <string name="standings_bracket">Bracket</string>
+    <string name="standings_top_four">Top 4 go to the playoffs</string>
+    <string name="standings_playoffs_title">Playoffs start after Matchday 14</string>
+    <string name="standings_playoffs_body">The top 4 teams go through.</string>
+    <string name="standings_quarters">Quarter-finals</string>
+    <string name="standings_semis">Semi-finals</string>
+    <string name="standings_final">Final</string>
+    <string name="standings_bracket_note">Penalty wins are shown under each tie. The final is on %1$s.</string>
+    <string name="standings_pens">%1$s %2$d–%3$d pens</string>
+    <string name="standings_goals">Goals</string>
+    <string name="standings_assists">Assists</string>
+    <string name="standings_cards">Cards</string>
+
+    <string name="empty_no_matches_title">No matches yet</string>
+    <string name="empty_no_matches_body">Fixtures appear here once the organizer publishes them. You\'ll get a notification when they\'re out.</string>
+    <string name="error_no_connection_title">Can\'t load this league</string>
+    <string name="error_no_connection_body">Connect to the internet and try again. Nothing from this league is saved on this phone yet.</string>
+    <string name="error_try_again">Try again</string>
+</resources>

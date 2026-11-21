@@ -176,12 +176,15 @@
 
     <style name="Widget.LeagueX.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
         <item name="backgroundTint">@color/paper</item>
+        <!-- Plain paper, as the Figma draws it: no shadow, and no Material 3 tint for being raised. -->
+        <item name="android:elevation">0dp</item>
         <item name="shapeAppearance">@style/ShapeAppearance.LeagueX.Sheet</item>
         <item name="shapeAppearanceOverlay">@null</item>
     </style>
 
     <style name="ThemeOverlay.LeagueX.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/Widget.LeagueX.BottomSheet</item>
+        <item name="elevationOverlayEnabled">false</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
     </style>

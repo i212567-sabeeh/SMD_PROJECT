@@ -24,6 +24,13 @@
         <item name="android:layout_marginBottom">-3dp</item>
     </style>
 
+    <!-- Anton 28/34: (34 − 42.1) / 2. 12 League page's numbers. -->
+    <style name="Widget.LeagueX.Anton.Stat">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.StatNumber</item>
+        <item name="android:layout_marginTop">-4dp</item>
+        <item name="android:layout_marginBottom">-4dp</item>
+    </style>
+
     <!-- Anton 32/38: (38 − 48.2) / 2. Page headings such as "Welcome back". -->
     <style name="Widget.LeagueX.Anton.PageTitle">
         <item name="android:textAppearance">@style/TextAppearance.LeagueX.PageTitle</item>
