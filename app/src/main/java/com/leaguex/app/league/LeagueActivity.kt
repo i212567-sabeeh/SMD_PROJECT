@@ -1,5 +1,6 @@
 package com.leaguex.app.league
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.core.view.isVisible
 import com.leaguex.app.LeagueXActivity
@@ -7,11 +8,14 @@ import com.leaguex.app.R
 import com.leaguex.app.captains.RegisterTeamActivity
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityLeagueBinding
+import com.leaguex.app.home.HomeActivity
+import com.leaguex.app.home.HomeVersion
 import com.leaguex.app.kit.bind
 import com.leaguex.app.kit.keepTogether
 import com.leaguex.app.kit.rows.MatchRowAdapter
 import com.leaguex.app.kit.rows.showRows
 import com.leaguex.app.news.AnnouncementActivity
+import com.leaguex.app.screen
 
 /** 12 League page's versions: the page, and 57 Error / No connection when it can't load. */
 enum class LeagueVersion { DEFAULT, NO_CONNECTION }
@@ -54,9 +58,13 @@ class LeagueActivity : LeagueXActivity() {
         b.season.text = league.season.substringAfter(' ')
         b.matchday.text = getString(R.string.league_matchday_of, SampleData.NEXT_MATCHDAY, MATCHDAYS)
 
+        // Following the league puts it on Home, which comes back to the front with it.
         b.follow.setOnClickListener {
             b.follow.setText(R.string.league_following_button)
             b.follow.setIconResource(R.drawable.ic_check)
+            startActivity(
+                screen(HomeActivity::class, HomeVersion.LEAGUE).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),
+            )
         }
 
         b.register.setOnClickListener { go(RegisterTeamActivity::class) }

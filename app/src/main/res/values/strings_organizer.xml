@@ -52,12 +52,15 @@
 
     <string name="review_edit">Edit</string>
     <string name="review_publish">Publish league</string>
+    <string name="review_publish_tournament">Publish tournament</string>
 
     <string name="published_live">%1$s is live</string>
     <string name="published_body">Send this code to captains so they can register their teams.</string>
     <string name="published_copy">Copy code</string>
     <string name="published_share">Share</string>
     <string name="published_dashboard">Go to dashboard</string>
+    <!-- A published tournament's next job is its draw (40). -->
+    <string name="published_draw">Make the draw</string>
 
     <string name="dashboard_title">Organizer dashboard</string>
     <string name="dashboard_synced">Synced</string>

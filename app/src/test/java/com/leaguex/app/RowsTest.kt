@@ -10,6 +10,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.leaguex.app.data.EventType
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.kit.StatusKind
+import com.leaguex.app.kit.rows.ActionRow
+import com.leaguex.app.kit.rows.ActionRowAdapter
 import com.leaguex.app.kit.rows.EventAdapter
 import com.leaguex.app.kit.rows.MatchRowAdapter
 import com.leaguex.app.kit.rows.NoteRow
@@ -99,6 +101,16 @@ class RowsTest {
         val list = laidOut(TableAdapter(SampleData.TABLE, playoffAfter = 4))
         val shown = (1 until list.childCount).map { list.getChildAt(it).findViewById<View>(R.id.playoffLine).isShown }
         assertEquals(listOf(false, false, false, true, false, false, false, false), shown)
+    }
+
+    /** A trailing lambda is the row's tap, for action rows as for player rows (Search's league, Profile's lists). */
+    @Test
+    fun trailingLambdaTapsTheRow() {
+        val row = ActionRow(R.drawable.ic_emoji_events, "Islamabad Futsal League", "League, 8 teams")
+        val tapped = mutableListOf<ActionRow>()
+        val list = laidOut(ActionRowAdapter(listOf(row)) { tapped += it })
+        list.getChildAt(0).performClick()
+        assertEquals(listOf(row), tapped)
     }
 
     /** What [adapter]'s rows show in a 412dp-wide list on a LeagueX-themed screen. */

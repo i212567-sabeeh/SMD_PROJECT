@@ -7,7 +7,7 @@ import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityCreateReviewBinding
 import com.leaguex.app.kit.bind
 
-/** 35 Create / Review: everything chosen, each step with Edit, then Publish league. */
+/** 35 Create / Review: everything chosen, each step with Edit, then Publish league (or tournament). */
 class CreateReviewActivity : LeagueXActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +20,8 @@ class CreateReviewActivity : LeagueXActivity() {
 
         val league = SampleData.LEAGUE
         val kind = versionOr(CreateKind.LEAGUE)
-        b.type.bind(getString(R.string.create_step_type), listOf(getString(R.string.type_league))) { go(CreateTypeActivity::class) }
+        val type = if (kind == CreateKind.TOURNAMENT) R.string.type_knockout else R.string.type_league
+        b.type.bind(getString(R.string.create_step_type), listOf(getString(type))) { go(CreateTypeActivity::class) }
         b.details.bind(
             getString(R.string.create_step_details),
             listOf("${league.name}, ${league.season}", league.place, league.venue),
@@ -29,6 +30,7 @@ class CreateReviewActivity : LeagueXActivity() {
             getString(R.string.create_step_rules),
             listOf("Home and away, 14 matchdays", "Win 3, draw 1, loss 0", getString(R.string.standings_top_four), "2 halves of 20 minutes"),
         ) { go(CreateRulesActivity::class, kind) }
-        b.publish.setOnClickListener { go(PublishedActivity::class) }
+        b.publish.setText(if (kind == CreateKind.TOURNAMENT) R.string.review_publish_tournament else R.string.review_publish)
+        b.publish.setOnClickListener { go(PublishedActivity::class, kind) }
     }
 }

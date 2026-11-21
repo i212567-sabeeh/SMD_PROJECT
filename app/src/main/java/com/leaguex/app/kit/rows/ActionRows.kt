@@ -14,11 +14,14 @@ data class ActionRow(
     val action: String? = null,
 )
 
-/** Action rows (08 Home's suggestions and organizer to-dos). [onClick] hears the row; [onAction] its button. */
+/**
+ * Action rows (08 Home's suggestions and organizer to-dos). [onAction] hears the row's button; [onClick] the row
+ * itself, and comes last so that a trailing lambda is the row's tap, as with the other row adapters.
+ */
 class ActionRowAdapter(
     private val items: List<ActionRow>,
-    private val onClick: ((ActionRow) -> Unit)? = null,
     private val onAction: ((ActionRow) -> Unit)? = null,
+    private val onClick: ((ActionRow) -> Unit)? = null,
 ) : RecyclerView.Adapter<BindingHolder<ItemActionRowBinding>>() {
 
     override fun getItemCount() = items.size

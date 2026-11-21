@@ -11,7 +11,10 @@ import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityPublishedBinding
 import com.leaguex.app.screen
 
-/** 36 Published: the league is live; its join code goes to captains. Go to dashboard ends the create flow. */
+/**
+ * 36 Published: the league is live; its join code goes to captains. Go to dashboard ends the create flow. A
+ * published tournament (the Capital Futsal Cup) goes on to its draw instead, as the Figma has no tournament dashboard.
+ */
 class PublishedActivity : LeagueXActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,17 +27,19 @@ class PublishedActivity : LeagueXActivity() {
         b.top.back.contentDescription = getString(R.string.create_cd_close)
         backOn(b.top.back)
 
-        val league = SampleData.LEAGUE
-        b.live.text = getString(R.string.published_live, league.name)
-        b.code.text = league.code
+        val tournament = versionOr(CreateKind.LEAGUE) == CreateKind.TOURNAMENT
+        val competition = if (tournament) SampleData.CUP else SampleData.LEAGUE
+        b.live.text = getString(R.string.published_live, competition.name)
+        b.code.text = competition.code
         val copy = { _: android.view.View ->
-            getSystemService<ClipboardManager>()?.setPrimaryClip(ClipData.newPlainText(getString(R.string.settings_join_code), league.code))
+            getSystemService<ClipboardManager>()?.setPrimaryClip(ClipData.newPlainText(getString(R.string.settings_join_code), competition.code))
             Unit
         }
         b.copy.setOnClickListener(copy)
         b.copyIcon.setOnClickListener(copy)
+        if (tournament) b.dashboard.setText(R.string.published_draw)
         b.dashboard.setOnClickListener {
-            startActivity(screen(DashboardActivity::class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+            if (tournament) go(DrawActivity::class) else startActivity(screen(DashboardActivity::class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
             finish()
         }
     }
