@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Players (24–27), copied from design/screens/src/screens/players.js, plus 53 Photo upload (across.js). -->
+<resources>
+    <string name="profile_title">Profile</string>
+    <string name="profile_edit">Edit profile</string>
+    <string name="profile_cd_settings">Settings</string>
+    <string name="profile_organizer_line">Organizer, %1$s</string>
+    <string name="profile_assists">assists</string>
+    <string name="profile_my_teams">My teams</string>
+    <string name="profile_history_line">%1$s, %2$s</string>
+    <string name="profile_one_assist">1 assist</string>
+    <string name="profile_assists_count">%1$d assists</string>
+    <string name="profile_one_goal">1 goal</string>
+    <string name="profile_you_run">Leagues and tournaments you run</string>
+    <string name="profile_create">Create a league or tournament</string>
+    <string name="profile_following">Following</string>
+
+    <string name="edit_title">Edit profile</string>
+    <string name="edit_change_photo">Change photo</string>
+    <string name="edit_photo_waiting">Photo waiting to upload</string>
+    <string name="edit_phone">Phone</string>
+    <string name="edit_save">Save</string>
+    <string name="edit_saved_offline">Saved on this phone. It\'ll upload when you\'re back online.</string>
+    <string name="photo_title">Profile photo</string>
+    <string name="photo_take">Take photo</string>
+    <string name="photo_gallery">Choose from gallery</string>
+    <string name="photo_remove">Remove photo</string>
+    <string name="photo_uploading">Uploading photo… %1$d%%</string>
+    <string name="photo_cancel">Cancel</string>
+
+    <string name="join_title">Join a team</string>
+    <string name="join_body">Enter the invite code your captain sent you.</string>
+    <string name="join_code">Invite code</string>
+    <string name="join_code_help">Codes look like MAR-4821. Ask your captain if you don\'t have one.</string>
+    <string name="join_button">Join team</string>
+
+    <string name="invite_title">Team invite</string>
+    <string name="invite_headline">%1$s invited you to %2$s</string>
+    <string name="invite_body">%1$d players, %2$s. You\'ll see the team\'s matches and your own stats.</string>
+    <string name="invite_accept">Accept</string>
+    <string name="invite_decline">Decline</string>
+    <string name="invite_cd_close">Close</string>
+</resources>

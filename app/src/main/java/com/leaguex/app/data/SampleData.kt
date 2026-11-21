@@ -22,7 +22,7 @@ object SampleData {
     /** The Figma's signed-in player: Usman Tariq, #7 winger for Margalla Strikers. */
     val ME = Person(
         name = "Usman Tariq", email = "usman.tariq@example.com", team = "MAR", number = 7, position = "Winger",
-        province = "Islamabad Capital Territory", city = "Islamabad",
+        province = "Islamabad Capital Territory", city = "Islamabad", phone = "+92 300 1234567",
     )
 
     /** The league table after matchday 4. */

@@ -16,6 +16,7 @@ enum class StatusKind(@get:StyleRes val style: Int) {
     LIVE(R.style.Widget_LeagueX_Status_Live),
     UPDATED(R.style.Widget_LeagueX_Status_Updated),
     ON_BLUE(R.style.Widget_LeagueX_Status_OnBlue),
+    NEUTRAL(R.style.Widget_LeagueX_Status_Neutral),
 }
 
 /** The attributes a status style sets, sorted as obtainStyledAttributes needs them. */

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 25 Edit profile, 25 Edit profile / Saved offline, and 53 Photo upload / Uploading (53 Pick is a sheet over
+     it). The photo, positions, phone and where you live, then Save. Offline, the photo waits to upload; while a new
+     photo uploads, its progress card takes the photo's place. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top_back" />
+
+    <include
+        android:id="@+id/offline"
+        layout="@layout/include_offline_banner"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/content"
+            style="@style/Widget.LeagueX.Content.Form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_12"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/avatar"
+                    style="@style/Widget.LeagueX.Avatar.XL"
+                    tools:text="UT" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/changePhoto"
+                    style="@style/Widget.LeagueX.Button.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit_change_photo"
+                    app:icon="@drawable/ic_photo_camera" />
+
+                <TextView
+                    android:id="@+id/photoWaiting"
+                    style="@style/Widget.LeagueX.Status.Waiting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit_photo_waiting"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- 53 Photo upload / Uploading. -->
+            <LinearLayout
+                android:id="@+id/uploading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:divider="@drawable/gap_12"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:showDividers="middle"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:background="@drawable/bg_glyph_circle"
+                    android:backgroundTint="@color/line"
+                    android:importantForAccessibility="no"
+                    android:padding="28dp"
+                    android:src="@drawable/ic_image"
+                    app:tint="@color/muted" />
+
+                <TextView
+                    android:id="@+id/progressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Title.Small"
+                    tools:text="Uploading photo… 64%" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    app:indicatorColor="@color/blue"
+                    app:indicatorTrackGapSize="0dp"
+                    app:trackColor="@color/line"
+                    app:trackCornerRadius="4dp"
+                    app:trackStopIndicatorSize="0dp"
+                    app:trackThickness="8dp"
+                    tools:progress="64" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancelUpload"
+                    style="@style/Widget.LeagueX.Button.Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photo_cancel" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_8"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start_positions"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Label.Large" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:chipSpacingHorizontal="8dp"
+                    app:chipSpacingVertical="8dp">
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.LeagueX.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/position_goalkeeper" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.LeagueX.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/position_defender" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.LeagueX.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/position_midfielder" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.LeagueX.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/position_winger" />
+
+                    <com.google.android.material.chip.Chip
+                        style="@style/Widget.LeagueX.Chip.Filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/position_forward" />
+                </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Widget.LeagueX.Field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/phone"
+                    android:text="@string/edit_phone"
+                    android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.LeagueX.TextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        tools:text="+92 300 1234567" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    style="@style/Widget.LeagueX.FieldHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start_phone_help" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/provinceField"
+                style="@style/Widget.LeagueX.Field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/province"
+                    android:text="@string/start_province"
+                    android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.LeagueX.TextField.Dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/province"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        app:simpleItems="@array/provinces" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cityField"
+                style="@style/Widget.LeagueX.Field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/city"
+                    android:text="@string/start_city"
+                    android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.LeagueX.TextField.Dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        app:simpleItems="@array/cities" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        style="@style/Widget.LeagueX.Footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_save" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 27 Team invite. Who invited you to which team, its competitions and size, then Accept or Decline. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top_back" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="@dimen/page_margin"
+        android:paddingTop="24dp"
+        android:paddingEnd="@dimen/page_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_card"
+            android:divider="@drawable/gap_16"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/crest"
+                style="@style/Widget.LeagueX.Crest.XL"
+                tools:text="MAR" />
+
+            <TextView
+                android:id="@+id/headline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.LeagueX.Title.Medium"
+                tools:text="Hamza Ali invited you to Margalla Strikers" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_8"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/league"
+                    style="@style/Widget.LeagueX.Status.Neutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Islamabad Futsal League" />
+
+                <TextView
+                    android:id="@+id/cup"
+                    style="@style/Widget.LeagueX.Status.Neutral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Capital Futsal Cup" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                android:textColor="@color/muted"
+                tools:text="9 players, Islamabad. You'll see the team's matches and your own stats." />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        style="@style/Widget.LeagueX.Footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/accept"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/invite_accept" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/decline"
+            style="@style/Widget.LeagueX.Button.Outlined.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/invite_decline" />
+    </LinearLayout>
+</LinearLayout>

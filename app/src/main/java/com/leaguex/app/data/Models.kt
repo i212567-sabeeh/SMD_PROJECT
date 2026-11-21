@@ -63,4 +63,5 @@ data class Person(
     val position: String,
     val province: String,
     val city: String,
+    val phone: String = "",
 )

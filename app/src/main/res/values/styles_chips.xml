@@ -120,4 +120,10 @@
         <item name="android:textColor">@color/on_blue</item>
     </style>
 
+    <!-- .status.neutral: a competition's name on 27 Team invite, blue on tint. -->
+    <style name="Widget.LeagueX.Status.Neutral">
+        <item name="android:backgroundTint">@color/tint</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
 </resources>
