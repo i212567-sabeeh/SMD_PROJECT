@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Captains (28–31), copied from design/screens/src/screens/captains.js. -->
+<resources>
+    <string name="register_title">Register a team</string>
+    <string name="register_which">Which team?</string>
+    <string name="register_use_yours">Use one of your teams</string>
+    <string name="register_create">Create a new team</string>
+    <string name="register_create_body">Name, short code, colours and logo</string>
+    <string name="register_join_code">Join code</string>
+    <string name="register_join_code_help">Ask the organizer for the code.</string>
+    <string name="register_entering">You\'re entering</string>
+    <string name="register_entering_about">Knockout, starts %1$s, organized by %2$s</string>
+    <string name="register_send">Send request</string>
+    <string name="register_sent_title">Request sent to %1$s</string>
+    <string name="register_sent_body">We\'ll let you know when %1$s is approved for the %2$s.</string>
+    <string name="register_sent_on">Sent %1$s</string>
+    <string name="register_waiting">Waiting for approval</string>
+    <string name="register_back">Back to my team</string>
+
+    <string name="squad_title">Manage squad</string>
+    <string name="squad_intro">%1$s, %2$d players. Tap a player to change their number or position, or to remove them.</string>
+    <string name="squad_pending">Pending invites</string>
+    <string name="squad_invited_on">Invited %1$s</string>
+    <string name="squad_add">Add players</string>
+    <string name="squad_change_number">Change number</string>
+    <string name="squad_change_position">Change position</string>
+    <string name="squad_remove">Remove from team</string>
+
+    <string name="add_title">Add players</string>
+    <string name="add_search_hint">Search by name</string>
+    <string name="add_no_team">%1$s, no team yet</string>
+    <string name="add_share_title">Share invite link</string>
+    <string name="add_share_body">Anyone with this code can ask to join %1$s.</string>
+    <string name="add_share">Share link</string>
+    <string name="add_cd_copy">Copy code</string>
+
+    <string name="edit_team_title">Edit team</string>
+    <string name="edit_team_logo">Change logo</string>
+    <string name="edit_team_name">Team name</string>
+    <string name="edit_team_code">Short code</string>
+    <string name="edit_team_code_help">2 to 3 letters, shown on scoreboards</string>
+    <string name="edit_team_colour">Team colour</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 31 Edit team: the chosen colour's ring, 2dp of blue just outside a 3dp gap around the 36dp swatch. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <stroke
+        android:width="2dp"
+        android:color="@color/blue" />
+</shape>

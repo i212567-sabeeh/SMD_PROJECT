@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.core.view.isVisible
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
+import com.leaguex.app.captains.RegisterTeamActivity
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityLeagueBinding
 import com.leaguex.app.kit.bind
@@ -58,6 +59,7 @@ class LeagueActivity : LeagueXActivity() {
             b.follow.setIconResource(R.drawable.ic_check)
         }
 
+        b.register.setOnClickListener { go(RegisterTeamActivity::class) }
         b.nextHead.title.setText(R.string.league_next_matches)
         val next = SampleData.MATCHDAY5.filter { it.home == "MAR" || it.home == "SAD" }
         b.next.showRows(MatchRowAdapter(next) { go(MatchActivity::class, MatchVersion.BEFORE) })

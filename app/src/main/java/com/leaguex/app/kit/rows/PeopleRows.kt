@@ -1,5 +1,6 @@
 package com.leaguex.app.kit.rows
 
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
@@ -35,14 +36,14 @@ data class PlayerRow(val name: String, val meta: String? = null, val trail: Trai
 
 /**
  * Players as ui.js playerRow() lists them; [compact] rows are 56dp. Tapping "Invite" turns it into "Invite sent";
- * [onTrail] hears taps on the trailing buttons (call, more, remove). While photos load ([skeleton], 57 Loading),
+ * [onTrail] hears taps on the trailing buttons (call, more, remove), with the button tapped. While photos load ([skeleton], 57 Loading),
  * each avatar is a blank grey circle.
  */
 class PlayerRowAdapter(
     items: List<PlayerRow>,
     private val compact: Boolean = false,
     private val skeleton: Boolean = false,
-    private val onTrail: ((PlayerRow, Trail) -> Unit)? = null,
+    private val onTrail: ((PlayerRow, Trail, View) -> Unit)? = null,
     private val onClick: ((PlayerRow) -> Unit)? = null,
 ) : RecyclerView.Adapter<BindingHolder<ItemPlayerRowBinding>>() {
 
@@ -92,7 +93,7 @@ class PlayerRowAdapter(
         b.more.isVisible = t == Trail.CallAndMore
         b.remove.isVisible = t == Trail.Remove
         listOf(b.call to Trail.Call, b.more to Trail.CallAndMore, b.remove to Trail.Remove).forEach { (button, which) ->
-            button.setOnClickListener { onTrail?.invoke(p, which) }
+            button.setOnClickListener { view -> onTrail?.invoke(p, which, view) }
         }
         b.cards.isVisible = t is Trail.Cards
         if (t is Trail.Cards) {

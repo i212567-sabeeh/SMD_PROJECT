@@ -3,6 +3,8 @@ package com.leaguex.app.news
 import android.os.Bundle
 import androidx.core.view.isVisible
 import com.leaguex.app.LeagueXActivity
+import com.leaguex.app.captains.EditTeamActivity
+import com.leaguex.app.captains.ManageSquadActivity
 import com.leaguex.app.R
 import com.leaguex.app.data.MatchRow
 import com.leaguex.app.data.MatchState
@@ -58,6 +60,8 @@ class TeamActivity : LeagueXActivity() {
         b.league.status(StatusKind.ON_BLUE, SampleData.LEAGUE.name)
         b.cup.status(StatusKind.ON_BLUE, SampleData.CUP.name)
         b.captainActions.isVisible = version == TeamVersion.CAPTAIN
+        b.manageSquad.setOnClickListener { go(ManageSquadActivity::class) }
+        b.editTeam.setOnClickListener { go(EditTeamActivity::class) }
 
         // "See all 9" shows the rest of the squad.
         val shown = if (version == TeamVersion.CAPTAIN) 3 else 4

@@ -3,6 +3,7 @@ package com.leaguex.app.kit
 import android.content.res.ColorStateList
 import android.graphics.drawable.LayerDrawable
 import android.widget.TextView
+import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import com.leaguex.app.R
 
@@ -17,6 +18,10 @@ private val TEAM_COLOURS = mapOf(
     "PIN" to R.color.team_pin,
     "KOH" to R.color.team_koh,
 )
+
+/** [code]'s team colour, or the line colour for a team still to be decided. */
+@ColorRes
+fun teamColour(code: String): Int = TEAM_COLOURS[code] ?: R.color.line
 
 /** Teams whose colour is light enough to need ink text on their crest (data.js `ink: true`). */
 private val INK_TEXT = setOf("POT")

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 29 Manage squad: what a captain can do to a player in the squad. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/changeNumber"
+        android:icon="@drawable/ic_tag"
+        android:iconTint="@color/muted"
+        android:title="@string/squad_change_number" />
+    <item
+        android:id="@+id/changePosition"
+        android:icon="@drawable/ic_swap_horiz"
+        android:iconTint="@color/muted"
+        android:title="@string/squad_change_position" />
+    <item
+        android:id="@+id/removePlayer"
+        android:icon="@drawable/ic_person_remove"
+        android:iconTint="@color/error"
+        android:title="@string/squad_remove" />
+</menu>
