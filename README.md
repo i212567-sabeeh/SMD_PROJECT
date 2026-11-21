@@ -146,5 +146,7 @@ frame into `shots/`. Then `node tools/png.mjs vs <section>` puts each one beside
 
 ## Licences
 
-- **Fonts:** Anton and Archivo, under the SIL Open Font License 1.1. The licence texts are in `licenses/`.
+- **Fonts:** Anton and Archivo, under the SIL Open Font License 1.1.
 - **Icons:** Material Symbols by Google, under the Apache License 2.0.
+
+The licence texts are in `licenses/`.
