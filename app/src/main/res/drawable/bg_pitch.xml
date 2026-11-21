@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The pitch markings on 01 Splash and 02 Welcome: a halfway line and a 300dp centre circle, white at 10%. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:height="2dp"
+        android:gravity="center_vertical|fill_horizontal">
+        <shape>
+            <solid android:color="#1AFFFFFF" />
+        </shape>
+    </item>
+    <item
+        android:width="300dp"
+        android:height="300dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <stroke
+                android:width="2dp"
+                android:color="#1AFFFFFF" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 03 Sign up. Full name, email and password (focused, with its rule under it), the terms line, then Create
+     account and the way to Log in. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Content.Form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                style="@style/Widget.LeagueX.Field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/name"
+                    android:text="@string/start_full_name"
+                    android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.LeagueX.TextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName|textCapWords"
+                        tools:text="Usman Tariq" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Widget.LeagueX.Field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/email"
+                    android:text="@string/start_email"
+                    android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.LeagueX.TextField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textEmailAddress"
+                        tools:text="usman.tariq@example.com" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/Widget.LeagueX.Field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/password"
+                    android:text="@string/start_password"
+                    android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.LeagueX.TextField.Focused"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:endIconDrawable="@drawable/ic_password_toggle"
+                    app:endIconMode="password_toggle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    style="@style/Widget.LeagueX.FieldHelp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start_password_help" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/start_terms"
+                android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                android:textColor="@color/muted" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        style="@style/Widget.LeagueX.Footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createAccount"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_create_account" />
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.FooterLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/start_have_account"
+                android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                android:textColor="@color/muted" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/logIn"
+                style="@style/Widget.LeagueX.Button.Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:text="@string/start_log_in" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

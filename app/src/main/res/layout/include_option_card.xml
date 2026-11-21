@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 06 Get started and 32 Create / Type (kit.css .option-card): a tint glyph tile, a title and a line of help,
+     and a chevron, on a bordered card. Bind it with IncludeOptionCardBinding.bind(). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_option_card"
+    android:clickable="true"
+    android:divider="@drawable/gap_16"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    android:showDividers="middle">
+
+    <ImageView
+        android:id="@+id/glyph"
+        style="@style/Widget.LeagueX.OptionGlyph"
+        tools:src="@drawable/ic_stadium" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Title.Small"
+            tools:text="Follow leagues and tournaments" />
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+            android:textColor="@color/muted"
+            tools:text="See fixtures, live scores and tables." />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/chevron"
+        style="@style/Widget.LeagueX.Row.Icon"
+        android:src="@drawable/ic_chevron_right" />
+</LinearLayout>

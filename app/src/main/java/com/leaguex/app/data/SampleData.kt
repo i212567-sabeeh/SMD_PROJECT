@@ -19,6 +19,12 @@ object SampleData {
 
     fun teamName(code: String): String = TEAMS[code]?.name ?: code
 
+    /** The Figma's signed-in player: Usman Tariq, #7 winger for Margalla Strikers. */
+    val ME = Person(
+        name = "Usman Tariq", email = "usman.tariq@example.com", team = "MAR", number = 7, position = "Winger",
+        province = "Islamabad Capital Territory", city = "Islamabad",
+    )
+
     /** The league table after matchday 4. */
     val TABLE: List<TableRow> = listOf(
         listOf("CAP", 4, 4, 0, 0, 7, 12), listOf("MAR", 4, 3, 1, 0, 5, 10), listOf("POT", 4, 2, 2, 0, 2, 8),
@@ -33,18 +39,22 @@ object SampleData {
     val CUP = Competition(name = "Capital Futsal Cup", code = "CFC-3M8D", season = "2026")
 
     /** A knockout the organizer opened for entries; team requests and the captain's registration are for this. */
-    val WINTER = Competition(name = "Islamabad Winter Cup", code = "IWC-5T9P", starts = "Sat 6 Dec")
+    val WINTER = Competition(name = "Islamabad Winter Cup", code = "IWC-5T9P", starts = "Sat\u00A06\u00A0Dec")
 
     val MATCHDAY4: List<MatchRow> = listOf(
         MatchRow("CAP", "KHY", MatchState.RESULT, 3, 1), MatchRow("POT", "SAD", MatchState.RESULT, 2, 2),
         MatchRow("MAR", "PIN", MatchState.RESULT, 4, 2), MatchRow("RAW", "KOH", MatchState.RESULT, 3, 1),
     )
 
+    /** The next matchday, and the date it's played. */
+    const val NEXT_MATCHDAY = 5
+    const val MATCHDAY5_DATE = "Sat\u00A015\u00A0Nov"
+
     val MATCHDAY5: List<MatchRow> = listOf(
-        MatchRow("KHY", "KOH", MatchState.UPCOMING, time = "5:30 pm", venue = "Court 2"),
-        MatchRow("CAP", "POT", MatchState.UPCOMING, time = "6:00 pm", venue = "Court 1"),
-        MatchRow("MAR", "RAW", MatchState.UPCOMING, time = "7:00 pm", venue = "Court 2"),
-        MatchRow("SAD", "PIN", MatchState.UPCOMING, time = "8:00 pm", venue = "Court 1"),
+        MatchRow("KHY", "KOH", MatchState.UPCOMING, time = "5:30\u00A0pm", venue = "Court 2"),
+        MatchRow("CAP", "POT", MatchState.UPCOMING, time = "6:00\u00A0pm", venue = "Court 1"),
+        MatchRow("MAR", "RAW", MatchState.UPCOMING, time = "7:00\u00A0pm", venue = "Court 2"),
+        MatchRow("SAD", "PIN", MatchState.UPCOMING, time = "8:00\u00A0pm", venue = "Court 1"),
     )
 
     val SQUADS: Map<String, List<SquadPlayer>> = mapOf(

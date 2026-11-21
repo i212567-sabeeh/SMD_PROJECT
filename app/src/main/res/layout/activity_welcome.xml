@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 02 Welcome. A blue hero with the next match and the top of the table, the pitch markings behind them; the
+     heading and line under it; Create account and Log in at the bottom. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/hero"
+                android:layout_width="match_parent"
+                android:layout_height="312dp"
+                android:background="@drawable/bg_hero_block">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_pitch" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/bg_card"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:showDividers="middle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/start_next_match"
+                            android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+                            android:textColor="@color/muted" />
+
+                        <TextView
+                            android:id="@+id/matchday"
+                            style="@style/Widget.LeagueX.PillOrange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Matchday 5" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/homeCrest"
+                            style="@style/Widget.LeagueX.Crest.M"
+                            tools:text="MAR" />
+
+                        <TextView
+                            android:id="@+id/homeCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:textAppearance="@style/TextAppearance.LeagueX.Display.Title"
+                            tools:text="MAR" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/start_vs"
+                            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+                            android:textColor="@color/muted" />
+
+                        <TextView
+                            android:id="@+id/awayCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:textAppearance="@style/TextAppearance.LeagueX.Display.Title"
+                            tools:text="RAW" />
+
+                        <TextView
+                            android:id="@+id/awayCrest"
+                            style="@style/Widget.LeagueX.Crest.M"
+                            tools:text="RAW" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/when"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                        android:textColor="@color/muted"
+                        tools:text="Sat 15 Nov, 7:00 pm, Court 2" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="176dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/bg_card"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_table_row" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_12"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start_welcome_title"
+                    android:textAppearance="@style/TextAppearance.LeagueX.PageTitle.Big" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/start_welcome_body"
+                    android:textAppearance="@style/TextAppearance.LeagueX.Body.Large"
+                    android:textColor="@color/muted" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        style="@style/Widget.LeagueX.Footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createAccount"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_create_account" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/logIn"
+            style="@style/Widget.LeagueX.Button.Outlined.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_log_in" />
+    </LinearLayout>
+</LinearLayout>

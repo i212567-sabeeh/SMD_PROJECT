@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Getting started (01–07), copied from design/screens/src/screens/getting-started.js. -->
+<resources>
+    <string name="start_wordmark">LEAGUEX</string>
+    <string name="start_tagline">Leagues and tournaments, from kick-off to the table.</string>
+
+    <string name="start_next_match">Your next match</string>
+    <string name="start_matchday">Matchday %1$d</string>
+    <string name="start_vs">vs</string>
+    <string name="start_welcome_title">Your league, every matchday</string>
+    <string name="start_welcome_body">Fixtures, live scores, tables and stats for local football and futsal.</string>
+    <string name="start_create_account">Create account</string>
+    <string name="start_log_in">Log in</string>
+
+    <string name="start_full_name">Full name</string>
+    <string name="start_email">Email</string>
+    <string name="start_password">Password</string>
+    <string name="start_password_help">At least 8 characters</string>
+    <string name="start_terms">By creating an account you agree to the terms and the privacy policy.</string>
+    <string name="start_have_account">Already have an account?</string>
+
+    <string name="start_welcome_back">Welcome back</string>
+    <string name="start_log_in_body">Log in to follow your leagues and teams.</string>
+    <string name="start_forgot">Forgot password?</string>
+    <string name="start_new_here">New to LeagueX?</string>
+
+    <string name="start_reset_title">Reset password</string>
+    <string name="start_reset_body">Enter the email you signed up with. We\'ll send you a link to set a new password.</string>
+    <string name="start_send_link">Send reset link</string>
+    <string name="start_check_title">Check your email</string>
+    <string name="start_check_body">We sent a reset link to %1$s. It works for 30 minutes.</string>
+    <string name="start_back_to_log_in">Back to log in</string>
+    <string name="start_didnt_get">Didn\'t get it?</string>
+    <string name="start_send_again">Send again</string>
+
+    <string name="start_how_title">How will you use LeagueX?</string>
+    <string name="start_how_body">Pick where to start. You can add the rest later.</string>
+    <string name="start_follow">Follow leagues and tournaments</string>
+    <string name="start_follow_body">See fixtures, live scores and tables.</string>
+    <string name="start_join">Join a team</string>
+    <string name="start_join_body">Use the invite code from your captain.</string>
+    <string name="start_register">Register a team</string>
+    <string name="start_register_body">For captains entering a league or tournament.</string>
+    <string name="start_run">Run a league or tournament</string>
+    <string name="start_run_body">Make fixtures, record matches and post news.</string>
+
+    <string name="start_profile_title">Your profile</string>
+    <string name="start_skip">Skip</string>
+    <string name="start_add_photo">Add photo</string>
+    <string name="start_positions">Positions you play</string>
+    <string name="start_province">Province</string>
+    <string name="start_city">City</string>
+    <string name="start_phone">Phone (optional)</string>
+    <string name="start_phone_hint">+92 300 0000000</string>
+    <string name="start_phone_help">Only your captain and organizers can see it</string>
+    <string name="start_save_continue">Save and continue</string>
+    <string name="start_cd_photo">Profile photo</string>
+
+    <string name="position_goalkeeper">Goalkeeper</string>
+    <string name="position_defender">Defender</string>
+    <string name="position_midfielder">Midfielder</string>
+    <string name="position_winger">Winger</string>
+    <string name="position_forward">Forward</string>
+    <string-array name="provinces">
+        <item>Islamabad Capital Territory</item>
+        <item>Punjab</item>
+        <item>Sindh</item>
+        <item>Khyber Pakhtunkhwa</item>
+        <item>Balochistan</item>
+        <item>Gilgit-Baltistan</item>
+        <item>Azad Jammu and Kashmir</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Islamabad</item>
+        <item>Rawalpindi</item>
+        <item>Lahore</item>
+        <item>Karachi</item>
+        <item>Peshawar</item>
+    </string-array>
+</resources>

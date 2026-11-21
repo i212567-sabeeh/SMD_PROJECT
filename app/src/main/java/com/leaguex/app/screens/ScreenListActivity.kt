@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.leaguex.app.Extras
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
+import com.leaguex.app.screen
+import com.leaguex.app.start.SplashActivity
 import com.leaguex.app.databinding.ActivityScreenListBinding
 import com.leaguex.app.databinding.ItemScreenRowBinding
 import com.leaguex.app.databinding.ItemScreenSectionBinding
@@ -35,8 +37,8 @@ class ScreenListActivity : LeagueXActivity() {
     }
 
     private fun rows(): List<Row> = buildList {
-        // Shown but disabled until the Splash screen exists.
-        add(Row.Item(getString(R.string.screens_start), open = null))
+        // The real app, from the Splash screen, which moves on to Welcome by itself.
+        add(Row.Item(getString(R.string.screens_start)) { startActivity(screen(SplashActivity::class)) })
         for (section in Frames.sections) {
             add(Row.Section(section.title))
             section.frames.forEach { frame -> add(Row.Item(frame.name) { startActivity(frame.open(this@ScreenListActivity)) }) }

@@ -53,3 +53,14 @@ data class MatchEvent(
 
 /** A squad member: shirt number, name and position. */
 data class SquadPlayer(val number: Int, val name: String, val position: String)
+
+/** A person using the app, as the Figma shows them signed in. */
+data class Person(
+    val name: String,
+    val email: String,
+    val team: String,
+    val number: Int,
+    val position: String,
+    val province: String,
+    val city: String,
+)

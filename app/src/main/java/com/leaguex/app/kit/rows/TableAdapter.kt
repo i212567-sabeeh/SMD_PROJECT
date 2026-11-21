@@ -14,7 +14,8 @@ import com.leaguex.app.kit.crest
 
 /**
  * The league table (ui.js tableHead and tableRow): the heading, then one row per team. [short] drops W, D and L
- * (12 League page). The [highlight] team's row is tinted, and a dashed line follows the row at [playoffAfter].
+ * (12 League page), and [head] false leaves the heading out (02 Welcome). The [highlight] team's row is tinted,
+ * and a dashed line follows the row at [playoffAfter].
  */
 class TableAdapter(
     private val rows: List<TableRow>,
@@ -22,11 +23,14 @@ class TableAdapter(
     private val highlight: String? = null,
     private val playoffAfter: Int? = null,
     private val onClick: ((TableRow) -> Unit)? = null,
+    private val head: Boolean = true,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    override fun getItemCount() = rows.size + 1
+    private val first = if (head) 1 else 0
 
-    override fun getItemViewType(position: Int) = if (position == 0) HEAD else ROW
+    override fun getItemCount() = rows.size + first
+
+    override fun getItemViewType(position: Int) = if (position < first) HEAD else ROW
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
         if (viewType == HEAD) BindingHolder(parent.inflateRow(ItemTableHeadBinding::inflate))
@@ -34,12 +38,12 @@ class TableAdapter(
 
     @Suppress("UNCHECKED_CAST")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (position == 0) {
+        if (position < first) {
             val head = (holder as BindingHolder<ItemTableHeadBinding>).binding
             listOf(head.w, head.d, head.l).forEach { it.isVisible = !short }
             return
         }
-        val r = rows[position - 1]
+        val r = rows[position - first]
         val b = (holder as BindingHolder<ItemTableRowBinding>).binding
         b.pos.text = r.pos.toString()
         b.crest.crest(r.code)

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Page structure every screen shares (kit.css .content, .footer, .field), plus the few type sizes screens use
+     outside the type scale. The phone's own status bar and gesture bar are the Figma's 40px top and 20px bottom,
+     so a footer's 32px bottom padding is 12dp here plus the gesture inset fitSystemBars() adds. -->
+<resources>
+
+    <!-- .content: the page's scrolling column, 24dp from the top bar, 20dp sides, 24dp between blocks. -->
+    <style name="Widget.LeagueX.Content" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">@dimen/page_margin</item>
+        <item name="android:paddingEnd">@dimen/page_margin</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:divider">@drawable/gap_24</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+
+    <!-- .content.form: 8dp from the top bar, 20dp between fields. -->
+    <style name="Widget.LeagueX.Content.Form">
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:divider">@drawable/gap_20</item>
+    </style>
+
+    <!-- .content.tight: 16dp between blocks. -->
+    <style name="Widget.LeagueX.Content.Tight">
+        <item name="android:divider">@drawable/gap_16</item>
+    </style>
+
+    <!-- .footer: the buttons pinned under the content. -->
+    <style name="Widget.LeagueX.Footer" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">@dimen/page_margin</item>
+        <item name="android:paddingEnd">@dimen/page_margin</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:divider">@drawable/gap_12</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+
+    <!-- A footer's "Already have an account? Log in" line. -->
+    <style name="Widget.LeagueX.FooterLink" parent="">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!-- .field: its label above the box, 6dp apart, and any help text under it. -->
+    <style name="Widget.LeagueX.Field" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:divider">@drawable/gap_6</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+
+    <!-- A page heading in Anton 32/38, such as "Welcome back". -->
+    <style name="TextAppearance.LeagueX.PageTitle" parent="TextAppearance.LeagueX.Display.Title">
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineHeight">38sp</item>
+    </style>
+
+    <!-- 02 Welcome's Anton 40/46 heading. -->
+    <style name="TextAppearance.LeagueX.PageTitle.Big">
+        <item name="android:textSize">40sp</item>
+        <item name="android:lineHeight">46sp</item>
+    </style>
+
+    <!-- 01 Splash's wordmark: Anton 64/70, tracked 0.04em. -->
+    <style name="TextAppearance.LeagueX.SplashWordmark" parent="TextAppearance.LeagueX.Display.Hero">
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+    <!-- .pill-orange: "Matchday 5" on orange. -->
+    <style name="Widget.LeagueX.PillOrange" parent="">
+        <item name="android:background">@drawable/bg_pill_orange</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Label.Bold</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- .option-card .glyph: a 48dp tint tile with a blue icon. -->
+    <style name="Widget.LeagueX.OptionGlyph" parent="">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">@drawable/bg_option_glyph</item>
+        <item name="android:scaleType">center</item>
+        <item name="tint">@color/blue</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+</resources>
