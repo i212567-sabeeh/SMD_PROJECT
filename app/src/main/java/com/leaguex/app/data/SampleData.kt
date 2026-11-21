@@ -117,6 +117,25 @@ object SampleData {
         "Rawalpindi Football League" to "League, 10 teams, Rawalpindi",
     )
 
+    /** The league's announcements, newest first: title, start of the text, and who posted it when. */
+    val ANNOUNCEMENTS: List<Triple<String, String, String>> = listOf(
+        Triple(
+            "Matchday 5 kick-off times",
+            "All four matches are at F-9 Sports Arena on Sat 15 Nov. Arrive 20 minutes before kick-off.",
+            "Kamran Shah, Fri 14 Nov",
+        ),
+        Triple(
+            "Court 2 closed for maintenance on Sun 16 Nov",
+            "Sunday friendlies move to Court 1. League matches are not affected.",
+            "Kamran Shah, Thu 13 Nov",
+        ),
+        Triple(
+            "Capital Futsal Cup draw is out",
+            "Quarter-finals are on Sat 1 Nov. Check the bracket for your match.",
+            "Kamran Shah, Mon 27 Oct",
+        ),
+    )
+
     /** Players with no team yet, shown when a captain searches for forwards to invite: name and position. */
     val FREE_AGENTS: List<Pair<String, String>> = listOf(
         "Kashif Mehmood" to "Forward", "Sohail Abbasi" to "Forward", "Taha Nadeem" to "Forward",

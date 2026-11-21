@@ -87,6 +87,13 @@
         <item name="android:textAppearance">@style/TextAppearance.LeagueX.Crest.XL</item>
     </style>
 
+    <!-- 19 Team page: the 96dp crest in its 3dp paper ring. -->
+    <style name="Widget.LeagueX.Crest.XL.Ring">
+        <item name="android:layout_width">102dp</item>
+        <item name="android:layout_height">102dp</item>
+        <item name="android:background">@drawable/bg_crest_ring</item>
+    </style>
+
     <!-- Avatars (kit.css .avatar): initials in Archivo SemiBold, blue on a tint circle. Sizes s 32, m 40,
          l 56, xl 96dp. TextView.avatar(name) sets the initials. -->
     <style name="TextAppearance.LeagueX.Avatar" parent="TextAppearance.LeagueX.Label.Large">

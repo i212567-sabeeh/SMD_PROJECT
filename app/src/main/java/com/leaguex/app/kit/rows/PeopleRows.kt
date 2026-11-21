@@ -35,13 +35,15 @@ data class PlayerRow(val name: String, val meta: String? = null, val trail: Trai
 
 /**
  * Players as ui.js playerRow() lists them; [compact] rows are 56dp. Tapping "Invite" turns it into "Invite sent";
- * [onTrail] hears taps on the trailing buttons (call, more, remove).
+ * [onTrail] hears taps on the trailing buttons (call, more, remove). While photos load ([skeleton], 57 Loading),
+ * each avatar is a blank grey circle.
  */
 class PlayerRowAdapter(
     items: List<PlayerRow>,
     private val compact: Boolean = false,
-    private val onClick: ((PlayerRow) -> Unit)? = null,
+    private val skeleton: Boolean = false,
     private val onTrail: ((PlayerRow, Trail) -> Unit)? = null,
+    private val onClick: ((PlayerRow) -> Unit)? = null,
 ) : RecyclerView.Adapter<BindingHolder<ItemPlayerRowBinding>>() {
 
     private val items = items.toMutableList()
@@ -61,7 +63,13 @@ class PlayerRowAdapter(
         }
         b.number.isVisible = p.number != null
         b.number.text = p.number?.toString()
-        b.avatar.avatar(p.name)
+        if (skeleton) {
+            b.avatar.text = null
+            b.avatar.setBackgroundResource(R.drawable.bg_skeleton_circle)
+            b.avatar.contentDescription = null
+        } else {
+            b.avatar.avatar(p.name)
+        }
         b.name.text = p.name
         b.meta.isVisible = p.meta != null
         b.meta.text = p.meta

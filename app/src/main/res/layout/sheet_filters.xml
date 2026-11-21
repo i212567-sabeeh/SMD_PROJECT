@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 11 Filters, a sheet over 10 Search: where, which positions and which kinds of competition, then Clear and
+     Show results. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_sheet_head" />
+
+    <LinearLayout
+        style="@style/Widget.LeagueX.SheetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/province"
+                android:text="@string/start_province"
+                android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.LeagueX.TextField.Dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/province"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    app:simpleItems="@array/provinces" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Widget.LeagueX.Field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/city"
+                android:text="@string/start_city"
+                android:textAppearance="@style/TextAppearance.LeagueX.FieldLabel" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.LeagueX.TextField.Dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    app:simpleItems="@array/cities" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_8"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filters_position"
+                android:textAppearance="@style/TextAppearance.LeagueX.Label.Large" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/positions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position_goalkeeper" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position_defender" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position_midfielder" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/position_winger" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/position_forward" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_8"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filters_kind"
+                android:textAppearance="@style/TextAppearance.LeagueX.Label.Large" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/kinds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:chipSpacingHorizontal="8dp">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/filters_leagues" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.LeagueX.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/filters_tournaments" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_12"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear"
+                style="@style/Widget.LeagueX.Button.Outlined.Big"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/filters_clear" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/show"
+                style="@style/Widget.LeagueX.Button.Filled.Big"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/filters_show" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -10,6 +10,7 @@ import com.leaguex.app.kit.bind
 import com.leaguex.app.kit.keepTogether
 import com.leaguex.app.kit.rows.MatchRowAdapter
 import com.leaguex.app.kit.rows.showRows
+import com.leaguex.app.news.AnnouncementActivity
 
 /** 12 League page's versions: the page, and 57 Error / No connection when it can't load. */
 enum class LeagueVersion { DEFAULT, NO_CONNECTION }
@@ -64,7 +65,7 @@ class LeagueActivity : LeagueXActivity() {
         b.announcement.bind(
             R.drawable.ic_campaign, getString(R.string.home_notice, SampleData.NEXT_MATCHDAY),
             keepTogether("${league.organizer}, Fri 14 Nov"),
-        ) { }
+        ) { go(AnnouncementActivity::class) }
     }
 
     private companion object {

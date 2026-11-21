@@ -33,6 +33,9 @@ import com.leaguex.app.league.MatchActivity
 import com.leaguex.app.league.MatchVersion
 import com.leaguex.app.league.StandingsActivity
 import com.leaguex.app.league.StandingsVersion
+import com.leaguex.app.news.AnnouncementActivity
+import com.leaguex.app.news.NotificationsActivity
+import com.leaguex.app.news.SearchActivity
 import kotlin.math.roundToInt
 
 /** 08 Home's versions, one per Figma frame. */
@@ -79,6 +82,10 @@ class HomeActivity : LeagueXActivity() {
                 else -> go(MatchActivity::class, MatchVersion.BEFORE)
             }
         }
+        b.top.search.setOnClickListener { go(SearchActivity::class) }
+        b.top.notifications.setOnClickListener { go(NotificationsActivity::class) }
+        b.notice.setOnClickListener { go(AnnouncementActivity::class) }
+        b.findLeagues.setOnClickListener { go(SearchActivity::class) }
         if (version == HomeVersion.LIVE) b.secondary.setOnClickListener { go(MatchActivity::class, MatchVersion.LIVE) }
         if (sheetToOpen == SHEET_SWITCH_LEAGUE) switchLeague(version)
     }
@@ -103,6 +110,10 @@ class HomeActivity : LeagueXActivity() {
             Triple(SampleData.CUP.name, getString(R.string.league_you_play_for, getString(R.string.league_kind_knockout), mar), HomeVersion.TOURNAMENT),
             Triple(OTHER_LEAGUE, getString(R.string.league_following, getString(R.string.league_kind_league)), null),
         )
+        sheet.findMore.setOnClickListener {
+            dialog.dismiss()
+            go(SearchActivity::class)
+        }
         val chosen = if (current == HomeVersion.TOURNAMENT) 1 else 0
         val radios = mutableListOf<RadioButton>()
         options.forEachIndexed { i, (name, meta, target) ->

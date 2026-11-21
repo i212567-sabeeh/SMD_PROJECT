@@ -18,6 +18,8 @@ import com.leaguex.app.kit.rows.TableAdapter
 import com.leaguex.app.kit.rows.Trail
 import com.leaguex.app.kit.rows.showRows
 import com.leaguex.app.kit.status
+import com.leaguex.app.news.SearchActivity
+import com.leaguex.app.news.TeamActivity
 
 /** The Standings frames: 15 Table and 17 Stats (the league), 16 Bracket (the cup). */
 enum class StandingsVersion { TABLE, BRACKET, STATS }
@@ -38,6 +40,7 @@ class StandingsActivity : LeagueXActivity() {
         fitSystemBars(top = b.blueBlock, bottom = null)
         bottomNav(b.bottomNav.root)
         b.top.title.setText(R.string.standings_title)
+        b.top.action.setOnClickListener { go(SearchActivity::class) }
         b.league.status.status(StatusKind.SYNCED_ON_BLUE, getString(R.string.home_synced))
 
         val version = versionOr(StandingsVersion.TABLE)
@@ -63,7 +66,7 @@ class StandingsActivity : LeagueXActivity() {
         when (tab) {
             R.string.standings_table -> {
                 b.tableArea.isVisible = true
-                b.table.showRows(TableAdapter(SampleData.TABLE, highlight = "MAR", playoffAfter = 4))
+                b.table.showRows(TableAdapter(SampleData.TABLE, highlight = "MAR", playoffAfter = 4, onClick = { go(TeamActivity::class) }))
             }
             R.string.standings_playoffs -> {
                 b.playoffs.root.isVisible = true

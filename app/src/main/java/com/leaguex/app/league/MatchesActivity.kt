@@ -16,6 +16,7 @@ import com.leaguex.app.kit.keepTogether
 import com.leaguex.app.kit.rows.MatchRowAdapter
 import com.leaguex.app.kit.rows.showRows
 import com.leaguex.app.kit.status
+import com.leaguex.app.news.SearchActivity
 
 /** 13 Matches' versions: the matchdays, and 57 Empty / No matches yet for a league with no fixtures. */
 enum class MatchesVersion { DEFAULT, NO_MATCHES }
@@ -35,6 +36,7 @@ class MatchesActivity : LeagueXActivity() {
         fitSystemBars(top = b.blueBlock, bottom = null)
         bottomNav(b.bottomNav.root)
         b.top.title.setText(R.string.matches_title)
+        b.top.action.setOnClickListener { go(SearchActivity::class) }
         b.league.status.status(StatusKind.SYNCED_ON_BLUE, getString(R.string.home_synced))
         b.empty.bind(R.drawable.ic_event_busy, getString(R.string.empty_no_matches_title), getString(R.string.empty_no_matches_body))
 

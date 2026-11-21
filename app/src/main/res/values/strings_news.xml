@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Teams, players and news (10, 11, 18–23), copied from design/screens/src/screens/news.js, plus the 57 states these
+     screens show (across.js). -->
+<resources>
+    <string name="search_hint">Search</string>
+    <string name="search_tab_all">All</string>
+    <string name="search_tab_leagues">Leagues</string>
+    <string name="search_tab_teams">Teams</string>
+    <string name="search_tab_players">Players</string>
+    <string name="search_more_filters">More filters</string>
+    <string name="search_players_count">%1$d players</string>
+    <string name="search_teams_count">%1$d teams</string>
+    <string name="search_leagues_count">%1$d league</string>
+    <string name="search_results_count">%1$d results</string>
+    <string name="search_player_meta">%1$s, %2$s</string>
+    <string name="search_no_results">No players match \'%1$s\'</string>
+    <string name="search_no_results_body">Check the spelling, or clear the filters to see everyone.</string>
+    <string name="search_clear_filters">Clear filters</string>
+    <string name="search_cd_back">Back</string>
+
+    <string name="filters_title">Filters</string>
+    <string name="filters_position">Position</string>
+    <string name="filters_kind">League or tournament</string>
+    <string name="filters_leagues">Leagues</string>
+    <string name="filters_tournaments">Tournaments</string>
+    <string name="filters_clear">Clear</string>
+    <string name="filters_show">Show results</string>
+
+    <string name="teams_title">Teams</string>
+    <string name="teams_meta_short">Captain: %1$s</string>
+    <string name="teams_meta">Captain: %1$s, played %2$d, %3$d pts</string>
+
+    <string name="team_title">Team</string>
+    <string name="team_captain_place">Captain: %1$s, %2$s</string>
+    <string name="team_squad">Squad</string>
+    <string name="team_see_all">See all %1$d</string>
+    <string name="team_results">Results</string>
+    <string name="team_manage_squad">Manage squad</string>
+    <string name="team_edit">Edit team</string>
+    <string name="team_loading">Loading photos and logos…</string>
+    <string name="team_result_league">League</string>
+    <string name="team_result_cup_pens">Cup, pens</string>
+
+    <string name="player_title">Player</string>
+    <string name="player_role">%1$s, #%2$d</string>
+    <string name="player_played">played</string>
+    <string name="player_goals">goals</string>
+    <string name="player_assist">assist</string>
+    <string name="player_cards">cards</string>
+    <string name="player_history">Match history</string>
+    <string name="player_goals_in_match">%1$d goals</string>
+    <string name="player_goal_in_match">%1$d goal</string>
+
+    <string name="news_announcements">Announcements</string>
+    <string name="news_announcement">Announcement</string>
+    <string name="news_byline">%1$s, organizer</string>
+    <string name="news_detail_body">All four matches are at F-9 Sports Arena on Sat 15 Nov. Please arrive 20 minutes before kick-off with your team sheet, and check your court below.</string>
+
+    <string name="notes_title">Notifications</string>
+    <string name="notes_mark_all_read">Mark all read</string>
+    <string name="notes_new">New</string>
+    <string name="notes_earlier">Earlier</string>
+</resources>
