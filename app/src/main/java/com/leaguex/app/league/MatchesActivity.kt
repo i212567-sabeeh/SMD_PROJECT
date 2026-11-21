@@ -1,6 +1,7 @@
 package com.leaguex.app.league
 
 import android.os.Bundle
+import android.view.View
 import androidx.core.view.isVisible
 import com.google.android.material.tabs.TabLayout
 import com.leaguex.app.LeagueXActivity
@@ -10,6 +11,9 @@ import com.leaguex.app.data.MatchRow
 import com.leaguex.app.data.MatchState
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityMatchesBinding
+import com.leaguex.app.home.HomeActivity
+import com.leaguex.app.home.homeVersionFor
+import com.leaguex.app.home.showSwitchLeague
 import com.leaguex.app.kit.StatusKind
 import com.leaguex.app.kit.bind
 import com.leaguex.app.kit.keepTogether
@@ -38,10 +42,14 @@ class MatchesActivity : LeagueXActivity() {
         b.top.title.setText(R.string.matches_title)
         b.top.action.setOnClickListener { go(SearchActivity::class) }
         b.league.status.status(StatusKind.SYNCED_ON_BLUE, getString(R.string.home_synced))
+        // 09 Switch league: there's nothing of the cup to show here, so picking a competition goes back to its Home.
+        val switch = View.OnClickListener { showSwitchLeague { returnTo(HomeActivity::class, homeVersionFor(it)) } }
+        b.league.leagueName.setOnClickListener(switch)
+        b.league.switchArrow.setOnClickListener(switch)
         b.empty.bind(R.drawable.ic_event_busy, getString(R.string.empty_no_matches_title), getString(R.string.empty_no_matches_body))
 
         if (versionOr(MatchesVersion.DEFAULT) == MatchesVersion.NO_MATCHES) {
-            b.league.leagueName.text = OTHER_LEAGUE
+            b.league.leagueName.text = SampleData.FOLLOWED_LEAGUE
             b.tabs.isVisible = false
             showEmpty(true)
             return
@@ -89,8 +97,5 @@ class MatchesActivity : LeagueXActivity() {
 
     private companion object {
         const val MATCHDAY4_DATE = "Sat 8 Nov"
-
-        /** A league whose organizer hasn't published fixtures yet. */
-        const val OTHER_LEAGUE = "Lahore Futsal League"
     }
 }

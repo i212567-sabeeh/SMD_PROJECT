@@ -1,6 +1,5 @@
 package com.leaguex.app.players
 
-import android.content.Intent
 import android.os.Bundle
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
@@ -31,10 +30,7 @@ class TeamInviteActivity : LeagueXActivity() {
         b.cup.status(StatusKind.NEUTRAL, SampleData.CUP.name)
         b.about.text = getString(R.string.invite_body, SampleData.SQUADS.getValue("MAR").size, SampleData.ME.city)
 
-        b.accept.setOnClickListener {
-            startActivity(screen(ProfileActivity::class, ProfileVersion.PLAYER).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT))
-            finish()
-        }
+        b.accept.setOnClickListener { endFlow(JoinTeamActivity::class, screen(ProfileActivity::class, ProfileVersion.PLAYER)) }
         b.decline.setOnClickListener { finish() }
     }
 }

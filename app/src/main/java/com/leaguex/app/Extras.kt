@@ -18,6 +18,12 @@ object Extras {
 
     /** Figma frame id the screen list opens straight away, for example "s08-home-league". */
     const val OPEN = "open"
+
+    /**
+     * An Intent to open once a flow has ended: the flow's first screen is brought back with this, which closes every
+     * step above it, and then it opens the Intent and closes too. See LeagueXActivity.endFlow().
+     */
+    const val THEN = "then"
 }
 
 /** The Intent that shows [target], optionally in a version, with a sheet or with its menu open. */

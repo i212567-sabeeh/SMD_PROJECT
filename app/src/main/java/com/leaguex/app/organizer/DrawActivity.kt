@@ -26,7 +26,10 @@ class DrawActivity : LeagueXActivity() {
         b.quartersHead.title.setText(R.string.standings_quarters)
         show(DRAWN)
         b.again.setOnClickListener { show(DRAWN.map { it.reversed() }.shuffled()) }
-        b.confirm.setOnClickListener { go(StandingsActivity::class, StandingsVersion.BRACKET) }
+        b.confirm.setOnClickListener {
+            go(StandingsActivity::class, StandingsVersion.BRACKET)
+            finish()
+        }
     }
 
     private fun show(pairs: List<List<String>>) {

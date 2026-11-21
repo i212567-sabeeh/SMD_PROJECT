@@ -6,15 +6,22 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.activity.SystemBarStyle
-import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.content.IntentCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.leaguex.app.data.Session
+import com.leaguex.app.home.HomeActivity
+import com.leaguex.app.league.MatchesActivity
+import com.leaguex.app.league.StandingsActivity
+import com.leaguex.app.league.StandingsVersion
+import com.leaguex.app.news.TeamsActivity
+import com.leaguex.app.players.ProfileActivity
 import kotlin.reflect.KClass
 
 /** The bottom-bar tabs. */
@@ -30,14 +37,21 @@ private val Tab.menuItem: Int
         Tab.PROFILE -> R.id.nav_profile
     }
 
-/** The tab's screen, by name, so the bar compiles before the screens are built. */
-private val Tab.activityClass: String
+/** The tab's screen. */
+private val Tab.screen: KClass<out Activity>
     get() = when (this) {
-        Tab.HOME -> "com.leaguex.app.home.HomeActivity"
-        Tab.MATCHES -> "com.leaguex.app.league.MatchesActivity"
-        Tab.STANDINGS -> "com.leaguex.app.league.StandingsActivity"
-        Tab.TEAMS -> "com.leaguex.app.news.TeamsActivity"
-        Tab.PROFILE -> "com.leaguex.app.players.ProfileActivity"
+        Tab.HOME -> HomeActivity::class
+        Tab.MATCHES -> MatchesActivity::class
+        Tab.STANDINGS -> StandingsActivity::class
+        Tab.TEAMS -> TeamsActivity::class
+        Tab.PROFILE -> ProfileActivity::class
+    }
+
+/** The version a tab opens in: Standings shows the competition picked on Home, the league's table or the cup's bracket. */
+private val Tab.version: Enum<*>?
+    get() = when (this) {
+        Tab.STANDINGS -> if (Session.cupPicked) StandingsVersion.BRACKET else StandingsVersion.TABLE
+        else -> null
     }
 
 /**
@@ -56,14 +70,12 @@ abstract class LeagueXActivity : AppCompatActivity() {
             navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
         )
         super.onCreate(savedInstanceState)
-        // Back from a tab other than Home goes to Home. A sheet's own window takes back first, so it closes the sheet.
-        val tab = tab
-        if (tab != null && tab != Tab.HOME) {
-            onBackPressedDispatcher.addCallback(this) {
-                openTab(Tab.HOME)
-                finish()
-            }
-        }
+        passFlowOn(intent)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        passFlowOn(intent)
     }
 
     /** The version named by [Extras.VERSION], or [default] when there's none or the name is unknown. */
@@ -105,9 +117,8 @@ abstract class LeagueXActivity : AppCompatActivity() {
     }
 
     /**
-     * Wires the bottom bar (include_bottom_nav): checks this screen's [tab], and selecting another tab brings that
-     * tab's screen to the front without an animation. This screen keeps its own tab checked for when it comes back.
-     * A tab whose screen isn't built yet does nothing.
+     * Wires the bottom bar (include_bottom_nav): checks this screen's [tab], and selecting another tab opens that
+     * tab's screen without an animation. This screen keeps its own tab checked for when it comes back.
      */
     protected fun bottomNav(nav: BottomNavigationView) {
         val tab = tab
@@ -120,12 +131,40 @@ abstract class LeagueXActivity : AppCompatActivity() {
         nav.setOnItemReselectedListener { }
     }
 
-    /** Brings [target]'s screen to the front without an animation; does nothing while that screen doesn't exist. */
+    /**
+     * Opens [target]'s screen without an animation. Home comes back from under the tab, as it was; another tab opens in
+     * the competition picked on Home. A tab other than Home closes as it hands over, so at most one tab sits above
+     * Home, and back from a tab shows Home again.
+     */
     private fun openTab(target: Tab) {
-        val screen = runCatching { Class.forName(target.activityClass) }.getOrNull() ?: return
-        val intent = Intent(this, screen).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-        if (intent.resolveActivity(packageManager) == null) return
+        val intent = screen(target.screen, target.version)
+        if (target == Tab.HOME) intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         startActivity(intent, ActivityOptionsCompat.makeCustomAnimation(this, 0, 0).toBundle())
+        if (tab != Tab.HOME) finish()
+    }
+
+    /**
+     * Ends a flow that started at [first]: brings [first] back, which closes every step above it, and [first] then
+     * opens [then] and closes too. Back from [then] goes to wherever the flow was started from.
+     */
+    protected fun endFlow(first: KClass<out Activity>, then: Intent) {
+        startActivity(
+            screen(first).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra(Extras.THEN, then),
+        )
+        finish()
+    }
+
+    /** Goes back to [target] if it's open below this screen (closing what's above it), or opens it; this screen closes. */
+    protected fun returnTo(target: KClass<out Activity>, version: Enum<*>? = null) {
+        startActivity(screen(target, version).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP))
+        finish()
+    }
+
+    /** A flow's first screen, brought back by [endFlow], opens what comes after the flow and closes. */
+    private fun passFlowOn(intent: Intent) {
+        val then = IntentCompat.getParcelableExtra(intent, Extras.THEN, Intent::class.java) ?: return
+        startActivity(then)
+        finish()
     }
 
     /** Opens [target], optionally in a version or with a sheet showing. */

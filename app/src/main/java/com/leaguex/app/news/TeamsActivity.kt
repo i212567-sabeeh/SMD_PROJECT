@@ -1,11 +1,15 @@
 package com.leaguex.app.news
 
 import android.os.Bundle
+import android.view.View
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
 import com.leaguex.app.Tab
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityTeamsBinding
+import com.leaguex.app.home.HomeActivity
+import com.leaguex.app.home.homeVersionFor
+import com.leaguex.app.home.showSwitchLeague
 import com.leaguex.app.kit.StatusKind
 import com.leaguex.app.kit.rows.TeamRow
 import com.leaguex.app.kit.rows.TeamRowAdapter
@@ -28,6 +32,10 @@ class TeamsActivity : LeagueXActivity() {
         b.top.action.setOnClickListener { go(SearchActivity::class) }
         b.league.leagueName.text = SampleData.LEAGUE.name
         b.league.status.status(StatusKind.SYNCED_ON_BLUE, getString(R.string.home_synced))
+        // 09 Switch league: there's nothing of the cup to show here, so picking a competition goes back to its Home.
+        val switch = View.OnClickListener { showSwitchLeague { returnTo(HomeActivity::class, homeVersionFor(it)) } }
+        b.league.leagueName.setOnClickListener(switch)
+        b.league.switchArrow.setOnClickListener(switch)
         b.list.showRows(
             TeamRowAdapter(SampleData.TABLE.map { TeamRow(it.code, getString(R.string.teams_meta, SampleData.TEAMS.getValue(it.code).captain, it.p, it.pts)) }) {
                 go(TeamActivity::class)

@@ -10,17 +10,17 @@ import com.leaguex.app.screen
 
 /**
  * The more menu on 46 Record match and 50 Penalty shootout (the Figma draws the button, not the menu): the
- * line-ups and, when [penalties], the penalty shootout.
+ * line-ups and, when there's an [onPenalties] to open it, the penalty shootout.
  */
-internal fun Activity.matchMenu(anchor: View, penalties: Boolean) {
+internal fun Activity.matchMenu(anchor: View, onPenalties: (() -> Unit)? = null) {
     val popup = PopupMenu(this, anchor, Gravity.END)
     popup.menuInflater.inflate(R.menu.menu_record_match, popup.menu)
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) popup.setForceShowIcon(true)
-    popup.menu.findItem(R.id.penalties)?.isVisible = penalties
+    popup.menu.findItem(R.id.penalties)?.isVisible = onPenalties != null
     popup.setOnMenuItemClickListener { item ->
         when (item.itemId) {
             R.id.lineups -> startActivity(screen(LineupsActivity::class))
-            R.id.penalties -> startActivity(screen(PenaltiesActivity::class))
+            R.id.penalties -> onPenalties?.invoke()
         }
         true
     }

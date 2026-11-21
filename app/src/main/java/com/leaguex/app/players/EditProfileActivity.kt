@@ -78,6 +78,7 @@ class EditProfileActivity : LeagueXActivity() {
         val upload = { _: android.view.View ->
             dialog.dismiss()
             go(EditProfileActivity::class, EditProfileVersion.UPLOADING)
+            finish()
         }
         sheet.take.root.setOnClickListener(upload)
         sheet.gallery.root.setOnClickListener(upload)

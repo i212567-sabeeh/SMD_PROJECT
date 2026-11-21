@@ -14,7 +14,7 @@ import com.leaguex.app.league.MatchVersion
 /**
  * 50 Penalty shootout in the cup semi-final: each team's kicks so far, and the next kick to record as scored or
  * missed. Margalla kick first in each round. Once one team can't be caught, the card names the winner and Finish
- * match opens the match page.
+ * match opens the match page, answering RESULT_OK so the recording under it closes too.
  */
 class PenaltiesActivity : LeagueXActivity() {
 
@@ -35,7 +35,7 @@ class PenaltiesActivity : LeagueXActivity() {
         b.top.action.isVisible = true
         b.top.action.setIconResource(R.drawable.ic_more_vert)
         b.top.action.contentDescription = getString(R.string.kit_cd_more)
-        b.top.action.setOnClickListener { matchMenu(it, penalties = false) }
+        b.top.action.setOnClickListener { matchMenu(it) }
 
         b.homeCrest.crest(HOME)
         b.homeCode.text = HOME
@@ -45,6 +45,7 @@ class PenaltiesActivity : LeagueXActivity() {
         b.missed.setOnClickListener { kick(scored = false) }
         b.undo.setOnClickListener { undo() }
         b.finish.setOnClickListener {
+            setResult(RESULT_OK)
             go(MatchActivity::class, MatchVersion.PENALTIES)
             finish()
         }

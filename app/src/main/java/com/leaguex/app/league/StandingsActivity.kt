@@ -1,6 +1,7 @@
 package com.leaguex.app.league
 
 import android.os.Bundle
+import android.view.View
 import androidx.core.view.isVisible
 import com.google.android.material.tabs.TabLayout
 import com.leaguex.app.LeagueXActivity
@@ -8,6 +9,7 @@ import com.leaguex.app.R
 import com.leaguex.app.Tab
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityStandingsBinding
+import com.leaguex.app.home.showSwitchLeague
 import com.leaguex.app.kit.StatusKind
 import com.leaguex.app.kit.Tie
 import com.leaguex.app.kit.bind
@@ -46,6 +48,15 @@ class StandingsActivity : LeagueXActivity() {
         val version = versionOr(StandingsVersion.TABLE)
         cup = version == StandingsVersion.BRACKET
         b.league.leagueName.text = if (cup) SampleData.CUP.name else SampleData.LEAGUE.name
+        // 09 Switch league: Standings shows the picked competition, the league's table or the cup's bracket.
+        val switch = View.OnClickListener {
+            showSwitchLeague { picked ->
+                go(StandingsActivity::class, if (picked == SampleData.CUP) StandingsVersion.BRACKET else StandingsVersion.TABLE)
+                finish()
+            }
+        }
+        b.league.leagueName.setOnClickListener(switch)
+        b.league.switchArrow.setOnClickListener(switch)
         val tabs = if (cup) {
             listOf(R.string.standings_bracket, R.string.standings_stats)
         } else {

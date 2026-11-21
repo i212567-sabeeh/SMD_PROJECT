@@ -8,6 +8,7 @@ import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivitySetUpProfileBinding
 import com.leaguex.app.home.HomeActivity
 import com.leaguex.app.home.HomeVersion
+import com.leaguex.app.screen
 
 /** 07 Set up your profile: photo, positions, where you live and phone. Skip and Save and continue open Home. */
 class SetUpProfileActivity : LeagueXActivity() {
@@ -22,8 +23,10 @@ class SetUpProfileActivity : LeagueXActivity() {
         binding.top.actionText.isVisible = true
         binding.top.actionText.setText(R.string.start_skip)
 
-        binding.top.actionText.setOnClickListener { go(HomeActivity::class, HomeVersion.LEAGUE) }
-        binding.save.setOnClickListener { go(HomeActivity::class, HomeVersion.LEAGUE) }
+        // Skip and Save end the sign-up screens, so back from Home doesn't return to them.
+        val toHome = { _: android.view.View -> endFlow(WelcomeActivity::class, screen(HomeActivity::class, HomeVersion.LEAGUE)) }
+        binding.top.actionText.setOnClickListener(toHome)
+        binding.save.setOnClickListener(toHome)
         binding.province.setText(SampleData.ME.province, false)
         binding.city.setText(SampleData.ME.city, false)
     }

@@ -38,7 +38,10 @@ class LineupsActivity : LeagueXActivity() {
             override fun onTabReselected(tab: TabLayout.Tab) = Unit
         })
         show(0)
-        b.start.setOnClickListener { go(RecordMatchActivity::class, RecordMatchVersion.FIRST_HALF) }
+        b.start.setOnClickListener {
+            go(RecordMatchActivity::class, RecordMatchVersion.FIRST_HALF)
+            finish()
+        }
     }
 
     /** One team's squad, each player ticked or not; ticking one updates the counts in the footer. */

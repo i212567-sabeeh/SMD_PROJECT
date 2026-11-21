@@ -18,7 +18,7 @@ class CreateTypeActivity : LeagueXActivity() {
         createTop(b.top, b.steps, step = 1)
         backOn(b.top.back)
 
-        choose(CreateKind.LEAGUE)
+        choose(versionOr(CreateKind.LEAGUE))
         b.league.setOnClickListener { choose(CreateKind.LEAGUE) }
         b.leagueRadio.setOnClickListener { choose(CreateKind.LEAGUE) }
         b.knockout.setOnClickListener { choose(CreateKind.TOURNAMENT) }

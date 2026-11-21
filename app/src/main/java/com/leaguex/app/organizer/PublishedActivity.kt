@@ -2,7 +2,6 @@ package com.leaguex.app.organizer
 
 import android.content.ClipData
 import android.content.ClipboardManager
-import android.content.Intent
 import android.os.Bundle
 import androidx.core.content.getSystemService
 import com.leaguex.app.LeagueXActivity
@@ -12,8 +11,9 @@ import com.leaguex.app.databinding.ActivityPublishedBinding
 import com.leaguex.app.screen
 
 /**
- * 36 Published: the league is live; its join code goes to captains. Go to dashboard ends the create flow. A
- * published tournament (the Capital Futsal Cup) goes on to its draw instead, as the Figma has no tournament dashboard.
+ * 36 Published: the league is live; its join code goes to captains. Go to dashboard ends the create flow, closing its
+ * steps. A published tournament (the Capital Futsal Cup) goes on to its draw instead, as the Figma has no tournament
+ * dashboard.
  */
 class PublishedActivity : LeagueXActivity() {
 
@@ -39,8 +39,7 @@ class PublishedActivity : LeagueXActivity() {
         b.copyIcon.setOnClickListener(copy)
         if (tournament) b.dashboard.setText(R.string.published_draw)
         b.dashboard.setOnClickListener {
-            if (tournament) go(DrawActivity::class) else startActivity(screen(DashboardActivity::class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-            finish()
+            endFlow(CreateTypeActivity::class, screen(if (tournament) DrawActivity::class else DashboardActivity::class))
         }
     }
 }

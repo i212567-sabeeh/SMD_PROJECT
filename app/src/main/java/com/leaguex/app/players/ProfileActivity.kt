@@ -66,7 +66,7 @@ class ProfileActivity : LeagueXActivity() {
             )
             b.create.setOnClickListener { go(CreateTypeActivity::class) }
             b.followHead.title.setText(R.string.profile_following)
-            b.follow.showRows(ActionRowAdapter(listOf(ActionRow(R.drawable.ic_emoji_events, "Lahore Futsal League", "League, 10 teams, Lahore"))) {
+            b.follow.showRows(ActionRowAdapter(listOf(ActionRow(R.drawable.ic_emoji_events, SampleData.FOLLOWED_LEAGUE, "League, 10 teams, Lahore"))) {
                 go(LeagueActivity::class)
             })
             return

@@ -21,15 +21,15 @@ class CreateReviewActivity : LeagueXActivity() {
         val league = SampleData.LEAGUE
         val kind = versionOr(CreateKind.LEAGUE)
         val type = if (kind == CreateKind.TOURNAMENT) R.string.type_knockout else R.string.type_league
-        b.type.bind(getString(R.string.create_step_type), listOf(getString(type))) { go(CreateTypeActivity::class) }
+        b.type.bind(getString(R.string.create_step_type), listOf(getString(type))) { returnTo(CreateTypeActivity::class, kind) }
         b.details.bind(
             getString(R.string.create_step_details),
             listOf("${league.name}, ${league.season}", league.place, league.venue),
-        ) { go(CreateDetailsActivity::class, kind) }
+        ) { returnTo(CreateDetailsActivity::class, kind) }
         b.rules.bind(
             getString(R.string.create_step_rules),
             listOf("Home and away, 14 matchdays", "Win 3, draw 1, loss 0", getString(R.string.standings_top_four), "2 halves of 20 minutes"),
-        ) { go(CreateRulesActivity::class, kind) }
+        ) { returnTo(CreateRulesActivity::class, kind) }
         b.publish.setText(if (kind == CreateKind.TOURNAMENT) R.string.review_publish_tournament else R.string.review_publish)
         b.publish.setOnClickListener { go(PublishedActivity::class, kind) }
     }

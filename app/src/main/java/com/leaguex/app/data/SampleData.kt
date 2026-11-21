@@ -111,6 +111,9 @@ object SampleData {
     )
 
     /** Competitions near the player, for someone who follows nothing yet: name and a line about it. */
+    /** A league the player follows but doesn't play in (09 Switch league, 24 My profile, 57 No matches yet). */
+    const val FOLLOWED_LEAGUE = "Lahore Futsal League"
+
     val SUGGESTIONS: List<Pair<String, String>> = listOf(
         "Islamabad Futsal League" to "League, 8 teams, Islamabad",
         "Capital Futsal Cup" to "Knockout, 8 teams, Islamabad",

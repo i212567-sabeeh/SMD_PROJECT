@@ -22,7 +22,7 @@ class SignUpActivity : LeagueXActivity() {
         binding.password.setText(SAMPLE_PASSWORD)
 
         binding.createAccount.setOnClickListener { go(GetStartedActivity::class) }
-        binding.logIn.setOnClickListener { go(LogInActivity::class) }
+        binding.logIn.setOnClickListener { returnTo(LogInActivity::class) }
     }
 }
 

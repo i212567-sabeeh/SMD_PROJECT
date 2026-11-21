@@ -24,6 +24,11 @@ class ActionRowAdapter(
     private val onClick: ((ActionRow) -> Unit)? = null,
 ) : RecyclerView.Adapter<BindingHolder<ItemActionRowBinding>>() {
 
+    init {
+        // A button that does nothing can't ship: rows with an action need something to run.
+        require(onAction != null || items.none { it.action != null }) { "action rows with a button need an onAction" }
+    }
+
     override fun getItemCount() = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = BindingHolder(parent.inflateRow(ItemActionRowBinding::inflate))

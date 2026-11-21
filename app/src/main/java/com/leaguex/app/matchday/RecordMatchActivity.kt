@@ -68,8 +68,11 @@ class RecordMatchActivity : LeagueXActivity() {
         }
     }
 
-    /** 51 Confirm full time answers RESULT_OK once the match is finished, and then there's nothing left to record. */
-    private val confirm = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+    /**
+     * 51 Confirm full time and 50 Penalty shootout answer RESULT_OK once the match is finished, and then there's
+     * nothing left to record.
+     */
+    private val finishing = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) finish()
     }
 
@@ -84,7 +87,14 @@ class RecordMatchActivity : LeagueXActivity() {
         b.top.action.isVisible = true
         b.top.action.setIconResource(R.drawable.ic_more_vert)
         b.top.action.contentDescription = getString(R.string.kit_cd_more)
-        b.top.action.setOnClickListener { matchMenu(it, penalties = version == RecordMatchVersion.EXTRA_TIME) }
+        b.top.action.setOnClickListener { anchor ->
+            val penalties = if (version == RecordMatchVersion.EXTRA_TIME) {
+                { finishing.launch(screen(PenaltiesActivity::class)) }
+            } else {
+                null
+            }
+            matchMenu(anchor, penalties)
+        }
 
         version = versionOr(RecordMatchVersion.FIRST_HALF)
         recording = recordingFor(version)
@@ -117,7 +127,7 @@ class RecordMatchActivity : LeagueXActivity() {
         }
         b.end.setOnClickListener {
             if (endsMatch) {
-                confirm.launch(screen(ConfirmFullTimeActivity::class))
+                finishing.launch(screen(ConfirmFullTimeActivity::class))
             } else {
                 go(RecordMatchActivity::class, RecordMatchVersion.HALF_TIME)
                 finish()

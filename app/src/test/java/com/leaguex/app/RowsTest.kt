@@ -113,6 +113,12 @@ class RowsTest {
         assertEquals(listOf(row), tapped)
     }
 
+    /** An action row's button must do something: an adapter given a button but nothing to run can't be built. */
+    @Test(expected = IllegalArgumentException::class)
+    fun anActionButtonNeedsAHandler() {
+        ActionRowAdapter(listOf(ActionRow(R.drawable.ic_emoji_events, "Islamabad Futsal League", "League, 8 teams", action = "Follow")))
+    }
+
     /** What [adapter]'s rows show in a 412dp-wide list on a LeagueX-themed screen. */
     private fun shown(adapter: RecyclerView.Adapter<*>): String = FrameHarness.textOf(laidOut(adapter))
 
