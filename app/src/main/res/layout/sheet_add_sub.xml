@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 49 Add substitution, a sheet over 46 Record match / Offline: the team, who goes off and who comes on, and
+     the minute, then Save substitution. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_sheet_head" />
+
+    <LinearLayout
+        style="@style/Widget.LeagueX.SheetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/team"
+            layout="@layout/include_team_pick" />
+
+        <include
+            android:id="@+id/playerOff"
+            layout="@layout/include_player_pick" />
+
+        <include
+            android:id="@+id/playerOn"
+            layout="@layout/include_player_pick" />
+
+        <include
+            android:id="@+id/minute"
+            layout="@layout/include_minute_field" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sub_save" />
+    </LinearLayout>
+</LinearLayout>

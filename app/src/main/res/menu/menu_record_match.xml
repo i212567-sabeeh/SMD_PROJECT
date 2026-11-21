@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 46 Record match's more menu (the Figma draws the button, not the menu): the line-ups, and in extra time the
+     penalty shootout. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/lineups"
+        android:icon="@drawable/ic_checklist"
+        android:iconTint="@color/muted"
+        android:title="@string/lineups_title" />
+    <item
+        android:id="@+id/penalties"
+        android:icon="@drawable/ic_sports_soccer"
+        android:iconTint="@color/muted"
+        android:title="@string/shootout_title"
+        android:visible="false" />
+</menu>

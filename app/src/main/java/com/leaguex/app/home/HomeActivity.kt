@@ -33,6 +33,9 @@ import com.leaguex.app.league.MatchActivity
 import com.leaguex.app.league.MatchVersion
 import com.leaguex.app.league.StandingsActivity
 import com.leaguex.app.league.StandingsVersion
+import com.leaguex.app.matchday.LineupsActivity
+import com.leaguex.app.matchday.RecordMatchActivity
+import com.leaguex.app.matchday.RecordMatchVersion
 import com.leaguex.app.news.AnnouncementActivity
 import com.leaguex.app.organizer.DashboardActivity
 import com.leaguex.app.organizer.TeamRequestsActivity
@@ -80,7 +83,8 @@ class HomeActivity : LeagueXActivity() {
             when (version) {
                 HomeVersion.LIVE -> go(MatchActivity::class, MatchVersion.LIVE)
                 HomeVersion.TOURNAMENT -> go(StandingsActivity::class, StandingsVersion.BRACKET)
-                HomeVersion.ORGANIZER, HomeVersion.NOTHING -> Unit
+                HomeVersion.ORGANIZER -> go(RecordMatchActivity::class, RecordMatchVersion.FIRST_HALF)
+                HomeVersion.NOTHING -> Unit
                 else -> go(MatchActivity::class, MatchVersion.BEFORE)
             }
         }
@@ -220,12 +224,14 @@ class HomeActivity : LeagueXActivity() {
         b.secondary.icon = null
         section(b.attentionSection, b.attentionHead.title, R.string.home_attention)
         val requests = listOf("SAD", "PIN", "KOH").joinToString(", ") { SampleData.teamName(it) }
+        val lineUps = ActionRow(R.drawable.ic_checklist, getString(R.string.home_lineups_not_set), keepTogether("${next.home} vs ${next.away}, ${next.time}"))
         b.attention.showRows(
             ActionRowAdapter(
                 listOf(
                     ActionRow(R.drawable.ic_group_add, getString(R.string.home_team_requests, 3), "${SampleData.WINTER.name}: $requests", getString(R.string.home_review)),
-                    ActionRow(R.drawable.ic_checklist, getString(R.string.home_lineups_not_set), keepTogether("${next.home} vs ${next.away}, ${next.time}")),
+                    lineUps,
                 ),
+                onClick = { row -> if (row == lineUps) go(LineupsActivity::class) else go(TeamRequestsActivity::class) },
                 onAction = { go(TeamRequestsActivity::class) },
             ),
         )

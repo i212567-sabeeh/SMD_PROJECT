@@ -224,6 +224,27 @@
         <item name="android:textColor">@color/on_blue</item>
     </style>
 
+    <!-- The real Snackbar (25 Saved offline, 46 Record match / Offline) drawn as .snackbar: flat ink with 12dp
+         corners, 16dp in from the sides of the screen. -->
+    <style name="Widget.LeagueX.MaterialSnackbar" parent="Widget.Material3.Snackbar">
+        <item name="android:layout_margin">16dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.LeagueX.Snackbar</item>
+        <item name="backgroundTint">@color/ink</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.LeagueX.Snackbar" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="Widget.LeagueX.MaterialSnackbar.Text" parent="Widget.Material3.Snackbar.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Medium</item>
+        <item name="android:textColor">@color/on_blue</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
     <!-- Push notifications (kit.css .push): the system's own type (Roboto). -->
     <style name="TextAppearance.LeagueX.Push.Head" parent="TextAppearance.LeagueX.Body.Small">
         <item name="android:fontFamily">sans-serif</item>

@@ -36,7 +36,8 @@ data class PlayerRow(val name: String, val meta: String? = null, val trail: Trai
 
 /**
  * Players as ui.js playerRow() lists them; [compact] rows are 56dp. Tapping "Invite" turns it into "Invite sent";
- * [onTrail] hears taps on the trailing buttons (call, more, remove), with the button tapped. While photos load ([skeleton], 57 Loading),
+ * [onTrail] hears taps on the trailing buttons (call, more, remove), with the button tapped, and a ticked or cleared
+ * checkbox, with its new Trail.Check. While photos load ([skeleton], 57 Loading),
  * each avatar is a blank grey circle.
  */
 class PlayerRowAdapter(
@@ -80,7 +81,14 @@ class PlayerRowAdapter(
         b.stat.isVisible = t is Trail.Stat
         b.stat.text = (t as? Trail.Stat)?.value
         b.check.isVisible = t is Trail.Check
+        b.check.setOnCheckedChangeListener(null)
         if (t is Trail.Check) b.check.isChecked = t.on
+        b.check.setOnCheckedChangeListener { view, on ->
+            val at = holder.bindingAdapterPosition
+            if (at == RecyclerView.NO_POSITION) return@setOnCheckedChangeListener
+            items[at] = items[at].copy(trail = Trail.Check(on))
+            onTrail?.invoke(items[at], items[at].trail, view)
+        }
         b.invite.isVisible = t == Trail.Invite
         b.invite.setOnClickListener {
             val at = holder.bindingAdapterPosition

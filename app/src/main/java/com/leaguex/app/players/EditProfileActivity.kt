@@ -1,9 +1,7 @@
 package com.leaguex.app.players
 
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
-import com.google.android.material.snackbar.Snackbar
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
 import com.leaguex.app.data.SampleData
@@ -11,6 +9,7 @@ import com.leaguex.app.databinding.ActivityEditProfileBinding
 import com.leaguex.app.databinding.SheetPhotoBinding
 import com.leaguex.app.kit.avatar
 import com.leaguex.app.kit.bind
+import com.leaguex.app.kit.showSavedOffline
 import com.leaguex.app.kit.showSheet
 
 /**
@@ -43,13 +42,7 @@ class EditProfileActivity : LeagueXActivity() {
                 b.content.setPadding(b.content.paddingLeft, dp(16), b.content.paddingRight, b.content.paddingBottom)
                 b.changePhoto.isVisible = false
                 b.photoWaiting.isVisible = true
-                // The Figma's snackbar, held until the phone is back online.
-                Snackbar.make(b.root, R.string.edit_saved_offline, Snackbar.LENGTH_INDEFINITE)
-                    .setAnchorView(b.footer)
-                    .setBackgroundTint(ContextCompat.getColor(this, R.color.ink))
-                    .setTextColor(ContextCompat.getColor(this, R.color.on_blue))
-                    .setTextMaxLines(3)
-                    .show()
+                b.root.showSavedOffline(anchor = b.footer)
             }
             EditProfileVersion.UPLOADING -> {
                 b.photo.isVisible = false

@@ -14,8 +14,14 @@ import com.leaguex.app.kit.rows.ActionRow
 import com.leaguex.app.kit.rows.ActionRowAdapter
 import com.leaguex.app.kit.rows.showRows
 import com.leaguex.app.kit.showSheet
+import com.leaguex.app.matchday.LineupsActivity
+import com.leaguex.app.matchday.RecordMatchActivity
+import com.leaguex.app.matchday.RecordMatchVersion
 
-/** 37 Organizer dashboard: today's match, team requests, and shortcuts. Edit matches opens 41 Edit match. */
+/**
+ * 37 Organizer dashboard: today's match, team requests, and shortcuts. Set line-ups and Record match open 45 and 46;
+ * Edit matches opens 41 Edit match.
+ */
 class DashboardActivity : LeagueXActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +43,8 @@ class DashboardActivity : LeagueXActivity() {
         b.awayCrest.crest(today.away)
         b.match.text = "${today.home} vs ${today.away}"
         b.matchWhen.text = keepTogether("${today.time}, ${today.venue}")
+        b.setLineUps.setOnClickListener { go(LineupsActivity::class) }
+        b.record.setOnClickListener { go(RecordMatchActivity::class, RecordMatchVersion.FIRST_HALF) }
 
         val requests = listOf("SAD", "PIN", "KOH").joinToString(", ") { SampleData.teamName(it) }
         b.requests.showRows(

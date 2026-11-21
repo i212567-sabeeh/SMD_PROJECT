@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Organizers: match day (45–51), copied from design/screens/src/screens/match-day.js. -->
+<resources>
+    <string name="lineups_title">Line-ups</string>
+    <plurals name="lineups_picked">
+        <item quantity="one">%1$d player picked</item>
+        <item quantity="other">%1$d players picked</item>
+    </plurals>
+    <string name="lineups_other_picked">%1$s: %2$d picked</string>
+    <string name="lineups_start">Start match</string>
+
+    <string name="record_title">Record match</string>
+    <!-- The home and away score, such as "2–1". -->
+    <string name="record_score">%1$d–%2$d</string>
+    <string name="record_running">Running</string>
+    <string name="record_paused">Paused</string>
+    <string name="record_first_half_added">1st half, added time</string>
+    <string name="record_half_time">Half time</string>
+    <string name="record_second_half">2nd half</string>
+    <string name="record_extra_first">Extra time, 1st half</string>
+    <string name="record_pause">Pause</string>
+    <string name="record_resume">Resume</string>
+    <string name="record_end_half">End half</string>
+    <string name="record_end_match">End match</string>
+    <string name="record_start_second">Start 2nd half</string>
+    <string name="record_events">Events</string>
+
+    <string name="event_team">Team</string>
+    <string name="event_pick_player">Pick a player</string>
+    <string name="event_minute">Minute</string>
+    <string name="event_minute_help">From the match clock. You can change it.</string>
+    <string name="goal_title">Add goal</string>
+    <string name="goal_scorer">Scorer</string>
+    <string name="goal_assist">Assist (optional)</string>
+    <string name="goal_own">Own goal</string>
+    <string name="goal_penalty">Penalty</string>
+    <string name="goal_save">Save goal</string>
+    <string name="card_title">Add card</string>
+    <string name="card_player">Player</string>
+    <string name="card_card">Card</string>
+    <string name="card_yellow">Yellow</string>
+    <string name="card_red">Red</string>
+    <string name="card_save">Save card</string>
+    <string name="sub_title">Add substitution</string>
+    <string name="sub_off">Player off</string>
+    <string name="sub_on">Player on</string>
+    <string name="sub_save">Save substitution</string>
+
+    <string name="shootout_title">Penalty shootout</string>
+    <string name="shootout_about">Semi-final, after extra time 2–2</string>
+    <string name="shootout_kicks">Kicks</string>
+    <!-- %2$s is the kick's ordinal, such as "5th". -->
+    <string name="shootout_next">%1$s, %2$s kick</string>
+    <string name="shootout_stakes">If they miss, %1$s win.</string>
+    <string name="shootout_stakes_score">If they score, %1$s win.</string>
+    <string name="shootout_scored">Scored</string>
+    <string name="shootout_missed">Missed</string>
+    <string name="shootout_undo">Undo last kick</string>
+
+    <string name="confirm_title">Confirm full time</string>
+    <!-- A scorer and the minute, such as "Zain Abbas 6'". -->
+    <string name="confirm_scorer">%1$s %2$s</string>
+    <string name="confirm_summary">1 yellow card, 1 substitution</string>
+    <string name="confirm_note">The table and stats update, and followers get the final score.</string>
+    <string name="confirm_finish">Finish match</string>
+    <string name="confirm_back">Back to recording</string>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 48 Add card, a sheet over 46 Record match / Offline: the team, the player, yellow or red, and the minute,
+     then Save card. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_sheet_head" />
+
+    <LinearLayout
+        style="@style/Widget.LeagueX.SheetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/team"
+            layout="@layout/include_team_pick" />
+
+        <include
+            android:id="@+id/player"
+            layout="@layout/include_player_pick" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/gap_4"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/card_card"
+                android:textAppearance="@style/TextAppearance.LeagueX.Label.Large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-12dp"
+                android:divider="@drawable/gap_24"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:id="@+id/yellow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/yellowRadio"
+                        style="@style/Widget.LeagueX.RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:contentDescription="@string/card_yellow" />
+
+                    <View
+                        android:layout_width="14dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_card_mark"
+                        android:backgroundTint="@color/card_yellow" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/card_yellow"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Large" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/redRadio"
+                        style="@style/Widget.LeagueX.RadioButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/card_red" />
+
+                    <View
+                        android:layout_width="14dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_card_mark"
+                        android:backgroundTint="@color/card_red" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/card_red"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Large" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/minute"
+            layout="@layout/include_minute_field" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/save"
+            style="@style/Widget.LeagueX.Button.Filled.Big"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/card_save" />
+    </LinearLayout>
+</LinearLayout>

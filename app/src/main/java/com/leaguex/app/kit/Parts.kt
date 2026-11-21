@@ -5,6 +5,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.widget.TextViewCompat
+import com.google.android.material.textview.MaterialTextView
 import com.leaguex.app.R
 import com.leaguex.app.databinding.IncludeNavRowBinding
 import com.leaguex.app.databinding.IncludePairingBinding
@@ -51,7 +52,7 @@ fun IncludeSummaryCardBinding.bind(title: CharSequence, lines: List<CharSequence
     this.lines.removeAllViews()
     lines.forEachIndexed { i, line ->
         this.lines.addView(
-            TextView(root.context).apply {
+            MaterialTextView(root.context).apply {
                 TextViewCompat.setTextAppearance(this, if (i == 0) R.style.TextAppearance_LeagueX_Title_Small else R.style.TextAppearance_LeagueX_Body_Medium)
                 if (i > 0) setTextColor(ContextCompat.getColor(context, R.color.muted))
                 text = keepTogether(line.toString())

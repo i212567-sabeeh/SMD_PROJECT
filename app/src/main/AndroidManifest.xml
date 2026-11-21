@@ -217,6 +217,23 @@
             android:name=".organizer.LeagueSettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".matchday.LineupsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".matchday.RecordMatchActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".matchday.PenaltiesActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".matchday.ConfirmFullTimeActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

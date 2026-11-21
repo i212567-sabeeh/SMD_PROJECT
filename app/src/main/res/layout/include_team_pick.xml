@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 47–49's "Team": which side the event is for, one chip each. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_8"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/event_team"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:chipSpacingHorizontal="8dp"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/home"
+            style="@style/Widget.LeagueX.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            tools:text="Margalla Strikers" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/away"
+            style="@style/Widget.LeagueX.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Rawal Rovers" />
+    </com.google.android.material.chip.ChipGroup>
+</LinearLayout>

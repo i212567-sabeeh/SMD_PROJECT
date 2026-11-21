@@ -4,7 +4,10 @@ import com.leaguex.app.kit.MatchClock
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-/** The match clock reads mm:ss up to the end of the period, then counts added minutes from "+1". */
+/**
+ * The match clock reads mm:ss up to the end of the period, then counts added minutes from "+1". An event's minute is
+ * the minute the clock is in, as 47–49's Minute field fills it in.
+ */
 class MatchClockTest {
 
     @Test
@@ -19,5 +22,13 @@ class MatchClockTest {
         assertEquals("20+1", MatchClock.text(1230, 20))
         assertEquals("20+2", MatchClock.text(1260, 20))
         assertEquals("20+3", MatchClock.text(1321, 20))
+    }
+
+    @Test
+    fun namesTheMinuteAnEventHappensAt() {
+        assertEquals("33'", MatchClock.minute(1985, 40))
+        assertEquals("20'", MatchClock.minute(1200, 20))
+        assertEquals("20+1'", MatchClock.minute(1230, 20))
+        assertEquals("45+2'", MatchClock.minute(2765, 45))
     }
 }

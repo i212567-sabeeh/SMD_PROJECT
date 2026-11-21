@@ -43,8 +43,11 @@ android {
             isIncludeAndroidResources = true
             all {
                 it.jvmArgs("--enable-native-access=ALL-UNNAMED")
-                // Every frame test opens dozens of screens; the default heap runs out once all sections exist.
+                // Every frame test opens dozens of screens; the default heap runs out once all sections exist, and
+                // Robolectric keeps some of each test's state for the life of its JVM, so a fresh JVM takes over
+                // every five test classes.
                 it.maxHeapSize = "2g"
+                it.forkEvery = 5
                 it.systemProperty("leaguex.shots", shots)
                 it.systemProperty("leaguex.shotsDir", shotsDir)
                 if (shots.isNotEmpty()) it.outputs.upToDateWhen { false }
