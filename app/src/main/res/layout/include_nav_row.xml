@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Figma: 44 League settings: a setting that opens its own page, a muted glyph, its name and current value, and a
-     chevron. Bind it with IncludeNavRowBinding.bind(). -->
+<!-- Figma: 44 League settings and 55 Settings: a setting that opens its own page, a muted glyph, its name and current
+     value, and a chevron; or, in red with no chevron, an action such as Log out. Bind it with IncludeNavRowBinding.bind(). -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.LeagueX.Row"
@@ -36,6 +36,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/chevron"
         style="@style/Widget.LeagueX.Row.Icon"
         android:src="@drawable/ic_chevron_right" />
 </LinearLayout>

@@ -234,6 +234,22 @@
             android:name=".matchday.ConfirmFullTimeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".across.SyncStatusActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".across.LockScreenActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".across.SettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".across.NotificationSettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

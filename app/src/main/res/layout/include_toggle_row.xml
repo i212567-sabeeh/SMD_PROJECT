@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 56 Notification settings (ui.js settingRow, trailing toggle): a muted glyph, the setting's name and its
+     switch. Bind it with IncludeToggleRowBinding.bind(); tapping anywhere on the row flips the switch. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LeagueX.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/Widget.LeagueX.Row.Icon"
+        tools:src="@drawable/ic_alarm" />
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/Widget.LeagueX.Row.Label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="Match reminders" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:id="@+id/toggle"
+        style="@style/Widget.LeagueX.Switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

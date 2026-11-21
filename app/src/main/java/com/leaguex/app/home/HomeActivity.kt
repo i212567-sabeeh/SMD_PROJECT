@@ -2,14 +2,15 @@ package com.leaguex.app.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.RadioButton
 import android.view.View
+import android.widget.RadioButton
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
 import com.leaguex.app.Extras
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
 import com.leaguex.app.Tab
+import com.leaguex.app.across.opensSyncStatus
 import com.leaguex.app.data.MatchRow
 import com.leaguex.app.data.MatchState
 import com.leaguex.app.data.SampleData
@@ -37,10 +38,10 @@ import com.leaguex.app.matchday.LineupsActivity
 import com.leaguex.app.matchday.RecordMatchActivity
 import com.leaguex.app.matchday.RecordMatchVersion
 import com.leaguex.app.news.AnnouncementActivity
-import com.leaguex.app.organizer.DashboardActivity
-import com.leaguex.app.organizer.TeamRequestsActivity
 import com.leaguex.app.news.NotificationsActivity
 import com.leaguex.app.news.SearchActivity
+import com.leaguex.app.organizer.DashboardActivity
+import com.leaguex.app.organizer.TeamRequestsActivity
 import kotlin.math.roundToInt
 
 /** 08 Home's versions, one per Figma frame. */
@@ -200,6 +201,7 @@ class HomeActivity : LeagueXActivity() {
 
     private fun offline() {
         b.offline.root.isVisible = true
+        b.offline.root.opensSyncStatus()
         (b.league.root.layoutParams as? android.view.ViewGroup.MarginLayoutParams)?.topMargin = dp(8)
         leagueRow(SampleData.LEAGUE.name)
         b.league.status.status(StatusKind.OFFLINE, getString(R.string.home_offline))

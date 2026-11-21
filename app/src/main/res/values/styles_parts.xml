@@ -268,6 +268,23 @@
         <item name="android:textColor">@color/on_blue</item>
     </style>
 
+    <!-- 54 Push notifications: the lock screen's clock (Roboto 72/80) and date (Roboto Medium 16/24), in the system's type. -->
+    <style name="TextAppearance.LeagueX.Lock.Clock" parent="TextAppearance.LeagueX.Body.Medium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textSize">72sp</item>
+        <item name="android:lineHeight">80sp</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Lock.Date" parent="TextAppearance.LeagueX.Body.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">24sp</item>
+        <item name="android:textColor">@color/on_blue_muted</item>
+    </style>
+
     <!-- The Style kit screen: a caption above each part (kit.css .guide .cap). -->
     <style name="Widget.LeagueX.KitCaption" parent="">
         <item name="android:textAppearance">@style/TextAppearance.LeagueX.Label.Medium</item>

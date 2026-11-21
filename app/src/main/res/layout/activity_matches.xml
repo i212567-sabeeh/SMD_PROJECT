@@ -115,6 +115,8 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
+    <!-- 57 Empty / No matches yet centres its message 120dp up from the screen's bottom edge, under the bottom bar it
+         draws over the page; this area already stops at the bar, so only what's left of the 120dp applies. -->
     <FrameLayout
         android:id="@+id/emptyArea"
         android:layout_width="match_parent"
@@ -123,7 +125,7 @@
         android:paddingStart="@dimen/page_margin"
         android:paddingTop="24dp"
         android:paddingEnd="@dimen/page_margin"
-        android:paddingBottom="120dp"
+        android:paddingBottom="20dp"
         android:visibility="gone">
 
         <include

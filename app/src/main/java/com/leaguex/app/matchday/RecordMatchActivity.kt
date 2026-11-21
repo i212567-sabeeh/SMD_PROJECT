@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
+import com.leaguex.app.across.opensSyncStatus
 import com.leaguex.app.data.EventType
 import com.leaguex.app.data.MatchEvent
 import com.leaguex.app.data.SampleData
@@ -136,6 +137,7 @@ class RecordMatchActivity : LeagueXActivity() {
 
         if (version == RecordMatchVersion.OFFLINE) {
             b.offline.root.isVisible = true
+            b.offline.root.opensSyncStatus()
             b.head.updatePadding(top = dp(OFFLINE_HEAD_TOP))
             b.root.showSavedOffline()
         }

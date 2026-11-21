@@ -5,6 +5,7 @@ import androidx.core.view.isVisible
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
 import com.leaguex.app.Tab
+import com.leaguex.app.across.SettingsActivity
 import com.leaguex.app.data.MatchRow
 import com.leaguex.app.data.MatchState
 import com.leaguex.app.data.SampleData
@@ -42,6 +43,7 @@ class ProfileActivity : LeagueXActivity() {
         b.top.title.setText(R.string.profile_title)
         b.top.action.setIconResource(R.drawable.ic_settings)
         b.top.action.contentDescription = getString(R.string.profile_cd_settings)
+        b.top.action.setOnClickListener { go(SettingsActivity::class) }
         b.edit.setOnClickListener { go(EditProfileActivity::class) }
 
         if (versionOr(ProfileVersion.PLAYER) == ProfileVersion.ORGANIZER) {

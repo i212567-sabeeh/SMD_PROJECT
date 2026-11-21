@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.core.view.isVisible
 import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
+import com.leaguex.app.across.opensSyncStatus
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityEditProfileBinding
 import com.leaguex.app.databinding.SheetPhotoBinding
@@ -35,10 +36,12 @@ class EditProfileActivity : LeagueXActivity() {
         b.province.setText(me.province, false)
         b.city.setText(me.city, false)
         b.changePhoto.setOnClickListener { photoSheet() }
+        b.avatar.setOnClickListener { photoSheet() }
 
         when (versionOr(EditProfileVersion.DEFAULT)) {
             EditProfileVersion.SAVED_OFFLINE -> {
                 b.offline.root.isVisible = true
+                b.offline.root.opensSyncStatus()
                 b.content.setPadding(b.content.paddingLeft, dp(16), b.content.paddingRight, b.content.paddingBottom)
                 b.changePhoto.isVisible = false
                 b.photoWaiting.isVisible = true

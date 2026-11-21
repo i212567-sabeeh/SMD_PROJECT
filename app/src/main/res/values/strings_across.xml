@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Across the app (52–57), copied from design/screens/src/screens/across.js. -->
+<resources>
+    <string name="sync_title">Sync status</string>
+    <string name="sync_last">Last synced %1$s</string>
+    <plurals name="sync_waiting_count">
+        <item quantity="one">%1$d change is waiting for a connection</item>
+        <item quantity="other">%1$d changes are waiting for a connection</item>
+    </plurals>
+    <plurals name="sync_back_online">
+        <item quantity="one">Back online. %1$d upload failed</item>
+        <item quantity="other">Back online. %1$d uploads failed</item>
+    </plurals>
+    <plurals name="sync_uploaded_at">
+        <item quantity="one">%1$d change uploaded at %2$s.</item>
+        <item quantity="other">%1$d changes uploaded at %2$s.</item>
+    </plurals>
+    <string name="sync_waiting">Waiting</string>
+    <string name="sync_uploaded">Uploaded</string>
+    <string name="sync_synced">Synced</string>
+    <string name="sync_failed">Failed</string>
+    <string name="sync_now">Sync now</string>
+    <string name="sync_retry">Retry upload</string>
+    <!-- What was saved: "Goal, Usman Tariq, 29'", "Substitution, 30'", "Team logo, Margalla Strikers". -->
+    <string name="sync_item_goal">Goal, %1$s, %2$s</string>
+    <string name="sync_item_sub">Substitution, %1$s</string>
+    <string name="sync_item_photo">Profile photo</string>
+    <string name="sync_item_logo">Team logo, %1$s</string>
+    <!-- Where and when: "MAR vs RAW, saved 7:46 pm", or "Saved 7:38 pm" on its own. -->
+    <string name="sync_saved_at">%1$s, saved %2$s</string>
+    <string name="sync_saved">Saved %1$s</string>
+
+    <string name="lock_cd">Lock screen with LeagueX notifications</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_account">Account</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_notifications_value">Reminders, scores, schedule changes</string>
+    <string name="settings_offline">Offline storage</string>
+    <string name="settings_offline_value">%1$d MB saved</string>
+    <string name="settings_help">Help and feedback</string>
+    <string name="settings_log_out">Log out</string>
+
+    <string name="notify_title">Notifications</string>
+    <string name="notify_reminders">Match reminders</string>
+    <string name="notify_scores">Score updates</string>
+    <string name="notify_kickoff">Kick-off and half time</string>
+    <string name="notify_schedule">Schedule changes</string>
+    <string name="notify_announcements">Announcements</string>
+    <string name="notify_playoffs">Playoffs and draws</string>
+    <string name="notify_note">These apply to every league and tournament you follow.</string>
+</resources>

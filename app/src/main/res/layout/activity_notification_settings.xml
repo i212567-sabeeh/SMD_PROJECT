@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 56 Notification settings. Which notifications you get, one switch each, for everything you follow. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/include_top_back" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/content"
+            style="@style/Widget.LeagueX.Content.Tight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_card"
+                android:divider="@drawable/divider_line"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/reminders"
+                    layout="@layout/include_toggle_row" />
+
+                <include
+                    android:id="@+id/scores"
+                    layout="@layout/include_toggle_row" />
+
+                <include
+                    android:id="@+id/kickoff"
+                    layout="@layout/include_toggle_row" />
+
+                <include
+                    android:id="@+id/schedule"
+                    layout="@layout/include_toggle_row" />
+
+                <include
+                    android:id="@+id/announcements"
+                    layout="@layout/include_toggle_row" />
+
+                <include
+                    android:id="@+id/playoffs"
+                    layout="@layout/include_toggle_row" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/notify_note"
+                android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                android:textColor="@color/muted" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
