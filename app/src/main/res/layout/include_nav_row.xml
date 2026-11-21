@@ -10,6 +10,7 @@
     <ImageView
         android:id="@+id/icon"
         style="@style/Widget.LeagueX.Row.Icon"
+        android:importantForAccessibility="no"
         tools:src="@drawable/ic_edit" />
 
     <LinearLayout
@@ -38,5 +39,6 @@
     <ImageView
         android:id="@+id/chevron"
         style="@style/Widget.LeagueX.Row.Icon"
+        android:importantForAccessibility="no"
         android:src="@drawable/ic_chevron_right" />
 </LinearLayout>

@@ -1,10 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Top bars (kit.css .top-bar): 64dp tall. Home's title is the wordmark; a tab's title is Anton 28/34;
          a pushed screen's title is Title/Large next to the back button. -->
     <style name="TextAppearance.LeagueX.TopBar.Tab" parent="TextAppearance.LeagueX.Display.Title">
         <item name="android:textSize">28sp</item>
-        <item name="android:lineHeight">34sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">34sp</item>
     </style>
 
     <!-- Tabs (kit.css .tabs): 48dp, Label/Large, muted with the active tab blue over a 3dp bar inset 16dp,

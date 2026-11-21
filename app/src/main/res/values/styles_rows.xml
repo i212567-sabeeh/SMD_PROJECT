@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- List rows (kit.css .row, .match-row, .result-row, .table-row, .event, .period). Fixed menus such as Settings
      write their rows out with Widget.LeagueX.Row, .Row.Title and .Row.Meta; data lists use the item_* layouts. -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- .row: at least 64dp, 8dp top and bottom, 16dp sides, 12dp between the parts, centred. -->
     <style name="Widget.LeagueX.Row" parent="">
@@ -60,7 +60,7 @@
     <!-- .result-row .score: Anton 20/24. -->
     <style name="TextAppearance.LeagueX.ResultScore" parent="TextAppearance.LeagueX.Display.Small">
         <item name="android:textSize">20sp</item>
-        <item name="android:lineHeight">24sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">24sp</item>
     </style>
 
     <!-- .table-row .pts: Archivo Bold 14/20. -->

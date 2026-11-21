@@ -10,6 +10,7 @@
     <ImageView
         android:id="@+id/icon"
         style="@style/Widget.LeagueX.Row.Icon"
+        android:importantForAccessibility="no"
         tools:src="@drawable/ic_alarm" />
 
     <TextView

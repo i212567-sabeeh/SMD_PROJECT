@@ -200,6 +200,7 @@
 
                     <ImageView
                         style="@style/Widget.LeagueX.Row.Icon"
+                        android:importantForAccessibility="no"
                         android:src="@drawable/ic_calendar_month" />
 
                     <TextView
@@ -229,6 +230,7 @@
 
                     <ImageView
                         style="@style/Widget.LeagueX.Row.Icon"
+                        android:importantForAccessibility="no"
                         android:src="@drawable/ic_schedule" />
 
                     <TextView
@@ -258,6 +260,7 @@
 
                     <ImageView
                         style="@style/Widget.LeagueX.Row.Icon"
+                        android:importantForAccessibility="no"
                         android:src="@drawable/ic_location_on" />
 
                     <TextView
@@ -288,6 +291,7 @@
 
                     <ImageView
                         style="@style/Widget.LeagueX.Row.Icon"
+                        android:importantForAccessibility="no"
                         android:src="@drawable/ic_emoji_events" />
 
                     <TextView

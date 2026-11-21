@@ -2,7 +2,7 @@
 <!-- Page structure every screen shares (kit.css .content, .footer, .field), plus the few type sizes screens use
      outside the type scale. The phone's own status bar and gesture bar are the Figma's 40px top and 20px bottom,
      so a footer's 32px bottom padding is 12dp here plus the gesture inset fitSystemBars() adds. -->
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- .content: the page's scrolling column, 24dp from the top bar, 20dp sides, 24dp between blocks. -->
     <style name="Widget.LeagueX.Content" parent="">
@@ -53,13 +53,13 @@
     <!-- A page heading in Anton 32/38, such as "Welcome back". -->
     <style name="TextAppearance.LeagueX.PageTitle" parent="TextAppearance.LeagueX.Display.Title">
         <item name="android:textSize">32sp</item>
-        <item name="android:lineHeight">38sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">38sp</item>
     </style>
 
     <!-- 02 Welcome's Anton 40/46 heading. -->
     <style name="TextAppearance.LeagueX.PageTitle.Big">
         <item name="android:textSize">40sp</item>
-        <item name="android:lineHeight">46sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">46sp</item>
     </style>
 
     <!-- 01 Splash's wordmark: Anton 64/70, tracked 0.04em. -->
@@ -71,14 +71,14 @@
     <!-- 08 Home's hero: team codes and the live score in Anton 56/60, white. -->
     <style name="TextAppearance.LeagueX.HeroCode" parent="TextAppearance.LeagueX.Display.Title">
         <item name="android:textSize">56sp</item>
-        <item name="android:lineHeight">60sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">60sp</item>
         <item name="android:textColor">@color/on_blue</item>
     </style>
 
     <!-- .stat .n: Anton 28/34, 12 League page's numbers. -->
     <style name="TextAppearance.LeagueX.StatNumber" parent="TextAppearance.LeagueX.Display.Title">
         <item name="android:textSize">28sp</item>
-        <item name="android:lineHeight">34sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">34sp</item>
     </style>
 
     <!-- .pill-orange: "Matchday 5" on orange. -->

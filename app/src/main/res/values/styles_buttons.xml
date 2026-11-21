@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Buttons (kit.css .btn): 48dp tall pills with 24dp side padding, Label/Large text, a 20dp icon
          8dp before the label. A full-width ("block") button is the same style with match_parent. -->
@@ -9,7 +9,7 @@
     <!-- .btn.big: 16sp label. -->
     <style name="TextAppearance.LeagueX.Button.Big">
         <item name="android:textSize">16sp</item>
-        <item name="android:lineHeight">20sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">20sp</item>
     </style>
 
     <!-- Filled is the base: blue with on-blue text. Material 3 already draws buttons fully rounded. -->

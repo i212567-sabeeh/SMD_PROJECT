@@ -65,6 +65,7 @@
 
                 <ImageView
                     style="@style/Widget.LeagueX.OptionGlyph"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_leaderboard" />
 
                 <LinearLayout
@@ -109,6 +110,7 @@
 
                 <ImageView
                     style="@style/Widget.LeagueX.OptionGlyph"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_account_tree" />
 
                 <LinearLayout

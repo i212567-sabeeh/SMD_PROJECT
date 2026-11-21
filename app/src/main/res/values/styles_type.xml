@@ -1,11 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- The 15 type styles of the style guide: font file, size (sp) and line height as in kit.css. -->
     <style name="TextAppearance.LeagueX.Display.Wordmark" parent="TextAppearance.Material3.BodyMedium">
         <item name="android:fontFamily">@font/anton_regular</item>
         <item name="fontFamily">@font/anton_regular</item>
         <item name="android:textSize">26sp</item>
-        <item name="android:lineHeight">32sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">32sp</item>
         <item name="android:letterSpacing">0.04</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -14,7 +14,7 @@
         <item name="android:fontFamily">@font/anton_regular</item>
         <item name="fontFamily">@font/anton_regular</item>
         <item name="android:textSize">64sp</item>
-        <item name="android:lineHeight">70sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">70sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -23,7 +23,7 @@
         <item name="android:fontFamily">@font/anton_regular</item>
         <item name="fontFamily">@font/anton_regular</item>
         <item name="android:textSize">72sp</item>
-        <item name="android:lineHeight">76sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">76sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -32,7 +32,7 @@
         <item name="android:fontFamily">@font/anton_regular</item>
         <item name="fontFamily">@font/anton_regular</item>
         <item name="android:textSize">48sp</item>
-        <item name="android:lineHeight">52sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">52sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -41,7 +41,7 @@
         <item name="android:fontFamily">@font/anton_regular</item>
         <item name="fontFamily">@font/anton_regular</item>
         <item name="android:textSize">24sp</item>
-        <item name="android:lineHeight">30sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">30sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -50,7 +50,7 @@
         <item name="android:fontFamily">@font/anton_regular</item>
         <item name="fontFamily">@font/anton_regular</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:lineHeight">24sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">24sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -59,7 +59,7 @@
         <item name="android:fontFamily">@font/archivo_semibold</item>
         <item name="fontFamily">@font/archivo_semibold</item>
         <item name="android:textSize">22sp</item>
-        <item name="android:lineHeight">28sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">28sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -68,7 +68,7 @@
         <item name="android:fontFamily">@font/archivo_semibold</item>
         <item name="fontFamily">@font/archivo_semibold</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:lineHeight">24sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">24sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -77,7 +77,7 @@
         <item name="android:fontFamily">@font/archivo_semibold</item>
         <item name="fontFamily">@font/archivo_semibold</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:lineHeight">22sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">22sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -86,7 +86,7 @@
         <item name="android:fontFamily">@font/archivo_regular</item>
         <item name="fontFamily">@font/archivo_regular</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:lineHeight">24sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">24sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -95,7 +95,7 @@
         <item name="android:fontFamily">@font/archivo_regular</item>
         <item name="fontFamily">@font/archivo_regular</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:lineHeight">20sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">20sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -104,7 +104,7 @@
         <item name="android:fontFamily">@font/archivo_regular</item>
         <item name="fontFamily">@font/archivo_regular</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">16sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">16sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -113,7 +113,7 @@
         <item name="android:fontFamily">@font/archivo_semibold</item>
         <item name="fontFamily">@font/archivo_semibold</item>
         <item name="android:textSize">14sp</item>
-        <item name="android:lineHeight">20sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">20sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -122,7 +122,7 @@
         <item name="android:fontFamily">@font/archivo_medium</item>
         <item name="fontFamily">@font/archivo_medium</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">16sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">16sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>
@@ -131,7 +131,7 @@
         <item name="android:fontFamily">@font/archivo_bold</item>
         <item name="fontFamily">@font/archivo_bold</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">16sp</item>
+        <item name="android:lineHeight" tools:targetApi="28">16sp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textColor">@color/ink</item>
     </style>

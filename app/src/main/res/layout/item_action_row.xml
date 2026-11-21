@@ -53,6 +53,7 @@
     <ImageView
         android:id="@+id/chevron"
         style="@style/Widget.LeagueX.Row.Icon"
+        android:importantForAccessibility="no"
         android:src="@drawable/ic_chevron_right"
         android:visibility="gone" />
 </LinearLayout>

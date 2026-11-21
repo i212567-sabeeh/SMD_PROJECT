@@ -856,6 +856,7 @@
 
                 <ImageView
                     style="@style/Widget.LeagueX.Row.Icon"
+                    android:importantForAccessibility="no"
                     android:src="@drawable/ic_notifications" />
 
                 <TextView
