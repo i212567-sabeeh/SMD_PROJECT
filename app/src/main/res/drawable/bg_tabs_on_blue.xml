@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .tabs.on-blue: a 1dp white line at 20% along the bottom. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:height="@dimen/line_width"
+        android:gravity="bottom">
+        <shape>
+            <solid android:color="@color/on_blue_divider" />
+        </shape>
+    </item>
+</layer-list>

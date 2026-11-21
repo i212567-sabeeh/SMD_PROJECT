@@ -35,10 +35,18 @@ android {
     }
     // Robolectric needs the merged resources and manifest to inflate layouts in unit tests.
     // Its native runtime calls System.load, which JDK 25 warns about unless native access is enabled.
+    // FrameShotsTest renders screenshots only when Gradle gets -Pshots=<section slug|all|kit>; they go to LeagueX/shots.
+    val shots = providers.gradleProperty("shots").getOrElse("")
+    val shotsDir = rootProject.layout.projectDirectory.dir("shots").asFile.absolutePath
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
-            all { it.jvmArgs("--enable-native-access=ALL-UNNAMED") }
+            all {
+                it.jvmArgs("--enable-native-access=ALL-UNNAMED")
+                it.systemProperty("leaguex.shots", shots)
+                it.systemProperty("leaguex.shotsDir", shotsDir)
+                if (shots.isNotEmpty()) it.outputs.upToDateWhen { false }
+            }
         }
     }
 }

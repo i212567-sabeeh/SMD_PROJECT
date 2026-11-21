@@ -1,0 +1,16 @@
+<!-- Figma: Style kit, Bottom sheet; 53 Photo pick (ui.js sheetRow). One action in a sheet: a blue icon and its label,
+     or in red for a danger action such as "Remove photo". Bind it with ItemSheetActionBinding.bind(). -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:drawablePadding="12dp"
+    android:drawableTint="@color/blue"
+    android:gravity="center_vertical"
+    android:minHeight="@dimen/row_height"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:textAppearance="@style/TextAppearance.LeagueX.Body.Large"
+    tools:drawableStart="@drawable/ic_photo_camera"
+    tools:text="Take photo" />

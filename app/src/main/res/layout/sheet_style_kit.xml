@@ -1,0 +1,35 @@
+<!-- Figma: Style kit, Bottom sheet ("Profile photo"). The kit's sheet: drawn in place on the Style kit screen, and
+     opened for real (showSheet) by tapping it. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/head"
+        layout="@layout/include_sheet_head" />
+
+    <LinearLayout
+        style="@style/Widget.LeagueX.SheetBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/takePhoto"
+                layout="@layout/item_sheet_action" />
+
+            <include
+                android:id="@+id/choosePhoto"
+                layout="@layout/item_sheet_action" />
+
+            <include
+                android:id="@+id/removePhoto"
+                layout="@layout/item_sheet_action" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

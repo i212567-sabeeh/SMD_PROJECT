@@ -1,0 +1,26 @@
+<!-- Figma: a section title in Anton with an optional text button, such as "Latest results" on 08 Home (ui.js sectionHead). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:minHeight="32dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:accessibilityHeading="true"
+        android:textAppearance="@style/TextAppearance.LeagueX.Display.Title"
+        tools:targetApi="28"
+        tools:text="Latest results" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action"
+        style="@style/Widget.LeagueX.Button.Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</LinearLayout>

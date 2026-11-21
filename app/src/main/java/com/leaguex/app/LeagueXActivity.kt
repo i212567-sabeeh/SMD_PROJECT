@@ -1,20 +1,44 @@
 package com.leaguex.app
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.activity.SystemBarStyle
+import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlin.reflect.KClass
 
 /** The bottom-bar tabs. */
 enum class Tab { HOME, MATCHES, STANDINGS, TEAMS, PROFILE }
+
+/** The tab's item in menu/bottom_nav. */
+private val Tab.menuItem: Int
+    get() = when (this) {
+        Tab.HOME -> R.id.nav_home
+        Tab.MATCHES -> R.id.nav_matches
+        Tab.STANDINGS -> R.id.nav_standings
+        Tab.TEAMS -> R.id.nav_teams
+        Tab.PROFILE -> R.id.nav_profile
+    }
+
+/** The tab's screen, by name, so the bar compiles before the screens are built. */
+private val Tab.activityClass: String
+    get() = when (this) {
+        Tab.HOME -> "com.leaguex.app.home.HomeActivity"
+        Tab.MATCHES -> "com.leaguex.app.league.MatchesActivity"
+        Tab.STANDINGS -> "com.leaguex.app.league.StandingsActivity"
+        Tab.TEAMS -> "com.leaguex.app.news.TeamsActivity"
+        Tab.PROFILE -> "com.leaguex.app.players.ProfileActivity"
+    }
 
 /**
  * Every screen activity extends this. It draws edge to edge with transparent system bars, and gives
@@ -32,6 +56,14 @@ abstract class LeagueXActivity : AppCompatActivity() {
             navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
         )
         super.onCreate(savedInstanceState)
+        // Back from a tab other than Home goes to Home. A sheet's own window takes back first, so it closes the sheet.
+        val tab = tab
+        if (tab != null && tab != Tab.HOME) {
+            onBackPressedDispatcher.addCallback(this) {
+                openTab(Tab.HOME)
+                finish()
+            }
+        }
     }
 
     /** The version named by [Extras.VERSION], or [default] when there's none or the name is unknown. */
@@ -70,6 +102,30 @@ abstract class LeagueXActivity : AppCompatActivity() {
     /** Tapping [view] does what the system back does. */
     protected fun backOn(view: View) {
         view.setOnClickListener { onBackPressedDispatcher.onBackPressed() }
+    }
+
+    /**
+     * Wires the bottom bar (include_bottom_nav): checks this screen's [tab], and selecting another tab brings that
+     * tab's screen to the front without an animation. This screen keeps its own tab checked for when it comes back.
+     * A tab whose screen isn't built yet does nothing.
+     */
+    protected fun bottomNav(nav: BottomNavigationView) {
+        val tab = tab
+        if (tab != null) nav.selectedItemId = tab.menuItem
+        nav.setOnItemSelectedListener { item ->
+            val target = Tab.entries.firstOrNull { it.menuItem == item.itemId }
+            if (target != null && target != tab) openTab(target)
+            false
+        }
+        nav.setOnItemReselectedListener { }
+    }
+
+    /** Brings [target]'s screen to the front without an animation; does nothing while that screen doesn't exist. */
+    private fun openTab(target: Tab) {
+        val screen = runCatching { Class.forName(target.activityClass) }.getOrNull() ?: return
+        val intent = Intent(this, screen).addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        if (intent.resolveActivity(packageManager) == null) return
+        startActivity(intent, ActivityOptionsCompat.makeCustomAnimation(this, 0, 0).toBundle())
     }
 
     /** Opens [target], optionally in a version or with a sheet showing. */

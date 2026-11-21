@@ -1,0 +1,56 @@
+<!-- Figma: Style kit, Top bars (Home). "LEAGUEX" with search and notifications, on the blue block (ui.js topHome). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/top_bar_height"
+    android:divider="@drawable/gap_4"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="20dp"
+    android:paddingEnd="8dp"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:accessibilityHeading="true"
+        android:maxLines="1"
+        android:text="@string/kit_wordmark"
+        android:textAppearance="@style/TextAppearance.LeagueX.Display.Wordmark"
+        android:textColor="@color/on_blue"
+        tools:targetApi="28" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search"
+        style="@style/Widget.LeagueX.IconButton.OnBlue"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/kit_cd_search"
+        app:icon="@drawable/ic_search" />
+
+    <FrameLayout
+        android:layout_width="48dp"
+        android:layout_height="48dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/notifications"
+            style="@style/Widget.LeagueX.IconButton.OnBlue"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/kit_cd_notifications"
+            app:icon="@drawable/ic_notifications" />
+
+        <!-- .badge-dot: hide it when there's nothing new. -->
+        <View
+            android:id="@+id/badge"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="11dp"
+            android:background="@drawable/bg_badge_dot" />
+    </FrameLayout>
+</LinearLayout>

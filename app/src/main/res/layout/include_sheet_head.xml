@@ -1,0 +1,51 @@
+<!-- Figma: Style kit, Bottom sheet; 09, 11, 41, 47-49, 53 (ui.js sheet). The top of every sheet: the grab handle,
+     the title and a close button. showSheet() wires the close button. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="28dp">
+
+        <View
+            android:id="@+id/sheetGrab"
+            android:layout_width="32dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_step"
+            android:backgroundTint="@color/line" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/sheetTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:accessibilityHeading="true"
+            android:textAppearance="@style/TextAppearance.LeagueX.Title.Medium"
+            tools:targetApi="28"
+            tools:text="Profile photo" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sheetClose"
+            style="@style/Widget.LeagueX.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/kit_cd_close"
+            app:icon="@drawable/ic_close" />
+    </LinearLayout>
+</LinearLayout>

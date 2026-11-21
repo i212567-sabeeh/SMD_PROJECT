@@ -1,0 +1,14 @@
+<resources>
+    <!-- Colours kit.css writes inline in its parts rather than as :root tokens. -->
+    <!-- .btn.on-blue-outlined border: rgba(255, 255, 255, 0.6) -->
+    <color name="on_blue_outline">#99FFFFFF</color>
+    <!-- .tabs.on-blue bottom border: rgba(255, 255, 255, 0.2) -->
+    <color name="on_blue_divider">#33FFFFFF</color>
+    <!-- .banner pitch lines: rgba(255, 255, 255, 0.22) -->
+    <color name="banner_pitch">#38FFFFFF</color>
+    <!-- .banner .glow: orange at opacity 0.9 -->
+    <color name="banner_glow">#E6FF6A1F</color>
+    <!-- Press ripples: on blue, and on light surfaces. -->
+    <color name="ripple_on_blue">#3DFFFFFF</color>
+    <color name="ripple_blue">#291F3FD1</color>
+</resources>

@@ -1,0 +1,219 @@
+<resources>
+
+    <!-- Buttons (kit.css .btn): 48dp tall pills with 24dp side padding, Label/Large text, a 20dp icon
+         8dp before the label. A full-width ("block") button is the same style with match_parent. -->
+    <style name="TextAppearance.LeagueX.Button" parent="TextAppearance.LeagueX.Label.Large">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- .btn.big: 16sp label. -->
+    <style name="TextAppearance.LeagueX.Button.Big">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">20sp</item>
+    </style>
+
+    <!-- Filled is the base: blue with on-blue text. Material 3 already draws buttons fully rounded. -->
+    <style name="Widget.LeagueX.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">@dimen/button_padding_h</item>
+        <item name="android:paddingRight">@dimen/button_padding_h</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconPadding">8dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="android:textColor">@color/on_blue</item>
+        <item name="iconTint">@color/on_blue</item>
+        <item name="rippleColor">@color/ripple_on_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Button.Filled" />
+
+    <style name="Widget.LeagueX.Button.Filled.Big">
+        <item name="android:minHeight">@dimen/button_height_big</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button.Big</item>
+    </style>
+
+    <!-- .btn.tonal: tint with blue text. -->
+    <style name="Widget.LeagueX.Button.Tonal">
+        <item name="backgroundTint">@color/tint</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="iconTint">@color/blue</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Button.Tonal.Big">
+        <item name="android:minHeight">@dimen/button_height_big</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button.Big</item>
+    </style>
+
+    <!-- .btn.outlined: paper with a 1dp line border and blue text. -->
+    <style name="Widget.LeagueX.Button.Outlined">
+        <item name="backgroundTint">@color/paper</item>
+        <item name="strokeColor">@color/line</item>
+        <item name="strokeWidth">@dimen/line_width</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="iconTint">@color/blue</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Button.Outlined.Big">
+        <item name="android:minHeight">@dimen/button_height_big</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button.Big</item>
+    </style>
+
+    <!-- .btn.text: no background, 12dp side padding, blue text. -->
+    <style name="Widget.LeagueX.Button.Text">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="iconTint">@color/blue</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Button.Text.Big">
+        <item name="android:minHeight">@dimen/button_height_big</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button.Big</item>
+    </style>
+
+    <!-- .btn.danger: paper with an error border and error text. -->
+    <style name="Widget.LeagueX.Button.Danger">
+        <item name="backgroundTint">@color/paper</item>
+        <item name="strokeColor">@color/error</item>
+        <item name="strokeWidth">@dimen/line_width</item>
+        <item name="android:textColor">@color/error</item>
+        <item name="iconTint">@color/error</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Button.Danger.Big">
+        <item name="android:minHeight">@dimen/button_height_big</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button.Big</item>
+    </style>
+
+    <!-- .btn.on-blue: paper with blue text, on a blue background. -->
+    <style name="Widget.LeagueX.Button.OnBlue">
+        <item name="backgroundTint">@color/paper</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="iconTint">@color/blue</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Button.OnBlue.Big">
+        <item name="android:minHeight">@dimen/button_height_big</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button.Big</item>
+    </style>
+
+    <!-- .btn.on-blue-outlined: no background, a white border at 60% and white text, on blue. -->
+    <style name="Widget.LeagueX.Button.OnBlueOutlined">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="strokeColor">@color/on_blue_outline</item>
+        <item name="strokeWidth">@dimen/line_width</item>
+        <item name="android:textColor">@color/on_blue</item>
+        <item name="iconTint">@color/on_blue</item>
+        <item name="rippleColor">@color/ripple_on_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Button.OnBlueOutlined.Big">
+        <item name="android:minHeight">@dimen/button_height_big</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Button.Big</item>
+    </style>
+
+    <!-- Icon buttons (.icon-btn): a 48dp circle around a 24dp icon. Plain is ink on nothing. -->
+    <style name="Widget.LeagueX.IconButton" parent="Widget.Material3.Button.IconButton">
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="iconTint">@color/ink</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+    </style>
+
+    <!-- .icon-btn.tonal: tint with a blue icon. -->
+    <style name="Widget.LeagueX.IconButton.Tonal">
+        <item name="backgroundTint">@color/tint</item>
+        <item name="iconTint">@color/blue</item>
+    </style>
+
+    <!-- .icon-btn.filled: blue with a white icon. -->
+    <style name="Widget.LeagueX.IconButton.Filled">
+        <item name="backgroundTint">@color/blue</item>
+        <item name="iconTint">@color/on_blue</item>
+        <item name="rippleColor">@color/ripple_on_blue</item>
+    </style>
+
+    <!-- .icon-btn.on-blue: white at 14% with a white icon, on blue. -->
+    <style name="Widget.LeagueX.IconButton.OnBlue">
+        <item name="backgroundTint">@color/on_blue_surface</item>
+        <item name="iconTint">@color/on_blue</item>
+        <item name="rippleColor">@color/ripple_on_blue</item>
+    </style>
+
+    <!-- .icon-btn.plain-on-blue: just a white icon, on blue (top bar actions). -->
+    <style name="Widget.LeagueX.IconButton.PlainOnBlue">
+        <item name="iconTint">@color/on_blue</item>
+        <item name="rippleColor">@color/ripple_on_blue</item>
+    </style>
+
+    <!-- .event-btn: Goal, Card and Sub. 56dp tall, 16dp corners, a 24dp icon over a 12sp label. -->
+    <style name="TextAppearance.LeagueX.EventButton" parent="TextAppearance.LeagueX.Label.Medium">
+        <item name="android:fontFamily">@font/archivo_semibold</item>
+        <item name="fontFamily">@font/archivo_semibold</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.LeagueX.EventButton" parent="Widget.Material3.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.EventButton</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="elevation">0dp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="iconGravity">top</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconPadding">2dp</item>
+        <item name="backgroundTint">@color/tint</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="iconTint">@color/blue</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+    </style>
+
+    <!-- .event-btn.on-blue: white at 14% with white text, on blue. -->
+    <style name="Widget.LeagueX.EventButton.OnBlue">
+        <item name="backgroundTint">@color/on_blue_surface</item>
+        <item name="android:textColor">@color/on_blue</item>
+        <item name="iconTint">@color/on_blue</item>
+        <item name="rippleColor">@color/ripple_on_blue</item>
+    </style>
+
+</resources>

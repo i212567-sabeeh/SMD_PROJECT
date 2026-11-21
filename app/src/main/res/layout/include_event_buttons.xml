@@ -1,0 +1,36 @@
+<!-- Figma: 46 Record match (ui.js eventButtons): Goal, Card and Sub, each a tint tile with a blue icon over its label. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_8"
+    android:orientation="horizontal"
+    android:showDividers="middle">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/goal"
+        style="@style/Widget.LeagueX.EventButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/kit_event_goal"
+        app:icon="@drawable/ic_sports_soccer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/card"
+        style="@style/Widget.LeagueX.EventButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/kit_event_card"
+        app:icon="@drawable/ic_style" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sub"
+        style="@style/Widget.LeagueX.EventButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/kit_event_sub"
+        app:icon="@drawable/ic_swap_vert" />
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .badge-dot.light: the badge dot with a paper ring, on a light background. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <solid android:color="@color/orange" />
+    <stroke android:width="2dp" android:color="@color/paper" />
+    <size android:width="10dp" android:height="10dp" />
+</shape>

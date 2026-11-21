@@ -1,0 +1,203 @@
+<resources>
+    <!-- Kit parts: copy the shared parts show wherever they're used. -->
+    <string name="kit_wordmark">LEAGUEX</string>
+    <string name="kit_cd_back">Back</string>
+    <string name="kit_cd_close">Close</string>
+    <string name="kit_cd_search">Search</string>
+    <string name="kit_cd_notifications">Notifications</string>
+    <string name="kit_cd_more">More options</string>
+    <string name="kit_cd_edit">Edit</string>
+    <string name="kit_cd_add">Add</string>
+    <string name="kit_cd_switch_league">Switch league</string>
+    <string name="kit_nav_home">Home</string>
+    <string name="kit_nav_matches">Matches</string>
+    <string name="kit_nav_standings">Standings</string>
+    <string name="kit_nav_teams">Teams</string>
+    <string name="kit_nav_profile">Profile</string>
+    <string name="kit_event_goal">Goal</string>
+    <string name="kit_event_card">Card</string>
+    <string name="kit_event_sub">Sub</string>
+    <string name="kit_offline_banner">You\'re offline. Showing what\'s saved on this phone.</string>
+    <string name="kit_steps_label">Step %1$d of %2$d: %3$s</string>
+    <string name="kit_tie_to_be_decided">To be decided</string>
+    <string name="kit_kick_scored">Scored</string>
+    <string name="kit_kick_missed">Missed</string>
+    <string name="kit_kick_to_take">Still to take</string>
+    <string name="kit_push_app">L</string>
+    <string name="kit_push_head">LeagueX, %1$s</string>
+
+    <!-- The Style kit screen: the Figma's Style kit page (style-guide.js). -->
+    <string name="kit_title">Style guide: Matchday</string>
+    <string name="kit_subtitle">Android, Material 3 conventions, 412 x 917 frames</string>
+    <string name="kit_section_colours">Colours</string>
+    <string name="kit_team_colours">Team colours</string>
+    <string name="kit_section_type">Type</string>
+    <string name="kit_section_buttons">Buttons and inputs</string>
+    <string name="kit_section_identity">Identity, lists and rows</string>
+    <string name="kit_section_match">Match parts</string>
+    <string name="kit_section_navigation">Navigation and system</string>
+
+    <string name="kit_cap_filled">Filled</string>
+    <string name="kit_cap_tonal">Tonal</string>
+    <string name="kit_cap_outlined">Outlined</string>
+    <string name="kit_cap_text">Text</string>
+    <string name="kit_cap_danger">Danger</string>
+    <string name="kit_cap_on_blue">On blue</string>
+    <string name="kit_cap_icon_buttons">Icon buttons</string>
+    <string name="kit_cap_filter_chips">Filter chips</string>
+    <string name="kit_cap_status_chips">Status chips</string>
+    <string name="kit_cap_text_fields">Text fields</string>
+    <string name="kit_cap_search">Search</string>
+    <string name="kit_cap_dropdown">Dropdown</string>
+    <string name="kit_cap_toggles">Toggle, checkbox, radio</string>
+    <string name="kit_cap_tabs_steps">Tabs and steps</string>
+    <string name="kit_cap_crests">Crests</string>
+    <string name="kit_cap_avatars">Avatars</string>
+    <string name="kit_cap_scoreboard">Scoreboard</string>
+    <string name="kit_cap_clock">Match clock</string>
+    <string name="kit_cap_ties">Bracket ties</string>
+    <string name="kit_cap_top_bars">Top bars</string>
+    <string name="kit_cap_bottom_nav">Bottom nav</string>
+    <string name="kit_cap_sheet">Bottom sheet</string>
+    <string name="kit_cap_offline">Offline banner and snackbar</string>
+    <string name="kit_cap_empty">Empty state</string>
+    <string name="kit_cap_banner">League banner</string>
+    <string name="kit_cap_push">Push notification</string>
+
+    <!-- Colours: the swatch names, in the style guide's order (hex values come from the colours themselves). -->
+    <string-array name="kit_colour_names">
+        <item>Blue</item>
+        <item>Ink</item>
+        <item>Muted</item>
+        <item>Line</item>
+        <item>Tint</item>
+        <item>Page</item>
+        <item>Paper</item>
+        <item>Orange</item>
+        <item>Orange text</item>
+        <item>On blue, muted</item>
+        <item>Success</item>
+        <item>Waiting</item>
+        <item>Waiting background</item>
+        <item>Error</item>
+        <item>Error background</item>
+        <item>Yellow card</item>
+        <item>Red card</item>
+    </string-array>
+    <string-array name="kit_team_colour_names">
+        <item>Capital United</item>
+        <item>Margalla Strikers</item>
+        <item>Potohar Lions</item>
+        <item>Rawal Rovers</item>
+        <item>Saddar City</item>
+        <item>Khyber Eagles</item>
+        <item>Pindi Panthers</item>
+        <item>Kohsar FC</item>
+    </string-array>
+
+    <!-- Type: each style's name and size, and its sample, in the style guide's order. -->
+    <string-array name="kit_type_names">
+        <item>Display/Wordmark, Anton 26/32</item>
+        <item>Display/Hero, Anton 64/70</item>
+        <item>Display/Clock, Anton 72/76</item>
+        <item>Display/Score, Anton 48/52</item>
+        <item>Display/Title, Anton 24/30</item>
+        <item>Display/Small, Anton 18/24</item>
+        <item>Title/Large, Archivo SemiBold 22/28</item>
+        <item>Title/Medium, Archivo SemiBold 18/24</item>
+        <item>Title/Small, Archivo SemiBold 16/22</item>
+        <item>Body/Large, Archivo 16/24</item>
+        <item>Body/Medium, Archivo 14/20</item>
+        <item>Body/Small, Archivo 12/16</item>
+        <item>Label/Large, Archivo SemiBold 14/20</item>
+        <item>Label/Medium, Archivo Medium 12/16</item>
+        <item>Label/Bold, Archivo Bold 12/16</item>
+    </string-array>
+    <string-array name="kit_type_samples">
+        <item>LEAGUEX</item>
+        <item>MAR vs RAW</item>
+        <item>20+1</item>
+        <item>3–2</item>
+        <item>Latest results</item>
+        <item>Matchday 5</item>
+        <item>Islamabad Futsal League</item>
+        <item>Your next match</item>
+        <item>Margalla Strikers</item>
+        <item>Fixtures, live scores and tables.</item>
+        <item>Sat 15 Nov, 7:00 pm, Court 2</item>
+        <item>Updated 3 min ago</item>
+        <item>Record match</item>
+        <item>Standings</item>
+        <item>Matchday 5</item>
+    </string-array>
+
+    <!-- Buttons and inputs. -->
+    <string name="kit_record_match">Record match</string>
+    <string name="kit_approve">Approve</string>
+    <string name="kit_log_in">Log in</string>
+    <string name="kit_see_all">See all</string>
+    <string name="kit_end_season">End season</string>
+    <string name="kit_match_details">Match details</string>
+    <string name="kit_remind_me">Remind me</string>
+    <string name="kit_chip_forward">Forward</string>
+    <string name="kit_chip_winger">Winger</string>
+    <string name="kit_chip_islamabad">Islamabad</string>
+    <string name="kit_status_synced">Synced</string>
+    <string name="kit_status_waiting">Waiting to upload</string>
+    <string name="kit_status_offline">Offline</string>
+    <string name="kit_status_failed">Upload failed</string>
+    <string name="kit_status_live">Live 32\'</string>
+    <string name="kit_status_updated">Updated 3 min ago</string>
+    <string name="kit_email">Email</string>
+    <string name="kit_email_value">usman.tariq@example.com</string>
+    <string name="kit_password">Password</string>
+    <string name="kit_password_value">••••••••••</string>
+    <string name="kit_password_help">At least 8 characters</string>
+    <string name="kit_email_error_value">usman.tariq@</string>
+    <string name="kit_email_error">Enter a full email address</string>
+    <string name="kit_search_value">Forward</string>
+    <string name="kit_province">Province</string>
+    <string-array name="kit_provinces">
+        <item>Islamabad Capital Territory</item>
+        <item>Punjab</item>
+        <item>Sindh</item>
+        <item>Khyber Pakhtunkhwa</item>
+        <item>Balochistan</item>
+        <item>Gilgit-Baltistan</item>
+        <item>Azad Jammu and Kashmir</item>
+    </string-array>
+    <string name="kit_tab_table">Table</string>
+    <string name="kit_tab_playoffs">Playoffs</string>
+    <string name="kit_tab_stats">Stats</string>
+    <string name="kit_step_title">Details</string>
+
+    <!-- Identity. -->
+    <string name="kit_avatar_xl">Usman Tariq</string>
+    <string name="kit_avatar_l">Hamza Ali</string>
+    <string name="kit_avatar_m">Zain Abbas</string>
+    <string name="kit_avatar_s">Bilal Ahmed</string>
+
+    <!-- Match parts. -->
+    <string name="kit_scoreboard_home">Margalla Strikers</string>
+    <string name="kit_scoreboard_away">Rawal Rovers</string>
+    <string name="kit_clock_running">Running</string>
+    <string name="kit_clock_period">1st half, added time</string>
+    <string name="kit_tie_pens">MAR win 4–3 on penalties</string>
+    <string name="kit_tie_date">Sun 23 Nov, 6:00 pm</string>
+
+    <!-- Navigation and system. -->
+    <string name="kit_top_standings">Standings</string>
+    <string name="kit_top_edit_profile">Edit profile</string>
+    <string name="kit_sheet_title">Profile photo</string>
+    <string name="kit_sheet_take_photo">Take photo</string>
+    <string name="kit_sheet_gallery">Choose from gallery</string>
+    <string name="kit_sheet_remove_photo">Remove photo</string>
+    <string name="kit_snackbar">Saved on this phone. It\'ll upload when you\'re back online.</string>
+    <string name="kit_empty_title">No players found</string>
+    <string name="kit_empty_body">Try another position or city.</string>
+    <string name="kit_empty_button">Clear filters</string>
+    <string name="kit_banner_label">Islamabad Futsal League</string>
+    <string name="kit_push_title">Kick-off in 1 hour</string>
+    <string name="kit_push_body">MAR vs RAW at 7:00 pm, Court 2</string>
+    <string name="kit_push_time">6:00 pm</string>
+</resources>

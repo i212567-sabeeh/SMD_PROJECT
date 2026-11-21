@@ -1,0 +1,87 @@
+<!-- Figma: Style kit, Bracket ties; 08 Home / Tournament, 16 Bracket (ui.js tie). Two lines of crest, code and goals,
+     with a note under them. Bind it with IncludeTieBinding.bind(Tie, narrow). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="164dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_tie"
+    android:divider="@drawable/gap_6"
+    android:orientation="vertical"
+    android:paddingStart="12dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="12dp"
+    android:paddingBottom="10dp"
+    android:showDividers="middle">
+
+    <LinearLayout
+        android:id="@+id/lineA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/crestA"
+            style="@style/Widget.LeagueX.Crest.S"
+            tools:text="MAR" />
+
+        <TextView
+            android:id="@+id/codeA"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.LeagueX.TieCode"
+            tools:text="MAR" />
+
+        <TextView
+            android:id="@+id/goalsA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.LeagueX.TieGoals"
+            tools:text="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/crestB"
+            style="@style/Widget.LeagueX.Crest.S"
+            tools:text="CAP" />
+
+        <TextView
+            android:id="@+id/codeB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.LeagueX.TieCode"
+            tools:text="CAP" />
+
+        <TextView
+            android:id="@+id/goalsB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.LeagueX.TieGoals"
+            tools:text="2" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+        android:textColor="@color/muted"
+        tools:text="MAR win 4–3 on penalties" />
+</LinearLayout>

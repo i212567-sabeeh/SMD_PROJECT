@@ -1,0 +1,123 @@
+<resources>
+
+    <!-- Filter chips (kit.css .chip): 36dp tall pills, 14dp side padding, Archivo Medium 14/20, 1dp line
+         border on paper. Checked (.chip.selected): tint with blue text and an 18dp check 6dp before it. -->
+    <style name="TextAppearance.LeagueX.Chip" parent="TextAppearance.LeagueX.Body.Medium">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium</item>
+    </style>
+
+    <style name="Widget.LeagueX.Chip.Filter" parent="Widget.Material3.Chip.Filter">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Chip</item>
+        <item name="android:textColor">@color/chip_content</item>
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="chipStrokeColor">@color/chip_stroke</item>
+        <item name="chipStrokeWidth">@dimen/line_width</item>
+        <item name="chipMinHeight">@dimen/chip_height</item>
+        <item name="chipCornerRadius">18dp</item>
+        <item name="ensureMinTouchTargetSize">false</item>
+        <item name="android:elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="rippleColor">@color/ripple_blue</item>
+        <item name="chipStartPadding">14dp</item>
+        <item name="iconStartPadding">0dp</item>
+        <item name="iconEndPadding">6dp</item>
+        <item name="textStartPadding">0dp</item>
+        <item name="textEndPadding">0dp</item>
+        <item name="closeIconStartPadding">6dp</item>
+        <item name="closeIconEndPadding">0dp</item>
+        <item name="chipEndPadding">14dp</item>
+        <item name="chipIconSize">18dp</item>
+        <item name="chipIconTint">@color/chip_content</item>
+        <item name="checkedIcon">@drawable/ic_check</item>
+        <item name="checkedIconTint">@color/chip_content</item>
+        <item name="checkedIconVisible">true</item>
+        <item name="closeIcon">@drawable/ic_expand_more</item>
+        <item name="closeIconSize">18dp</item>
+        <item name="closeIconTint">@color/chip_content</item>
+        <item name="closeIconVisible">false</item>
+    </style>
+
+    <!-- A chip that opens a list, such as "Islamabad": an 18dp expand_more after the label. Not checkable. -->
+    <style name="Widget.LeagueX.Chip.Filter.Dropdown">
+        <item name="android:checkable">false</item>
+        <item name="closeIconVisible">true</item>
+    </style>
+
+    <!-- Status chips (kit.css .status): 28dp tall, 14dp corners, 10dp side padding, Archivo SemiBold 12/16,
+         a 16dp icon 4dp before the label. Each kind sets its colours and icon; TextView.status() applies the
+         same look in code. -->
+    <style name="TextAppearance.LeagueX.Status" parent="TextAppearance.LeagueX.Label.Medium">
+        <item name="android:fontFamily">@font/archivo_semibold</item>
+        <item name="fontFamily">@font/archivo_semibold</item>
+    </style>
+
+    <style name="Widget.LeagueX.Status" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Status</item>
+        <item name="android:background">@drawable/bg_status</item>
+        <item name="android:minHeight">28dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="Widget.LeagueX.Status.Synced">
+        <item name="android:backgroundTint">@color/success_bg</item>
+        <item name="android:textColor">@color/success</item>
+        <item name="android:drawableStart">@drawable/ic_cloud_done_16</item>
+        <item name="android:drawableTint">@color/success</item>
+    </style>
+
+    <style name="Widget.LeagueX.Status.SyncedOnBlue">
+        <item name="android:backgroundTint">@color/on_blue_surface</item>
+        <item name="android:textColor">@color/on_blue</item>
+        <item name="android:drawableStart">@drawable/ic_cloud_done_16</item>
+        <item name="android:drawableTint">@color/on_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Status.Waiting">
+        <item name="android:backgroundTint">@color/waiting_bg</item>
+        <item name="android:textColor">@color/waiting</item>
+        <item name="android:drawableStart">@drawable/ic_schedule_16</item>
+        <item name="android:drawableTint">@color/waiting</item>
+    </style>
+
+    <style name="Widget.LeagueX.Status.Offline">
+        <item name="android:backgroundTint">@color/line</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:drawableStart">@drawable/ic_cloud_off_16</item>
+        <item name="android:drawableTint">@color/ink</item>
+    </style>
+
+    <style name="Widget.LeagueX.Status.Failed">
+        <item name="android:backgroundTint">@color/error_bg</item>
+        <item name="android:textColor">@color/error</item>
+        <item name="android:drawableStart">@drawable/ic_error_16</item>
+        <item name="android:drawableTint">@color/error</item>
+    </style>
+
+    <!-- .status.live: orange with ink text and a 6dp ink dot. -->
+    <style name="Widget.LeagueX.Status.Live">
+        <item name="android:backgroundTint">@color/orange</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:drawableStart">@drawable/bg_live_dot</item>
+        <item name="android:drawableTint">@color/ink</item>
+    </style>
+
+    <style name="Widget.LeagueX.Status.Updated">
+        <item name="android:backgroundTint">@color/line</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:drawableStart">@drawable/ic_history_16</item>
+        <item name="android:drawableTint">@color/muted</item>
+    </style>
+
+    <!-- .status.on-blue: white at 14% with white text and no icon, such as "Paused". -->
+    <style name="Widget.LeagueX.Status.OnBlue">
+        <item name="android:backgroundTint">@color/on_blue_surface</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+</resources>

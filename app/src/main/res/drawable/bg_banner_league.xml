@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .banner (league): blue with the orange glow at the top right and the pitch markings.
+     Drawn edge to edge; include_banner clips it to 20dp corners. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/blue" />
+        </shape>
+    </item>
+    <!-- .glow: a 200dp circle, 90dp past the right edge and 100dp above the top. -->
+    <item
+        android:width="200dp"
+        android:height="200dp"
+        android:end="-90dp"
+        android:gravity="top|end"
+        android:top="-100dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/banner_glow" />
+        </shape>
+    </item>
+    <!-- .pitch-line: the halfway line, 2dp wide, full height. -->
+    <item
+        android:width="2dp"
+        android:gravity="center_horizontal|fill_vertical">
+        <shape>
+            <solid android:color="@color/banner_pitch" />
+        </shape>
+    </item>
+    <!-- .pitch-circle: 88dp across, 2dp line. -->
+    <item
+        android:width="88dp"
+        android:height="88dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <stroke android:width="2dp" android:color="@color/banner_pitch" />
+        </shape>
+    </item>
+    <!-- .pitch-box: 56 x 72dp, 34dp from the top, 2dp past each side. -->
+    <item
+        android:width="56dp"
+        android:height="72dp"
+        android:gravity="top|start"
+        android:start="-2dp"
+        android:top="34dp">
+        <shape>
+            <stroke android:width="2dp" android:color="@color/banner_pitch" />
+        </shape>
+    </item>
+    <item
+        android:width="56dp"
+        android:height="72dp"
+        android:end="-2dp"
+        android:gravity="top|end"
+        android:top="34dp">
+        <shape>
+            <stroke android:width="2dp" android:color="@color/banner_pitch" />
+        </shape>
+    </item>
+</layer-list>

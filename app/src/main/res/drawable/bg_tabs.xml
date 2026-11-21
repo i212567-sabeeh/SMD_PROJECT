@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .tabs: a 1dp line along the bottom. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:height="@dimen/line_width"
+        android:gravity="bottom">
+        <shape>
+            <solid android:color="@color/line" />
+        </shape>
+    </item>
+</layer-list>

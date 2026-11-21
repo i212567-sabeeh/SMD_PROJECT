@@ -1,0 +1,30 @@
+<!-- Figma: Style kit, Colours. One swatch (kit.css .swatch): the colour, its name and its hex value. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_6"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <!-- StyleKitActivity fills it with the colour, inside a 1dp line border with 16dp corners. -->
+    <View
+        android:id="@+id/colour"
+        android:layout_width="match_parent"
+        android:layout_height="72dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+        tools:text="Blue" />
+
+    <TextView
+        android:id="@+id/hex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+        android:textColor="@color/muted"
+        tools:text="#1F3FD1" />
+</LinearLayout>

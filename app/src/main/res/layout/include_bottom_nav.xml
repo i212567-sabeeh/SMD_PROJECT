@@ -1,0 +1,8 @@
+<!-- Figma: Style kit, Bottom nav. The bottom bar of the tab screens (ui.js navBar); LeagueXActivity.bottomNav() wires it. -->
+<com.google.android.material.bottomnavigation.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomNav"
+    style="@style/Widget.LeagueX.BottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:menu="@menu/bottom_nav" />

@@ -1,0 +1,71 @@
+<resources>
+
+    <!-- Top bars (kit.css .top-bar): 64dp tall. Home's title is the wordmark; a tab's title is Anton 28/34;
+         a pushed screen's title is Title/Large next to the back button. -->
+    <style name="TextAppearance.LeagueX.TopBar.Tab" parent="TextAppearance.LeagueX.Display.Title">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineHeight">34sp</item>
+    </style>
+
+    <!-- Tabs (kit.css .tabs): 48dp, Label/Large, muted with the active tab blue over a 3dp bar inset 16dp,
+         and a 1dp line along the bottom. -->
+    <style name="Widget.LeagueX.Tabs" parent="Widget.Material3.TabLayout">
+        <item name="android:background">@drawable/bg_tabs</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabGravity">fill</item>
+        <item name="tabMinWidth">0dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabTextAppearance">@style/TextAppearance.LeagueX.Label.Large</item>
+        <item name="tabTextColor">@color/muted</item>
+        <item name="tabSelectedTextColor">@color/blue</item>
+        <item name="tabIndicator">@drawable/tab_indicator</item>
+        <item name="tabIndicatorColor">@color/blue</item>
+        <item name="tabIndicatorHeight">3dp</item>
+        <item name="tabIndicatorFullWidth">true</item>
+        <item name="tabIndicatorAnimationMode">linear</item>
+        <item name="tabRippleColor">@color/ripple_blue</item>
+    </style>
+
+    <!-- .tabs.on-blue: muted-on-blue labels, the active one white over a white bar, a white line at 20%. -->
+    <style name="Widget.LeagueX.Tabs.OnBlue">
+        <item name="android:background">@drawable/bg_tabs_on_blue</item>
+        <item name="tabTextColor">@color/on_blue_muted</item>
+        <item name="tabSelectedTextColor">@color/on_blue</item>
+        <item name="tabIndicatorColor">@color/on_blue</item>
+        <item name="tabRippleColor">@color/ripple_on_blue</item>
+    </style>
+
+    <!-- Bottom bar (kit.css .nav-bar): 80dp of paper with a 1dp line on top, plus the system navigation bar
+         below it (the view pads itself by that inset). Items: a 24dp icon in a 64 x 32dp pill over a 12sp
+         label; the active one has a tint pill, a filled blue icon and a bold ink label. -->
+    <style name="TextAppearance.LeagueX.NavLabel" parent="TextAppearance.LeagueX.Label.Medium" />
+
+    <style name="TextAppearance.LeagueX.NavLabel.Active" parent="TextAppearance.LeagueX.Label.Bold" />
+
+    <style name="Widget.LeagueX.BottomNav.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/tint</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
+    </style>
+
+    <style name="Widget.LeagueX.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="android:background">@drawable/bg_bottom_nav</item>
+        <item name="backgroundTint">@null</item>
+        <item name="elevation">0dp</item>
+        <item name="android:minHeight">@dimen/nav_bar_height</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="itemIconSize">24dp</item>
+        <item name="itemIconTint">@color/nav_icon</item>
+        <item name="itemTextColor">@color/nav_label</item>
+        <item name="itemTextAppearanceInactive">@style/TextAppearance.LeagueX.NavLabel</item>
+        <item name="itemTextAppearanceActive">@style/TextAppearance.LeagueX.NavLabel.Active</item>
+        <item name="itemTextAppearanceActiveBoldEnabled">false</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.LeagueX.BottomNav.ActiveIndicator</item>
+        <item name="itemPaddingTop">14dp</item>
+        <item name="itemPaddingBottom">14dp</item>
+        <item name="activeIndicatorLabelPadding">4dp</item>
+        <item name="itemRippleColor">@color/ripple_blue</item>
+    </style>
+
+</resources>

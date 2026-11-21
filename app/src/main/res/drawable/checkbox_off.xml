@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .checkbox: 20dp, 5dp corners, 2dp muted border, centred in 48dp. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:pathData="M19,15h10a4,4 0,0 1,4 4v10a4,4 0,0 1,-4 4h-10a4,4 0,0 1,-4 -4v-10a4,4 0,0 1,4 -4z"
+        android:strokeWidth="2"
+        android:strokeColor="@color/muted" />
+</vector>

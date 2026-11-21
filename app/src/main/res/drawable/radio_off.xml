@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .radio: a 20dp ring with a 2dp muted line, centred in 48dp. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:pathData="M24,15a9,9 0,1 1,0 18a9,9 0,1 1,0 -18z"
+        android:strokeWidth="2"
+        android:strokeColor="@color/muted" />
+</vector>

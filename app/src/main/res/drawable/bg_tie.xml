@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .tie: paper, 16dp corners, 1dp line border. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/paper" />
+    <stroke android:width="@dimen/line_width" android:color="@color/line" />
+    <corners android:radius="16dp" />
+</shape>

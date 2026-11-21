@@ -1,0 +1,109 @@
+<!-- Figma: Style kit, Scoreboard; 14 Match page (ui.js scoreboard). Two clubs with ringed crests either side of the
+     score (or the kick-off time), its state and a detail line, on the blue block. Bind it with
+     IncludeScoreboardBinding.bind(Scoreboard). The ring sits 3dp outside each 56dp crest, so the top padding
+     is 8 - 3 = 5dp and the middle column's is 4 + 3 = 7dp. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:paddingStart="20dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="20dp"
+    android:paddingBottom="24dp">
+
+    <LinearLayout
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/homeCrest"
+            style="@style/Widget.LeagueX.Crest.L.Ring"
+            tools:text="MAR" />
+
+        <TextView
+            android:id="@+id/homeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+            android:textColor="@color/on_blue"
+            tools:text="Margalla Strikers" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_8"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="7dp"
+        android:showDividers="middle">
+
+        <!-- The score ("2–1", Display/Score), or before kick-off the time (Display/Title). -->
+        <TextView
+            android:id="@+id/score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Display.Score"
+            android:textColor="@color/on_blue"
+            tools:text="2–1" />
+
+        <!-- Live: the orange chip. -->
+        <TextView
+            android:id="@+id/live"
+            style="@style/Widget.LeagueX.Status.Live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:text="Live 32'"
+            tools:visibility="visible" />
+
+        <!-- Half time, full time, after extra time. -->
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+            android:textColor="@color/on_blue_muted"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+            android:textColor="@color/on_blue_muted"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/awayCrest"
+            style="@style/Widget.LeagueX.Crest.L.Ring"
+            tools:text="RAW" />
+
+        <TextView
+            android:id="@+id/awayName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+            android:textColor="@color/on_blue"
+            tools:text="Rawal Rovers" />
+    </LinearLayout>
+</LinearLayout>

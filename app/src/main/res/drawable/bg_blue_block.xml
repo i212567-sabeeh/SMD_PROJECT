@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .blue-block: blue, with 28dp bottom corners. Runs up behind the status bar. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/blue" />
+    <corners
+        android:bottomLeftRadius="@dimen/blue_block_radius"
+        android:bottomRightRadius="@dimen/blue_block_radius"
+        android:topLeftRadius="0dp"
+        android:topRightRadius="0dp" />
+</shape>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .card.tinted: tint, 20dp corners. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/tint" />
+    <corners android:radius="@dimen/card_radius" />
+</shape>

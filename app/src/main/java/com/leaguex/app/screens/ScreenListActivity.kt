@@ -35,13 +35,13 @@ class ScreenListActivity : LeagueXActivity() {
     }
 
     private fun rows(): List<Row> = buildList {
-        // Shown but disabled until the Splash and Style kit screens exist.
+        // Shown but disabled until the Splash screen exists.
         add(Row.Item(getString(R.string.screens_start), open = null))
         for (section in Frames.sections) {
             add(Row.Section(section.title))
             section.frames.forEach { frame -> add(Row.Item(frame.name) { startActivity(frame.open(this@ScreenListActivity)) }) }
         }
-        add(Row.Item(getString(R.string.screens_style_kit), open = null))
+        add(Row.Item(getString(R.string.screens_style_kit)) { startActivity(Intent(this@ScreenListActivity, StyleKitActivity::class.java)) })
     }
 
     private sealed interface Row {

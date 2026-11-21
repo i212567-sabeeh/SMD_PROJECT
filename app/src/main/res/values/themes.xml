@@ -4,8 +4,24 @@
     <style name="Theme.LeagueX" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="29">false</item>
 
-        <item name="android:fontFamily">@font/archivo_regular</item>
-        <item name="fontFamily">@font/archivo_regular</item>
+        <!-- Archivo is the default type through text appearances, never a theme-level fontFamily: that would
+             override the font of every text appearance a layout sets, as android:textColor would its colour. -->
+        <item name="android:textViewStyle">@style/Widget.LeagueX.TextView</item>
+        <item name="textAppearanceDisplayLarge">@style/TextAppearance.LeagueX.Material.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/TextAppearance.LeagueX.Material.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/TextAppearance.LeagueX.Material.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.LeagueX.Material.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/TextAppearance.LeagueX.Material.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.LeagueX.Material.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.LeagueX.Material.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.LeagueX.Material.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.LeagueX.Material.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.LeagueX.Material.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.LeagueX.Material.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.LeagueX.Material.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.LeagueX.Material.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.LeagueX.Material.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.LeagueX.Material.LabelSmall</item>
         <item name="android:textColorPrimary">@color/ink</item>
         <item name="android:textColorSecondary">@color/muted</item>
 

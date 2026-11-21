@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The bottom bar's five tabs (ui.js NAV). Icons fill in while checked. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_home"
+        android:title="@string/kit_nav_home" />
+    <item
+        android:id="@+id/nav_matches"
+        android:icon="@drawable/nav_matches"
+        android:title="@string/kit_nav_matches" />
+    <item
+        android:id="@+id/nav_standings"
+        android:icon="@drawable/nav_standings"
+        android:title="@string/kit_nav_standings" />
+    <item
+        android:id="@+id/nav_teams"
+        android:icon="@drawable/nav_teams"
+        android:title="@string/kit_nav_teams" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/nav_profile"
+        android:title="@string/kit_nav_profile" />
+</menu>

@@ -1,0 +1,55 @@
+<!-- Figma: Style kit, Push notification; 54 Push notifications (ui.js push). A lock-screen notification in the system's type. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_push"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingTop="14dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="14dp">
+
+    <TextView
+        android:id="@+id/app"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_push_app"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:includeFontPadding="false"
+        android:text="@string/kit_push_app"
+        android:textAppearance="@style/TextAppearance.LeagueX.Push.App" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <!-- "LeagueX, <time>": getString(R.string.kit_push_head, time). -->
+        <TextView
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Push.Head"
+            tools:text="LeagueX, 6:00 pm" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Push.Title"
+            tools:text="Kick-off in 1 hour" />
+
+        <TextView
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Push.Body"
+            tools:text="MAR vs RAW at 7:00 pm, Court 2" />
+    </LinearLayout>
+</LinearLayout>

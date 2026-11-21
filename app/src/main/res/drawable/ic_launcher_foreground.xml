@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launcher icon foreground: "LX" in Anton, white, converted to paths with opentype.js from res/font/anton_regular.ttf.
+     It sits inside a 60dp circle at the centre of the 108dp canvas, within the adaptive icon's 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/on_blue"
+        android:pathData="M50.65 75.58L33.16 75.58L33.16 32.45L41.78 32.45L41.78 68.23L50.65 68.23L50.65 75.58ZM60.60 75.58L51.86 75.58L56.49 52.71L52.81 32.42L61.24 32.42L63.47 47.25L65.46 32.42L73.91 32.42L70.24 52.71L74.84 75.58L66.12 75.58L63.40 58.72L60.60 75.58Z" />
+</vector>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gap of 16dp between a LinearLayout's children (android:divider with showDividers="middle"), like CSS gap: 16px. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+    <size android:width="16dp" android:height="16dp" />
+</shape>

@@ -1,0 +1,31 @@
+<!-- Figma: Style kit, League banner; 12 League page, 33 Create / Details (ui.js banner). Blue with the pitch
+     markings and the orange glow, 20dp corners. The label is hidden until a screen sets it. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="140dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pattern"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_banner_league"
+        app:shapeAppearance="@style/ShapeAppearance.LeagueX.Banner" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="14dp"
+        android:textAppearance="@style/TextAppearance.LeagueX.Display.Title"
+        android:textColor="@color/on_blue"
+        android:visibility="gone"
+        tools:text="Islamabad Futsal League"
+        tools:visibility="visible" />
+</FrameLayout>

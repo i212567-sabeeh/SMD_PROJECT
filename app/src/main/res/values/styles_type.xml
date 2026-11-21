@@ -136,4 +136,86 @@
         <item name="android:textColor">@color/ink</item>
     </style>
 
+    <!-- A plain TextView with no text appearance of its own: Body/Medium. -->
+    <style name="Widget.LeagueX.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Medium</item>
+    </style>
+
+    <!-- Material 3's type roles in Archivo, for the text Material components draw with them (menus, snackbars,
+         dialogs, the screen list): Material's sizes, with Archivo Medium where Material uses a medium weight. -->
+    <style name="TextAppearance.LeagueX.Material.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Material.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium</item>
+    </style>
+
 </resources>

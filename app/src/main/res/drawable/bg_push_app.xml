@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .push .app: the app icon, blue with 10dp corners. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/blue" />
+    <corners android:radius="10dp" />
+</shape>

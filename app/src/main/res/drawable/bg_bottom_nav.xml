@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- .nav-bar: paper with a 1dp line along the top. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/paper" />
+        </shape>
+    </item>
+    <item
+        android:height="@dimen/line_width"
+        android:gravity="top">
+        <shape>
+            <solid android:color="@color/line" />
+        </shape>
+    </item>
+</layer-list>

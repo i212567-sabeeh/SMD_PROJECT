@@ -1,0 +1,155 @@
+<resources>
+
+    <!-- Fields (kit.css .field). A field is three views in a column, 6dp apart, as the kit draws it:
+           a label above the box     TextView, TextAppearance.LeagueX.FieldLabel
+           the box                   TextInputLayout, Widget.LeagueX.TextField (or .Dropdown), with its edit text
+           help text under the box   TextView, Widget.LeagueX.FieldHelp (or .Error)
+         The box is 56dp tall with 12dp corners and a 1dp line border on paper; focused, the border is 2dp blue.
+         Text is Body/Large; placeholders (android:hint on the edit text) and icons are muted. -->
+    <style name="TextAppearance.LeagueX.FieldLabel" parent="TextAppearance.LeagueX.Label.Large" />
+
+    <style name="Widget.LeagueX.FieldHelp" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Small</item>
+        <item name="android:textColor">@color/muted</item>
+    </style>
+
+    <style name="Widget.LeagueX.FieldHelp.Error">
+        <item name="android:textColor">@color/error</item>
+    </style>
+
+    <style name="ShapeAppearance.LeagueX.Field" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!-- The edit texts inside a field's box, set through the box's materialThemeOverlay. -->
+    <style name="ThemeOverlay.LeagueX.TextField" parent="">
+        <item name="editTextStyle">@style/Widget.LeagueX.FieldInput</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.LeagueX.FieldInput.Dropdown</item>
+    </style>
+
+    <style name="Widget.LeagueX.FieldInput" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Large</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textColorHint">@color/muted</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
+    <style name="Widget.LeagueX.FieldInput.Dropdown" parent="Widget.Material3.AutoCompleteTextView.OutlinedBox">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Large</item>
+        <item name="android:textColor">@color/ink</item>
+        <item name="android:textColorHint">@color/muted</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+    </style>
+
+    <style name="Widget.LeagueX.TextField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.LeagueX.TextField</item>
+        <item name="hintEnabled">false</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.LeagueX.Field</item>
+        <item name="boxBackgroundColor">@color/paper</item>
+        <item name="boxStrokeColor">@color/field_stroke</item>
+        <item name="boxStrokeWidth">@dimen/line_width</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/error</item>
+        <item name="android:textColorHint">@color/muted</item>
+        <item name="placeholderTextColor">@color/muted</item>
+        <item name="placeholderTextAppearance">@style/TextAppearance.LeagueX.Body.Large</item>
+        <item name="startIconTint">@color/muted</item>
+        <item name="endIconTint">@color/muted</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="errorTextColor">@color/error</item>
+        <item name="errorTextAppearance">@style/TextAppearance.LeagueX.Body.Small</item>
+        <item name="helperTextTextColor">@color/muted</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.LeagueX.Body.Small</item>
+        <item name="passwordToggleDrawable">@drawable/ic_password_toggle</item>
+    </style>
+
+    <!-- .field.focused, kept on: the box a Figma frame draws focused, whichever view has focus. -->
+    <style name="Widget.LeagueX.TextField.Focused">
+        <item name="boxStrokeColor">@color/field_stroke_focused</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+    <!-- .field.error: a 2dp error border. Pair it with Widget.LeagueX.FieldHelp.Error under the box. -->
+    <style name="Widget.LeagueX.TextField.Error">
+        <item name="boxStrokeColor">@color/field_stroke_error</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+    <!-- A field that picks from a list (exposed dropdown menu), with a muted expand_more. Its edit text is a
+         MaterialAutoCompleteTextView with android:inputType="none". -->
+    <style name="Widget.LeagueX.TextField.Dropdown">
+        <item name="endIconMode">dropdown_menu</item>
+        <item name="endIconDrawable">@drawable/ic_expand_more</item>
+    </style>
+
+    <!-- Search (kit.css .search): a 48dp pill with a 1dp line border on paper, a muted search icon and a
+         clear button once there's text. -->
+    <style name="ShapeAppearance.LeagueX.Search" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="ThemeOverlay.LeagueX.Search" parent="">
+        <item name="editTextStyle">@style/Widget.LeagueX.SearchInput</item>
+    </style>
+
+    <style name="Widget.LeagueX.SearchInput" parent="Widget.LeagueX.FieldInput">
+        <item name="android:minHeight">@dimen/search_height</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Widget.LeagueX.Search" parent="Widget.LeagueX.TextField">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.LeagueX.Search</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.LeagueX.Search</item>
+        <item name="boxStrokeColor">@color/field_stroke_line</item>
+        <item name="boxStrokeWidthFocused">@dimen/line_width</item>
+        <item name="startIconDrawable">@drawable/ic_search</item>
+        <item name="startIconContentDescription">@string/kit_cd_search</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconDrawable">@drawable/ic_close</item>
+    </style>
+
+    <!-- Toggle (kit.css .toggle): a 52 x 32dp track. Off: line with a 2dp muted border and a 16dp muted
+         knob; on: blue with a 24dp paper knob. These are Material 3's switch sizes. -->
+    <style name="Widget.LeagueX.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="trackTint">@color/switch_track</item>
+        <item name="trackDecorationTint">@color/switch_track_outline</item>
+        <item name="thumbTint">@color/switch_thumb</item>
+    </style>
+
+    <!-- Checkbox (kit.css .checkbox): a 20dp box with 5dp corners in a 48dp target. -->
+    <style name="Widget.LeagueX.CheckBox" parent="Widget.Material3.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_button</item>
+        <item name="buttonCompat">@drawable/checkbox_button</item>
+        <item name="buttonTint">@null</item>
+        <item name="buttonIcon">@null</item>
+        <item name="useMaterialThemeColors">false</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <!-- Radio (kit.css .radio): a 20dp ring in a 48dp target; on: blue with a 10dp dot. -->
+    <style name="Widget.LeagueX.RadioButton" parent="Widget.Material3.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/radio_button</item>
+        <item name="buttonCompat">@drawable/radio_button</item>
+        <item name="buttonTint">@null</item>
+        <item name="useMaterialThemeColors">false</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+</resources>

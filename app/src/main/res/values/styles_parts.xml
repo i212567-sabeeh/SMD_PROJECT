@@ -1,0 +1,247 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Cards (kit.css .card, .list): paper with 20dp corners. Set on a LinearLayout. -->
+    <style name="Widget.LeagueX.Card" parent="">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- .card.tinted -->
+    <style name="Widget.LeagueX.Card.Tinted">
+        <item name="android:background">@drawable/bg_card_tinted</item>
+    </style>
+
+    <!-- .option-card: a 1dp line border; selected (View.isSelected), a 2dp blue one. -->
+    <style name="Widget.LeagueX.Card.Option">
+        <item name="android:background">@drawable/bg_option_card</item>
+    </style>
+
+    <!-- Crests (kit.css .crest): the team's short code in Anton on the team colour. Sizes s 28, m 40,
+         l 56, xl 96dp. TextView.crest(code) sets the code and colours. .Ring adds the 3dp paper ring,
+         which makes the view 6dp bigger. -->
+    <style name="TextAppearance.LeagueX.Crest" parent="TextAppearance.LeagueX.Display.Small">
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Crest.S">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Crest.M">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">20sp</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Crest.L">
+        <item name="android:textSize">22sp</item>
+        <item name="android:lineHeight">28sp</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Crest.XL">
+        <item name="android:textSize">36sp</item>
+        <item name="android:lineHeight">44sp</item>
+    </style>
+
+    <style name="Widget.LeagueX.Crest" parent="">
+        <item name="android:background">@drawable/bg_crest</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Crest.S">
+        <item name="android:layout_width">28dp</item>
+        <item name="android:layout_height">28dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Crest.S</item>
+    </style>
+
+    <style name="Widget.LeagueX.Crest.M">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Crest.M</item>
+    </style>
+
+    <style name="Widget.LeagueX.Crest.M.Ring">
+        <item name="android:layout_width">46dp</item>
+        <item name="android:layout_height">46dp</item>
+        <item name="android:background">@drawable/bg_crest_ring</item>
+    </style>
+
+    <style name="Widget.LeagueX.Crest.L">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Crest.L</item>
+    </style>
+
+    <style name="Widget.LeagueX.Crest.L.Ring">
+        <item name="android:layout_width">62dp</item>
+        <item name="android:layout_height">62dp</item>
+        <item name="android:background">@drawable/bg_crest_ring</item>
+    </style>
+
+    <style name="Widget.LeagueX.Crest.XL">
+        <item name="android:layout_width">96dp</item>
+        <item name="android:layout_height">96dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Crest.XL</item>
+    </style>
+
+    <!-- Avatars (kit.css .avatar): initials in Archivo SemiBold, blue on a tint circle. Sizes s 32, m 40,
+         l 56, xl 96dp. TextView.avatar(name) sets the initials. -->
+    <style name="TextAppearance.LeagueX.Avatar" parent="TextAppearance.LeagueX.Label.Large">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Avatar.S">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">14sp</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Avatar.M">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Avatar.L">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineHeight">22sp</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Avatar.XL">
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineHeight">35sp</item>
+    </style>
+
+    <style name="Widget.LeagueX.Avatar" parent="">
+        <item name="android:background">@drawable/bg_avatar</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="Widget.LeagueX.Avatar.S">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Avatar.S</item>
+    </style>
+
+    <style name="Widget.LeagueX.Avatar.M">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Avatar.M</item>
+    </style>
+
+    <style name="Widget.LeagueX.Avatar.L">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Avatar.L</item>
+    </style>
+
+    <style name="Widget.LeagueX.Avatar.XL">
+        <item name="android:layout_width">96dp</item>
+        <item name="android:layout_height">96dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Avatar.XL</item>
+    </style>
+
+    <!-- .banner: 20dp corners, which clip the glow and the pitch boxes. -->
+    <style name="ShapeAppearance.LeagueX.Banner" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/card_radius</item>
+    </style>
+
+    <!-- Bracket ties (kit.css .tie): codes in Archivo 14/20, bold on the winning line; goals in Anton 16/20. -->
+    <style name="TextAppearance.LeagueX.TieCode" parent="TextAppearance.LeagueX.Body.Medium" />
+
+    <style name="TextAppearance.LeagueX.TieCode.Won">
+        <item name="android:fontFamily">@font/archivo_bold</item>
+        <item name="fontFamily">@font/archivo_bold</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.TieGoals" parent="TextAppearance.LeagueX.Display.Small">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">20sp</item>
+    </style>
+
+    <!-- Bottom sheets (kit.css .sheet): paper with 28dp top corners over a scrim. showSheet() uses the
+         theme overlay; a sheet's layout starts with include_sheet_head, then a Widget.LeagueX.SheetBody. -->
+    <style name="ShapeAppearance.LeagueX.Sheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="Widget.LeagueX.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/paper</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.LeagueX.Sheet</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+    </style>
+
+    <style name="ThemeOverlay.LeagueX.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.LeagueX.BottomSheet</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+    </style>
+
+    <!-- .sheet-body: 8dp below the head, 24dp side padding, 16dp between its parts. -->
+    <style name="Widget.LeagueX.SheetBody" parent="">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:divider">@drawable/gap_16</item>
+        <item name="android:showDividers">middle</item>
+    </style>
+
+    <!-- .offline-banner: Archivo Medium 14/20, white on ink. -->
+    <style name="TextAppearance.LeagueX.OfflineBanner" parent="TextAppearance.LeagueX.Body.Medium">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+    <!-- .snackbar: ink with 12dp corners, Body/Medium in white. -->
+    <style name="Widget.LeagueX.Snackbar" parent="">
+        <item name="android:background">@drawable/bg_snackbar</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Body.Medium</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+    <!-- Push notifications (kit.css .push): the system's own type (Roboto). -->
+    <style name="TextAppearance.LeagueX.Push.Head" parent="TextAppearance.LeagueX.Body.Small">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/muted</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Push.Title" parent="TextAppearance.LeagueX.Body.Medium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="TextAppearance.LeagueX.Push.Body" parent="TextAppearance.LeagueX.Body.Medium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+    </style>
+
+    <!-- .push .app: "L" in Anton 18/20. -->
+    <style name="TextAppearance.LeagueX.Push.App" parent="TextAppearance.LeagueX.Display.Small">
+        <item name="android:lineHeight">20sp</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
+    <!-- The Style kit screen: a caption above each part (kit.css .guide .cap). -->
+    <style name="Widget.LeagueX.KitCaption" parent="">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Label.Medium</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,59 @@
+<!-- Figma: Style kit, Tabs and steps; 32-35 Create (ui.js steps). "Step 2 of 4: Details" over four bars, the
+     done ones blue. Bind it with IncludeStepsBinding.bind(step, title). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_8"
+    android:orientation="vertical"
+    android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.LeagueX.Label.Medium"
+        android:textColor="@color/muted"
+        tools:text="Step 2 of 4: Details" />
+
+    <LinearLayout
+        android:id="@+id/bars"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:divider="@drawable/gap_6"
+        android:orientation="horizontal"
+        android:showDividers="middle">
+
+        <View
+            android:id="@+id/bar1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_step"
+            android:backgroundTint="@color/blue" />
+
+        <View
+            android:id="@+id/bar2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_step"
+            android:backgroundTint="@color/blue" />
+
+        <View
+            android:id="@+id/bar3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_step"
+            android:backgroundTint="@color/line" />
+
+        <View
+            android:id="@+id/bar4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bg_step"
+            android:backgroundTint="@color/line" />
+    </LinearLayout>
+</LinearLayout>

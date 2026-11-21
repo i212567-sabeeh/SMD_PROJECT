@@ -1,0 +1,49 @@
+<!-- Figma: Style kit, Empty state; 57 Empty and error states, 05 Check your email, 28 Register / Waiting (ui.js empty).
+     Bind it with IncludeEmptyStateBinding.bind(). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/gap_12"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:showDividers="middle">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/bg_glyph_circle"
+        android:importantForAccessibility="no"
+        android:padding="20dp"
+        app:tint="@color/blue"
+        tools:src="@drawable/ic_search_off" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.LeagueX.Title.Medium"
+        tools:text="No players found" />
+
+    <TextView
+        android:id="@+id/body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+        android:textColor="@color/muted"
+        tools:text="Try another position or city." />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        style="@style/Widget.LeagueX.Button.Filled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="Clear filters"
+        tools:visibility="visible" />
+</LinearLayout>

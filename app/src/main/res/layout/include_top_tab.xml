@@ -1,0 +1,34 @@
+<!-- Figma: Style kit, Top bars (Standings). A tab screen's title in Anton with one action, on the blue block (ui.js topTab). -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/top_bar_height"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="20dp"
+    android:paddingEnd="8dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:accessibilityHeading="true"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.LeagueX.TopBar.Tab"
+        android:textColor="@color/on_blue"
+        tools:targetApi="28"
+        tools:text="Standings" />
+
+    <!-- The action: search on Matches, Standings and Teams; Profile sets ic_settings. -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action"
+        style="@style/Widget.LeagueX.IconButton.PlainOnBlue"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:contentDescription="@string/kit_cd_search"
+        app:icon="@drawable/ic_search" />
+</LinearLayout>
