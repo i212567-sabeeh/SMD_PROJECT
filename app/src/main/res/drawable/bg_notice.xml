@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 08 Home's announcement strip on the blue block: white at 14% with 12dp corners. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/on_blue_surface" />
+    <corners android:radius="12dp" />
+</shape>

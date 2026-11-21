@@ -8,12 +8,12 @@
     android:orientation="horizontal">
 
     <TextView
+        style="@style/Widget.LeagueX.Anton.Title"
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:accessibilityHeading="true"
-        android:textAppearance="@style/TextAppearance.LeagueX.Display.Title"
         tools:targetApi="28"
         tools:text="Latest results" />
 

@@ -5,6 +5,8 @@ import com.leaguex.app.LeagueXActivity
 import com.leaguex.app.R
 import com.leaguex.app.data.SampleData
 import com.leaguex.app.databinding.ActivityLogInBinding
+import com.leaguex.app.home.HomeActivity
+import com.leaguex.app.home.HomeVersion
 
 /** 04 Log in. Nothing is checked yet: Log in opens Home. */
 class LogInActivity : LeagueXActivity() {
@@ -20,6 +22,7 @@ class LogInActivity : LeagueXActivity() {
         binding.email.setText(SampleData.ME.email)
         binding.password.setText(SAMPLE_PASSWORD)
 
+        binding.logIn.setOnClickListener { go(HomeActivity::class, HomeVersion.LEAGUE) }
         binding.forgot.setOnClickListener { go(ForgotPasswordActivity::class, ForgotPasswordVersion.FORM) }
         binding.createAccount.setOnClickListener { go(SignUpActivity::class) }
     }

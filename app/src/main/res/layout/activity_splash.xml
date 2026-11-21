@@ -31,10 +31,10 @@
         android:showDividers="middle">
 
         <TextView
+            style="@style/Widget.LeagueX.Anton.Splash"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/start_wordmark"
-            android:textAppearance="@style/TextAppearance.LeagueX.SplashWordmark" />
+            android:text="@string/start_wordmark" />
 
         <View
             android:layout_width="56dp"

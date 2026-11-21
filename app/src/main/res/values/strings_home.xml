@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home (08), copied from design/screens/src/screens/home.js. -->
+<resources>
+    <string name="home_notice">Matchday %1$d kick-off times</string>
+    <string name="home_next_match">Your next match</string>
+    <string name="home_matchday">Matchday %1$d</string>
+    <string name="home_vs">vs</string>
+    <string name="home_match_details">Match details</string>
+    <string name="home_remind_me">Remind me</string>
+    <string name="home_table">Table</string>
+    <string name="home_latest_results">Latest results</string>
+
+    <string name="home_final">Final</string>
+    <string name="home_tbd_code">\?</string>
+    <string name="home_either">%1$s or %2$s</string>
+    <string name="home_semis">Semi-finals</string>
+    <string name="home_quarters">Quarter-finals</string>
+    <string name="home_pens_note">%1$s win %2$d–%3$d on penalties</string>
+
+    <string name="home_live_now">Live now</string>
+    <string name="home_live">Live %1$s</string>
+    <string name="home_follow_live">Follow live</string>
+    <string name="home_line_ups">Line-ups</string>
+    <string name="home_in_this_match">In this match</string>
+    <string name="home_earlier_today">Earlier today</string>
+
+    <string name="home_welcome">Welcome, %1$s</string>
+    <string name="home_follow_prompt">Follow a league to see its matches here.</string>
+    <string name="home_find_leagues">Find leagues</string>
+    <string name="home_popular">Popular near %1$s</string>
+    <string name="home_follow">Follow</string>
+    <string name="home_following">Following</string>
+
+    <string name="home_offline">Offline</string>
+    <string name="home_saved_on">Saved on %1$s</string>
+
+    <string name="home_today">Today: %1$s vs %2$s at %3$s</string>
+    <string name="home_you_organize">You organize</string>
+    <string name="home_next_to_record">Next to record, %1$s</string>
+    <string name="home_record_match">Record match</string>
+    <string name="home_dashboard">Organizer dashboard</string>
+    <string name="home_attention">Needs your attention</string>
+    <string name="home_team_requests">%1$d team requests</string>
+    <string name="home_review">Review</string>
+    <string name="home_lineups_not_set">Line-ups not set</string>
+    <string name="home_recorded_today">Recorded today</string>
+    <string name="home_synced">Synced</string>
+</resources>

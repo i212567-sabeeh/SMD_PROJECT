@@ -68,6 +68,13 @@
         <item name="android:textColor">@color/on_blue</item>
     </style>
 
+    <!-- 08 Home's hero: team codes and the live score in Anton 56/60, white. -->
+    <style name="TextAppearance.LeagueX.HeroCode" parent="TextAppearance.LeagueX.Display.Title">
+        <item name="android:textSize">56sp</item>
+        <item name="android:lineHeight">60sp</item>
+        <item name="android:textColor">@color/on_blue</item>
+    </style>
+
     <!-- .pill-orange: "Matchday 5" on orange. -->
     <style name="Widget.LeagueX.PillOrange" parent="">
         <item name="android:background">@drawable/bg_pill_orange</item>

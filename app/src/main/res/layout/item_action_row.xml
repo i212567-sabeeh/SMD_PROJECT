@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 08 Home / Nothing followed (Popular near Islamabad) and 08 Home / Organizer (Needs your attention): a glyph
+     in a tint circle, a title and a line about it, then a tonal button or a chevron. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LeagueX.Row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_glyph_circle"
+        android:importantForAccessibility="no"
+        android:padding="10dp"
+        app:tint="@color/blue"
+        tools:src="@drawable/ic_emoji_events" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:divider="@drawable/gap_2"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LeagueX.Title.Small"
+            tools:text="Islamabad Futsal League" />
+
+        <TextView
+            android:id="@+id/meta"
+            style="@style/Widget.LeagueX.Row.Meta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="League, 8 teams, Islamabad" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action"
+        style="@style/Widget.LeagueX.Button.Tonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:text="Follow"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/chevron"
+        style="@style/Widget.LeagueX.Row.Icon"
+        android:src="@drawable/ic_chevron_right"
+        android:visibility="gone" />
+</LinearLayout>

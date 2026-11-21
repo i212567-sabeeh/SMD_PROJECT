@@ -19,6 +19,7 @@
         android:accessibilityHeading="true"
         android:maxLines="1"
         android:text="@string/kit_wordmark"
+        android:includeFontPadding="false"
         android:textAppearance="@style/TextAppearance.LeagueX.Display.Wordmark"
         android:textColor="@color/on_blue"
         tools:targetApi="28" />

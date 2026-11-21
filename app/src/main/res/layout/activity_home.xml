@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma: 08 Home (League, Tournament, Live match, Nothing followed, Offline, Organizer). The blue block holds the top
+     bar, the followed competition and the match that matters now; under it are the lists that version shows.
+     HomeActivity shows the parts of the version it's opened with. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/blueBlock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_blue_block"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/top"
+                    layout="@layout/include_top_home" />
+
+                <include
+                    android:id="@+id/offline"
+                    layout="@layout/include_offline_banner"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/league"
+                    layout="@layout/include_league_row" />
+
+                <!-- 08 Home / League: the latest announcement. -->
+                <LinearLayout
+                    android:id="@+id/notice"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_notice"
+                    android:divider="@drawable/gap_10"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:showDividers="middle"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_campaign"
+                        app:tint="@color/on_blue" />
+
+                    <TextView
+                        android:id="@+id/noticeText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+                        android:textColor="@color/on_blue"
+                        tools:text="Matchday 5 kick-off times" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="@color/on_blue" />
+                </LinearLayout>
+
+                <!-- The match that matters now (home.js hero). -->
+                <LinearLayout
+                    android:id="@+id/hero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="24dp"
+                    android:showDividers="middle">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/heroLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+                            android:textColor="@color/on_blue_muted"
+                            tools:text="Your next match" />
+
+                        <TextView
+                            android:id="@+id/pill"
+                            style="@style/Widget.LeagueX.PillOrange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Matchday 5" />
+
+                        <TextView
+                            android:id="@+id/livePill"
+                            style="@style/Widget.LeagueX.Status.Live"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:divider="@drawable/gap_2"
+                            android:orientation="vertical"
+                            android:showDividers="middle">
+
+                            <TextView
+                                style="@style/Widget.LeagueX.Anton.HeroCode"
+                                android:id="@+id/homeCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="MAR" />
+
+                            <TextView
+                                android:id="@+id/homeName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+                                android:textColor="@color/on_blue_muted"
+                                tools:text="Margalla Strikers" />
+                        </LinearLayout>
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            style="@style/Widget.LeagueX.Anton.Small"
+                            android:id="@+id/mid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingBottom="26dp"
+                            android:textColor="@color/on_blue_muted"
+                            tools:text="vs" />
+
+                        <TextView
+                            android:id="@+id/score"
+                            style="@style/Widget.LeagueX.Anton.HeroCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="14dp"
+                            android:visibility="gone"
+                            tools:text="2–1" />
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:divider="@drawable/gap_2"
+                            android:gravity="end"
+                            android:orientation="vertical"
+                            android:showDividers="middle">
+
+                            <TextView
+                                style="@style/Widget.LeagueX.Anton.HeroCode"
+                                android:id="@+id/awayCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="RAW" />
+
+                            <TextView
+                                android:id="@+id/awayName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="@style/TextAppearance.LeagueX.Label.Large"
+                                android:textColor="@color/on_blue_muted"
+                                tools:text="Rawal Rovers" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/meta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Medium"
+                        android:textColor="@color/on_blue"
+                        tools:text="Sat 15 Nov, 7:00 pm, F-9 Sports Arena, Court 2" />
+
+                    <TextView
+                        android:id="@+id/saved"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Small"
+                        android:textColor="@color/on_blue_muted"
+                        android:visibility="gone"
+                        tools:text="Saved on Fri 14 Nov, 9:12 pm" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/gap_12"
+                        android:orientation="horizontal"
+                        android:showDividers="middle">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/primary"
+                            style="@style/Widget.LeagueX.Button.OnBlue"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            tools:text="Match details" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/secondary"
+                            style="@style/Widget.LeagueX.Button.OnBlueOutlined"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            tools:text="Remind me" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- 08 Home / Nothing followed. -->
+                <LinearLayout
+                    android:id="@+id/welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:paddingTop="16dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="24dp"
+                    android:showDividers="middle"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/Widget.LeagueX.Anton.PageTitle"
+                        android:id="@+id/welcomeTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/on_blue"
+                        tools:text="Welcome, Usman" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_follow_prompt"
+                        android:textAppearance="@style/TextAppearance.LeagueX.Body.Large"
+                        android:textColor="@color/on_blue_muted" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/findLeagues"
+                        style="@style/Widget.LeagueX.Button.OnBlue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_find_leagues"
+                        app:icon="@drawable/ic_search" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/gap_20"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/page_margin"
+                android:paddingTop="20dp"
+                android:paddingEnd="@dimen/page_margin"
+                android:paddingBottom="20dp"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:id="@+id/tableSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/tableHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/table"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_table_row" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/resultsSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/resultsHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/results"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_result_row" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/semisSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/semisHead"
+                        layout="@layout/include_section_head" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/gap_12"
+                        android:orientation="horizontal"
+                        android:showDividers="middle">
+
+                        <include
+                            android:id="@+id/semiOne"
+                            layout="@layout/include_tie" />
+
+                        <include
+                            android:id="@+id/semiTwo"
+                            layout="@layout/include_tie" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quartersSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/quartersHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/quarters"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="4"
+                        tools:listitem="@layout/item_result_row" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventsSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/eventsHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/events"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="5"
+                        tools:listitem="@layout/item_event" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/earlierSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/earlierHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/earlier"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_result_row" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/popularSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/popularHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/popular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_action_row" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/attentionSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/attentionHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/attention"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_action_row" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recordedSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@drawable/gap_12"
+                    android:orientation="vertical"
+                    android:showDividers="middle">
+
+                    <include
+                        android:id="@+id/recordedHead"
+                        layout="@layout/include_section_head" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recorded"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_card"
+                        tools:itemCount="2"
+                        tools:listitem="@layout/item_match_row" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bottomNav"
+        layout="@layout/include_bottom_nav" />
+</LinearLayout>

@@ -93,6 +93,24 @@ object SampleData {
         MatchEvent("38'", EventType.GOAL, Side.HOME, "Hamza Ali"),
     )
 
+    /** The Capital Futsal Cup quarter-finals (08 Home / Tournament); RAW beat KHY on penalties. */
+    val CUP_QUARTERS: List<MatchRow> = listOf(
+        MatchRow("CAP", "KOH", MatchState.RESULT, 4, 1), MatchRow("MAR", "PIN", MatchState.RESULT, 3, 0),
+        MatchRow("SAD", "POT", MatchState.RESULT, 2, 1), MatchRow("RAW", "KHY", MatchState.RESULT, 2, 2, meta = "Pens"),
+    )
+
+    /** Matchday 5's early kick-offs, already played on match night. */
+    val EARLIER_TODAY: List<MatchRow> = listOf(
+        MatchRow("CAP", "POT", MatchState.RESULT, 2, 1), MatchRow("KHY", "KOH", MatchState.RESULT, 1, 1),
+    )
+
+    /** Competitions near the player, for someone who follows nothing yet: name and a line about it. */
+    val SUGGESTIONS: List<Pair<String, String>> = listOf(
+        "Islamabad Futsal League" to "League, 8 teams, Islamabad",
+        "Capital Futsal Cup" to "Knockout, 8 teams, Islamabad",
+        "Rawalpindi Football League" to "League, 10 teams, Rawalpindi",
+    )
+
     /** Players with no team yet, shown when a captain searches for forwards to invite: name and position. */
     val FREE_AGENTS: List<Pair<String, String>> = listOf(
         "Kashif Mehmood" to "Forward", "Sohail Abbasi" to "Forward", "Taha Nadeem" to "Forward",

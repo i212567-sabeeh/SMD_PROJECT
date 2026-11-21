@@ -26,10 +26,10 @@
                 android:showDividers="middle">
 
                 <TextView
+                    style="@style/Widget.LeagueX.Anton.PageTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/start_how_title"
-                    android:textAppearance="@style/TextAppearance.LeagueX.PageTitle" />
+                    android:text="@string/start_how_title" />
 
                 <TextView
                     android:layout_width="match_parent"

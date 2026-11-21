@@ -17,6 +17,7 @@
         android:accessibilityHeading="true"
         android:ellipsize="end"
         android:maxLines="1"
+        android:includeFontPadding="false"
         android:textAppearance="@style/TextAppearance.LeagueX.TopBar.Tab"
         android:textColor="@color/on_blue"
         tools:targetApi="28"

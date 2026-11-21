@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Anton text placed the way the HTML's CSS places it. Android pads Anton up to its tallest glyph (2876 of 2048 units)
+     and gives each line the font's full ascent plus descent (2409 + 674 = 1.505 em); CSS centres those inside the line
+     height instead. So these styles turn font padding off and pull the text in by half the leading on each side:
+     (line height − 1.505 × size) / 2. Use them instead of android:textAppearance for Anton text that isn't centred in
+     a fixed-height bar (there, includeFontPadding="false" alone is enough). -->
+<resources>
+
+    <style name="Widget.LeagueX.Anton" parent="">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- Anton 18/24: (24 − 27.1) / 2. -->
+    <style name="Widget.LeagueX.Anton.Small">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Display.Small</item>
+        <item name="android:layout_marginTop">-1.5dp</item>
+        <item name="android:layout_marginBottom">-1.5dp</item>
+    </style>
+
+    <!-- Anton 24/30: (30 − 36.1) / 2. Section heads and other display titles. -->
+    <style name="Widget.LeagueX.Anton.Title">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Display.Title</item>
+        <item name="android:layout_marginTop">-3dp</item>
+        <item name="android:layout_marginBottom">-3dp</item>
+    </style>
+
+    <!-- Anton 32/38: (38 − 48.2) / 2. Page headings such as "Welcome back". -->
+    <style name="Widget.LeagueX.Anton.PageTitle">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.PageTitle</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:layout_marginBottom">-5dp</item>
+    </style>
+
+    <!-- Anton 40/46: (46 − 60.2) / 2. 02 Welcome's heading. -->
+    <style name="Widget.LeagueX.Anton.PageTitleBig">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.PageTitle.Big</item>
+        <item name="android:layout_marginTop">-7dp</item>
+        <item name="android:layout_marginBottom">-7dp</item>
+    </style>
+
+    <!-- Anton 48/52: (52 − 72.2) / 2. Scores. -->
+    <style name="Widget.LeagueX.Anton.Score">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Display.Score</item>
+        <item name="android:layout_marginTop">-10dp</item>
+        <item name="android:layout_marginBottom">-10dp</item>
+    </style>
+
+    <!-- Anton 56/60: (60 − 84.3) / 2. 08 Home's team codes and live score. -->
+    <style name="Widget.LeagueX.Anton.HeroCode">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.HeroCode</item>
+        <item name="android:layout_marginTop">-12dp</item>
+        <item name="android:layout_marginBottom">-12dp</item>
+    </style>
+
+    <!-- Anton 64/70: (70 − 96.3) / 2. 01 Splash's wordmark. -->
+    <style name="Widget.LeagueX.Anton.Splash">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.SplashWordmark</item>
+        <item name="android:layout_marginTop">-13dp</item>
+        <item name="android:layout_marginBottom">-13dp</item>
+    </style>
+
+    <!-- Anton 72/76: (76 − 108.4) / 2. The match clock. -->
+    <style name="Widget.LeagueX.Anton.Clock">
+        <item name="android:textAppearance">@style/TextAppearance.LeagueX.Display.Clock</item>
+        <item name="android:layout_marginTop">-16dp</item>
+        <item name="android:layout_marginBottom">-16dp</item>
+    </style>
+</resources>
