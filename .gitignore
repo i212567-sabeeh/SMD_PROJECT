@@ -1,17 +1,15 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+# Android Studio's per-machine settings (device choice, JDK paths); it rebuilds them from Gradle.
+/.idea
+.kotlin
 .DS_Store
 /build
 /captures
 .externalNativeBuild
 .cxx
 local.properties
-# Emulator screenshots and comparison pages (tools/shoot.mjs, tools/compare.mjs)
+node_modules
+# Rendered screenshots and comparison pages (FrameShotsTest, tools/compare.mjs)
 /shots
