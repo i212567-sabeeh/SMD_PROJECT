@@ -3,12 +3,12 @@ package com.leaguex.app
 import android.app.Activity
 import android.app.Application
 import android.content.Intent
-import androidx.core.content.IntentCompat
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.leaguex.app.FlowHarness.open
 import com.leaguex.app.FlowHarness.sheet
 import com.leaguex.app.FlowHarness.tap
+import com.leaguex.app.across.SettingsActivity
 import com.leaguex.app.home.HomeActivity
 import com.leaguex.app.home.HomeVersion
 import com.leaguex.app.league.LeagueActivity
@@ -30,9 +30,11 @@ import com.leaguex.app.players.EditProfileVersion
 import com.leaguex.app.players.JoinTeamActivity
 import com.leaguex.app.players.ProfileActivity
 import com.leaguex.app.players.TeamInviteActivity
+import com.leaguex.app.screens.ScreenListActivity
 import com.leaguex.app.start.LogInActivity
 import com.leaguex.app.start.SignUpActivity
 import com.leaguex.app.start.WelcomeActivity
+import kotlin.reflect.KClass
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -43,7 +45,6 @@ import org.junit.runner.RunWith
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowPopupMenu
-import kotlin.reflect.KClass
 
 /**
  * The screens a person passes through don't pile up: the bottom bar keeps one tab above Home, a finished flow closes
@@ -126,6 +127,25 @@ class BackStackTest {
         endsFlowAt(invite, JoinTeamActivity::class, then = ProfileActivity::class)
     }
 
+    /**
+     * Only a hand-over this app made counts: an Intent from outside, sent to the exported screen list with a forged
+     * one, opens nothing and closes nothing.
+     */
+    @Test
+    fun aForgedHandOverIsIgnored() {
+        val forged = Intent(app, SettingsActivity::class.java)
+        for (handOver in listOf<Any>(forged, "not-a-real-hand-over")) {
+            val intent = app.screen(ScreenListActivity::class)
+            when (handOver) {
+                is Intent -> intent.putExtra(Extras.THEN, handOver)
+                else -> intent.putExtra(Extras.THEN, handOver.toString())
+            }
+            val list = open(intent)
+            assertNull("nothing opens for $handOver", shadowOf(app).nextStartedActivity)
+            assertFalse("the screen list stays for $handOver", list.isFinishing)
+        }
+    }
+
     @Test
     fun startingTheMatchClosesLineUps() {
         val lineups = open(LineupsActivity::class)
@@ -206,11 +226,9 @@ class BackStackTest {
     private fun endsFlowAt(from: Activity, first: KClass<out Activity>, then: KClass<out Activity>) {
         val back = started(first)
         assertTrue("${first.simpleName} comes back", back.has(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP))
-        val next = IntentCompat.getParcelableExtra(back, Extras.THEN, Intent::class.java)
-        assertEquals("and then opens ${then.simpleName}", then.java.name, next?.component?.className)
         assertTrue("${from.javaClass.simpleName} closes", from.isFinishing)
         val passing = open(back)
-        assertEquals(then.java.name, shadowOf(app).nextStartedActivity?.component?.className)
+        assertEquals("and then opens ${then.simpleName}", then.java.name, shadowOf(app).nextStartedActivity?.component?.className)
         assertTrue("${first.simpleName} closes once it has passed the flow on", passing.isFinishing)
     }
 

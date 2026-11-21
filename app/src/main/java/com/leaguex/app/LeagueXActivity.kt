@@ -9,7 +9,6 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
-import androidx.core.content.IntentCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -22,6 +21,7 @@ import com.leaguex.app.league.StandingsActivity
 import com.leaguex.app.league.StandingsVersion
 import com.leaguex.app.news.TeamsActivity
 import com.leaguex.app.players.ProfileActivity
+import java.util.UUID
 import kotlin.reflect.KClass
 
 /** The bottom-bar tabs. */
@@ -146,10 +146,15 @@ abstract class LeagueXActivity : AppCompatActivity() {
     /**
      * Ends a flow that started at [first]: brings [first] back, which closes every step above it, and [first] then
      * opens [then] and closes too. Back from [then] goes to wherever the flow was started from.
+     *
+     * [then] stays in memory. The Intent to [first] carries only a one-time token for it, so an Intent from outside
+     * the app (the screen list is exported) can't make a screen open something else.
      */
     protected fun endFlow(first: KClass<out Activity>, then: Intent) {
+        val token = UUID.randomUUID().toString()
+        pendingHandOver = token to then
         startActivity(
-            screen(first).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra(Extras.THEN, then),
+            screen(first).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra(Extras.THEN, token),
         )
         finish()
     }
@@ -160,11 +165,23 @@ abstract class LeagueXActivity : AppCompatActivity() {
         finish()
     }
 
-    /** A flow's first screen, brought back by [endFlow], opens what comes after the flow and closes. */
+    /**
+     * A flow's first screen, brought back by [endFlow], opens what comes after the flow and closes. Only the token of
+     * the hand-over [endFlow] made counts, once; anything else in [Extras.THEN] is ignored.
+     */
     private fun passFlowOn(intent: Intent) {
-        val then = IntentCompat.getParcelableExtra(intent, Extras.THEN, Intent::class.java) ?: return
+        val token = intent.getStringExtra(Extras.THEN) ?: return
+        intent.removeExtra(Extras.THEN)
+        val (expected, then) = pendingHandOver ?: return
+        if (token != expected) return
+        pendingHandOver = null
         startActivity(then)
         finish()
+    }
+
+    private companion object {
+        /** The hand-over [endFlow] made and its first screen hasn't passed on yet: its one-time token and what to open. */
+        var pendingHandOver: Pair<String, Intent>? = null
     }
 
     /** Opens [target], optionally in a version or with a sheet showing. */

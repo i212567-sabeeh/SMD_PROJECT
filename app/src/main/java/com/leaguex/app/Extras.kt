@@ -20,8 +20,8 @@ object Extras {
     const val OPEN = "open"
 
     /**
-     * An Intent to open once a flow has ended: the flow's first screen is brought back with this, which closes every
-     * step above it, and then it opens the Intent and closes too. See LeagueXActivity.endFlow().
+     * The one-time token of a flow's hand-over: the flow's first screen is brought back with it, which closes every
+     * step above it, and then it opens the screen that LeagueXActivity.endFlow() kept for the token, and closes too.
      */
     const val THEN = "then"
 }
