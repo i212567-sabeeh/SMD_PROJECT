@@ -6,8 +6,8 @@ sent to a server or saved yet, because this is the frontend only.
 
 ## Open and run it
 
-1. Open the `LeagueX` folder in Android Studio. The project uses Android Gradle Plugin 9.4.1, Gradle 9.6, compile SDK
-   37 and min SDK 24. Android Studio's own JDK is enough.
+1. In Android Studio, open the folder this README is in. The project uses Android Gradle Plugin 9.4.1, Gradle 9.6,
+   compile SDK 37 and min SDK 24. Android Studio's own JDK is enough.
 2. Wait for the Gradle sync to finish.
 3. Pick a phone or a virtual device, and press **Run 'app'**.
 
